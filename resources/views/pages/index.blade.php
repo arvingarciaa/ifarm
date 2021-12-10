@@ -10,6 +10,24 @@
 </style>
 @section('content')
 
+<?php
+$user = auth()->user();
+?>
+
+@include('layouts.messages')
+<div class="edit-bar">
+    <nav class="navbar navbar-expand-lg shadow rounded" style="background-color:{{request()->edit == 1 ? '#53ade9' : '#05b52c'}}; height:52px">
+        <div class="col-auto text-white font-weight-bold">
+            You are viewing in {{request()->edit == 1 ? 'EDIT' : 'LIVE'}} mode
+        </div>
+        @if(request()->edit == 1)
+            <a href="{{route('getLandingPage')}}" class="btn btn-success">View Live</a>
+        @else
+            <a href="{{route('getLandingPage', ['edit' => '1'])}}" class="btn btn-light">Edit</a>
+        @endif
+    </nav>
+</div> 
+
 <div class="container-fluid">
     <div class="content-margin">   
         <div class="row">
@@ -38,171 +56,20 @@
         </div>
     </div>
     <div class="content-margin" style="background-color:white">
-        <img alt="iFarm Banner" src="/storage/page_images/ifarm_v1.png" style="width:100%">
-        <div class="section">
-            <h1 class="text-center">iFarm Cropping Advisories</h1>
-            <h6 class="text-center">
-                We craft site-specific recommendations for the representative sites of the different climate types.<br>
-                Recommendations may or may not be the same with other sites with the same climate type.
-            </h6>
-            <div class="row mt-4">
-                <div class="offset-sm-2 px-5 col-sm-4 text-center">
-                    <h4>Crop</h4>
-                    <select class="form-control">
-                        <option>Corn</option>
-                        <option>Rice</option>
-                    </select>
-                </div>
-                <div class="col-sm-4 px-5 text-center">
-                    <h4>Site</h4>
-                    <select class="form-control">
-                        <option>La Paz, Tarlac</option>
-                        <option>Concepcion, Tarlac</option>
-                      </select>
-                </div>
-            </div>
-            <h3 class="mt-5 text-center">
-                Cropping Advisories for Corn in La Paz, Tarlac
-            </h3>
-            <h6 class="text-center">
-                Based on the Rainfall Outlook from April to August 2021 <br>
-                Source: Project 1.1 Using Crop Simulation Models for Issuing Crop Advisories to Farmers
-
-                <img alt="iFarm Banner" src="/storage/page_images/cropping.png" style="width:100%">
-            </h6>
-        </div>
+        @include('sections.topBanner')
+        @include('sections.croppingAdvisories')
         <hr class="my-0">
-        <div class="section">
-            <h1 class="text-center">ICMF Corn Bulletin</h1>
-            <h5 class="text-center">(October 2021 – February 2022 based on September 2021 Condition)</h5>
-            <h6 class="text-center">
-                We generate science-based site-specific advisories using SARAi-generated meteorological information for better farm management decision-making.
-                <br>Source: Dr. Artemio Salazar; Project 3.3 Integrating Research Results, Communication Planning, and Linking Science to Policy
-            </h6>
-            <div class="row mt-4">
-                <div class="offset-sm-4 col-sm-4 px-5 text-center">
-                    <h4>Region</h4>
-                    <select class="form-control">
-                        <option>Region III - Central Luzon</option>
-                      </select>
-                </div>
-            </div>
-
-            <img alt="iFarm Banner" src="/storage/page_images/corn_bulletin.png" style="width:100%">
-        </div>
+        @include('sections.bulletin')
         <hr class="my-0">
-        <div class="section">
-
-            <h1 class="text-center">Weather Forecast and Rainfall Outlook</h1>
-            <h6 class="text-center">
-                We craft site-specific recommendations for the representative sites of the different climate types.<br>
-                Recommendations may or may not be the same with other sites with the same climate type.
-            </h6>
-
-            <img alt="iFarm Banner" src="/storage/page_images/14.png" style="width:100%">
-        </div>
+        @include('sections.remoteSensingMaps')
         <hr class="my-0">
-        <div class="section">
-            <h1 class="text-center">Analytics and Dashboard</h1>
-            <h6 class="text-center">
-                We craft site-specific recommendations for the representative sites of the different climate types.<br>
-                Recommendations may or may not be the same with other sites with the same climate type.
-            </h6>
-            <div class="row mt-4 px-5 mx-5">
-                <div class="px-5 col-sm-3 text-center">
-                    <select class="form-control">
-                        <option>Corn</option>
-                        <option>Rice</option>
-                    </select>
-                </div>
-                <div class="col-sm-3 px-5 text-center">
-                    <select class="form-control">
-                        <option>Select Date Range</option>
-                      </select>
-                </div>
-                <div class="col-sm-2 px-5 text-center">
-                    <select class="form-control">
-                        <option>Tarlac</option>
-                      </select>
-                </div>
-                <div class="col-sm-2 px-5 text-center">
-                    <select class="form-control">
-                        <option>La Paz</option>
-                        <option>Concepcion</option>
-                      </select>
-                </div>
-                <div class="col-sm-2 px-5 text-center">
-                    <select class="form-control">
-                        <option>Castillo</option>
-                        <option>Magao</option>
-                        <option>Balanoy</option>
-                        <option>Caut</option>
-                      </select>
-                </div>
-            </div>
-            <div class="row px-5 mx-5 mt-5">
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/1.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/2.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/3.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/4.jpg" style="width:100%">
-                </div>
-                
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/5.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/6.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/7.jpg" style="width:100%">
-                </div>
-                <div class="col-sm-3">
-                    <img alt="iFarm Banner" src="/storage/page_images/8.jpg" style="width:100%">
-                </div>
-            </div>
-            <div class="row px-5 mx-5 mt-5">
-                <div class="col-sm-6">
-                    <img alt="iFarm Banner" src="/storage/page_images/9.png" style="width:100%">
-                </div>
-                <div class="col-sm-6">
-                    <img alt="iFarm Banner" src="/storage/page_images/10.png" style="width:100%">
-                </div>
-            </div>
-        </div>
+        @include('sections.weatherForecast')
         <hr class="my-0">
-        <div class="section">
-            <h1 class="text-center">News and Information from Central Luzon</h1>
-            <h6 class="text-center">
-                We craft site-specific recommendations for the representative sites of the different climate types.<br>
-                Recommendations may or may not be the same with other sites with the same climate type.
-            </h6>
-            <img alt="iFarm Banner" src="/storage/page_images/12.png" style="width:100%">
-        </div>
+        @include('sections.analyticsDashboard')
         <hr class="my-0">
-        <div class="section" style="background-color:#5893CB !important;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h1 class="mt-4" style="color:white; font-weight: bold">iFarm Crop Monitoring App</h1>
-                        <h3 class="mt-4">Want to access the iFarm outputs on your mobile phones? Download our mobile application now!</h3>
-                        <h5 class="mt-4">
-                            *Please note that the application is still on testing phase so you may need to download the latest version once a month
-                        </h5>
-                        <button type="button" class="btn btn-lg btn-success mt-4" style="width:100%;">Download Here</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <img alt="iFarm Banner" src="/storage/page_images/11.png" style="width:100%">
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('sections.newsAndInformation')
+        <hr class="my-0">
+        @include('sections.appDownload')
     </div>
 </div>
 <footer class="mt-5">
@@ -213,12 +80,59 @@
         background-color:ghostwhite;
     }
     .content-margin{
-        margin-left: 6rem;
-        margin-right: 6rem;
+        margin-left: 15rem;
+        margin-right: 15rem;
     }
     .section{
         padding-top:3rem;
         padding-bottom:3rem;
+    }
+    .hover-overlay {
+        transition: .5s ease;
+        height:100%;
+        opacity: 0;
+        position: absolute;
+        z-index:1000;
+        text-align: right;
+    }
+    .overlay-container{
+        position: relative;
+        background-color:rgba(0,0,0,0);
+    }
+    .overlay-container:hover .bottom-overlay{
+        opacity: 0.5;
+    }
+    img{
+        transition: .5s ease;
+    }
+    .overlay-container:hover img{
+        opacity: 0.3;
+    }
+    .overlay-container:hover{
+        background-color:rgba(0,0,0,.15);
+        transition: .5s ease;
+    }
+    .overlay-container:hover .hover-overlay, .overlay-container:hover .hover-overlay-text{
+        opacity: 1;
+    }
+    .card-image-overlay{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1.25rem;
+    }
+    .center-vertically{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
     }
 </style>
 
