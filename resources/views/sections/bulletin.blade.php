@@ -2,7 +2,7 @@
     <h1 class="text-center">Corn Bulletin</h1>
     <h4 class="text-center">(October 2021 – February 2022 based on September 2021 Condition)</h4>
     <h5 class="text-center">
-        Site-specific advisories using Project SARAi-generated <br>meteorological information for better farm management decision-making. <br>Source: Dr. Artemio Salazar, Project SARAi
+        Site-specific advisories using meteorological information <br>for better farm management decision-making. <br>Source: Dr. Artemio Salazar, Project SARAi
     </h5>
     <div class="row mt-4">
         <div class="offset-sm-4 col-sm-4 px-5 text-center">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group">
                     {{Form::label('latest_aanr_subheader', 'ICMF Bulletin Subheader', ['class' => 'col-form-label required'])}}
-                    {{Form::textarea('latest_aanr_subheader', 'We generate science-based site-specific advisories using SARAi-generated meteorological information for better farm management decision-making. Source: Dr. Artemio Salazar; Project 3.3 Integrating Research Results, Communication Planning, and Linking Science to Policy
+                    {{Form::textarea('latest_aanr_subheader', 'We generate science-based site-specific advisories using meteorological information for better farm management decision-making. Source: Dr. Artemio Salazar; Project 3.3 Integrating Research Results, Communication Planning, and Linking Science to Policy
                     ', ['class' => 'form-control', 'rows' => '4'])}}
                 </div>
                 {{Form::label('banner', 'Change Section Background', ['class' => 'col-form-label'])}}

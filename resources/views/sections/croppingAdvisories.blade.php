@@ -21,7 +21,8 @@
     </div>
     <div class="row mt-4">
         <div class="col-sm-6">
-            <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%">
+            <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
+            <a href="" class="text-center"><h6>Link to Interactive Map</h6></a>
         </div>
         <div class="col-sm-6 ">
             <h5 class="text-center">
@@ -65,7 +66,7 @@
                 <div class="col-sm-4">
                     <h5>Number of Farm Lots</h5>
                     <h2 style="font-weight:700 !important">
-                        16
+                        494
                     </h2>
                 </div>
                 <div class="offset-sm-2"></div>
@@ -109,29 +110,6 @@
             </div>
         </div>
     </div>
-    <h3 class="mt-5 text-center">
-        Cropping Advisories for Corn in La Paz, Tarlac
-    </h3>
-    <h5 class="text-center">
-        Based on the Rainfall Outlook from April to August 2021 <br>
-        Source: Project 1.1 Using Crop Simulation Models for Issuing Crop Advisories to Farmers
-    </h5>
-    <table class="table mt-4">
-        <thead bgcolor="308CDD">
-          <tr>
-            <th scope="col">Planting</th>
-            <th scope="col">Cropping Period</th>
-            <th scope="col">Harvesting</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="border:1px solid #dee2e6;">First week of June</td>
-            <td style="border:1px solid #dee2e6;">Most water accumulated by August (end of vegetative going to flowering; water starts to decrease towards ripening)</td>
-            <td style="border:1px solid #dee2e6;">Towards the end of September</td>
-          </tr>
-        </tbody>
-    </table>
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editCroppingAdvisoriesSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
