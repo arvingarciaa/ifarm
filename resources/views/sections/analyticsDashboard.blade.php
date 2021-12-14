@@ -1,9 +1,8 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
     <h1 class="text-center">Analytics Dashboard</h1>
-    <h6 class="text-center">
-        We craft site-specific recommendations for the representative sites of the different climate types.<br>
-        Recommendations may or may not be the same with other sites with the same climate type.
-    </h6>
+    <h5 class="text-center">
+        Analytics dashboard aids key management decisions using site-specific data translated into graphs, tables, and infographics.
+    </h5>
     <div class="row mt-4 px-5 mx-5">
         <div class="px-5 col-sm-3 text-center">
             <select class="form-control">

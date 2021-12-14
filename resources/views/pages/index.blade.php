@@ -27,7 +27,6 @@ $user = auth()->user();
         @endif
     </nav>
 </div> 
-
 <div class="container-fluid">
     <div class="content-margin">   
         <div class="row">
@@ -62,8 +61,6 @@ $user = auth()->user();
         @include('sections.bulletin')
         <hr class="my-0">
         @include('sections.remoteSensingMaps')
-        <hr class="my-0">
-        @include('sections.weatherForecast')
         <hr class="my-0">
         @include('sections.analyticsDashboard')
         <hr class="my-0">

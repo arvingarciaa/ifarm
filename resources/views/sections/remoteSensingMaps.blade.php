@@ -1,9 +1,9 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}} px-5">
     <div class="title-section">
         <h1 class="text-center">Remote Sensing for Precision Farming</h1>
-        <h6 class="text-center">
-            We use remote sensing for nationwide crop forecasting and advisories
-        </h6>
+        <h5 class="text-center">
+            Nationwide crop forecasting and advisories using satellite data.
+        </h5>
         @if(request()->edit == 1)
             <div class="hover-overlay" style="width:100%; height:0">    
                 <button type="button" class="btn btn-xs btn-primary" data-target="#editMapsSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
@@ -13,19 +13,23 @@
     <div class="row">
         @foreach(App\Models\Map::all() as $map)
             <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="/storage/page_images/{{$map->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
-                    <div class="card-body pl-3 pr-3">
-                        <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$map->title}}</b></h5>
-                        <p class="card-text">
-                            {{$map->description}}
-                        </p>
-                         @if(request()->edit == 1)
-                            <button type="button" data-toggle="modal" data-target="#editMapModal-{{$map->id}}" class="btn btn-dark">Edit</button>
-                            <button type="button" data-toggle="modal" data-target="#deleteMapModal-{{$map->id}}" class="btn btn-dark">Delete</button>
-                        @endif
+                    <div class="card">
+                        <a href="{{$map->link}}" target="_blank" style="text-decorations:none; color:inherit">
+                        <img class="card-img-top" src="/storage/page_images/{{$map->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
+                        </a>
+                        <div class="card-body pl-3 pr-3">
+                            <a href="{{$map->link}}" target="_blank" style="text-decorations:none; color:inherit">
+                                <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$map->title}}</b></h5>
+                            </a>
+                            <p class="card-text">
+                                {{$map->description}}
+                            </p>
+                            @if(request()->edit == 1)
+                                <button type="button" data-toggle="modal" data-target="#editMapModal-{{$map->id}}" class="btn btn-dark">Edit</button>
+                                <button type="button" data-toggle="modal" data-target="#deleteMapModal-{{$map->id}}" class="btn btn-dark">Delete</button>
+                            @endif
+                        </div>
                     </div>
-                </div>
             </div>
         @endforeach
         @if(request()->edit == 1)

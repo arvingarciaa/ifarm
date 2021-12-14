@@ -1,5 +1,5 @@
 <div class="{{request()->edit == '1' ? 'overlay-container' : ''}}">
-    <img alt="iFarm Banner" src="/storage/page_images/ifarm_v1.png" style="width:100%">
+    <img alt="iFarm Banner" src="/storage/page_images/ifarm_v3.png" style="width:100%">
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editTopBannerSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      

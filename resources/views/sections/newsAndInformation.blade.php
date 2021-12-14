@@ -1,10 +1,10 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}} px-5">
     <div class="title-section">
         <h1 class="text-center">News and Information from Central Luzon</h1>
-        <h6 class="text-center">
+        <h5 class="text-center">
             We craft site-specific recommendations for the representative sites of the different climate types.<br>
             Recommendations may or may not be the same with other sites with the same climate type.
-        </h6>
+        </h5>
         @if(request()->edit == 1)
             <div class="hover-overlay" style="width:100%; height:0">    
                 <button type="button" class="btn btn-xs btn-primary" data-target="#editNewsSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
