@@ -82,7 +82,7 @@
         <section class="sticky-top">
             @extends('layouts.navbar')
         </section>
-        <div class="mt-5 pt-5">
+        <div class="mt-5 pt-4">
             @yield('content')
         </div>
     </div>

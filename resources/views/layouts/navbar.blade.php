@@ -20,14 +20,9 @@
                       <a id="mnuFrmRehab" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/rehabilitation-and-interventions"><i class="fa fa-hands-helping"></i> Rehabilitation and interventions</a>
                     </div>   
                 </div> 
-                
-                
-                            
-
                     <div class="btn-group">
                         <button class="btn navbar-btn dropdown-toggle navbar-btn btn-white ml-2 text-white" data-toggle="dropdown"> Lookups</button>
                         <div class="dropdown-menu bg-primary text-white">
-                            
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Cause-of-damage" data-id="4"><i class="fa fa-search"></i> Cause of damage</a>
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Commodity" data-id="4"><i class="fa fa-search"></i> Commodity</a>	                                
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Ecosystem" data-id="4"><i class="fa fa-search"></i> Ecosystem</a>	                
@@ -41,9 +36,6 @@
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Unit" data-id="4"><i class="fa fa-search"></i> Unit</a>                                                                
                         </div>   
                     </div> 
-
-                                            
-
                 <div class="btn-group">
                     <button class="btn navbar-btn dropdown-toggle navbar-btn btn-white ml-2 text-white" data-toggle="dropdown"> Reports</button>
                     <div class="dropdown-menu bg-primary text-white">

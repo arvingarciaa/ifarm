@@ -1,17 +1,17 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}} px-5" style="">
+<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="padding-bottom:0px !important">
     <h1 class="text-center">Farm-Level Crop Monitoring</h1>
     <h5 class="text-center">
-        Satellite-based data and site-specific monitoring reports on selected sites.<br>Recommendations may or may not be the same with other sites with the same climate type.
+        Satellite-based data and site-specific monitoring.<br>Recommendations may or may not be the same with other sites with the same climate type.
     </h5>
     <div class="row mt-4">
-        <div class="offset-sm-2 px-5 col-sm-4 text-center">
+        <div class="offset-lg-2 col-lg-4 col-sm-6 text-center">
             <h4>Crop</h4>
             <select class="form-control">
                 <option>Corn</option>
                 <option>Rice</option>
             </select>
         </div>
-        <div class="col-sm-4 px-5 text-center">
+        <div class="col-lg-4  col-sm-6 text-center">
             <h4>Site</h4>
             <select class="form-control">
                 <option>La Paz, Tarlac</option>
@@ -20,93 +20,84 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-sm-6">
+        <div class="col-lg-6 col-sm-12">
             <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
             <a href="" class="text-center"><h6>Link to Interactive Map</h6></a>
         </div>
-        <div class="col-sm-6 ">
+        <div class="col-lg-6 col-sm-12">
             <h5 class="text-center">
                 Rainfall Outlook for November, 2021 to March, 2022
             </h5>
             <div class="row mt-4">
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_5.png" style="width:50px;visibility: hidden"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_5.png" style="width:30px;visibility: hidden"><br>
                     <b>Month<br>
                     mm<br></b>
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_5.png" style="width:50px"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_5.png" style="width:30px"><br>
                     Nov 2021<br>
                     101
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_1.png" style="width:50px"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_1.png" style="width:30px"><br>
                     Dec 2021<br>
                     18
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_1.png" style="width:50px"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_1.png" style="width:30px"><br>
                     Jan 2022<br>
                     15
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_3.png" style="width:50px"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_3.png" style="width:30px"><br>
                     Feb 2022<br>
                     55
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img src="/storage/page_images/rainfall_4.png" style="width:50px"><br>
+                <div class="col-2 text-center">
+                    <img src="/storage/page_images/rainfall_4.png" style="width:30px"><br>
                     Mar 2022<br>
                     68
                 </div>
             </div>
             <hr class="rounded">
             <div class="row">
-                <div class="offset-sm-1"></div>
-                <div class="col-sm-4">
+                <div class="offset-1"></div>
+                <div class="col-5">
                     <h5>Number of Farm Lots</h5>
                     <h2 style="font-weight:700 !important">
                         494
                     </h2>
                 </div>
-                <div class="offset-sm-2"></div>
-                <div class="col-sm-4">
+                <div class="offset-1"></div>
+                <div class="col-5">
                     <h5>Percent of Plots Harvested</h5>
                     <h2 style="font-weight:700 !important">
                         31%
                     </h2>
                 </div>
-                <div class="offset-sm-1"></div>
-                <div class="offset-sm-1"></div>
-                <div class="col-sm-4">
+                <div class="offset-1"></div>
+                <div class="col-5">
                     <h5>Percent of Plots in Vegetative State</h5>
                     <h2 style="font-weight:700 !important">
                         24%
                     </h2>
                 </div>
-                <div class="offset-sm-2"></div>
-                <div class="col-sm-4">
+                <div class="offset-1"></div>
+                <div class="col-5">
                     <h5>Percent of Plots in Reproductive State</h5>
                     <h2 style="font-weight:700 !important">
                         45%
                     </h2>
                 </div>
             </div>
-            <hr class="rounded">
-            <h6 class="text-center">
-                Legend
-            </h6>
-            <div class="row">
-                <div class="offset-sm-1">
-                </div>
-                <div class="col-sm-5">
-                    <img alt="iFarm Banner" src="/storage/page_images/17.png" style="width:100%">
-                </div>
-                <div class="offset-sm-1">
-                </div>
-                <div class="col-sm-4">
-                    <img alt="iFarm Banner" src="/storage/page_images/18.png" style="width:100%">
-                </div>
+        </div>
+        <div class="expand-collapse">
+            <h4 style="padding-bottom:8px">Click to expand<br><i class="fas fa-angle-down"></i>
+            </h4>
+            <div class="collapse-content">
+                
+            <img alt="iFarm Banner" src="/storage/page_images/19.png" style="width:100%" class="mb-1">
             </div>
         </div>
     </div>
@@ -168,3 +159,47 @@
         </div>
     </div>
 </div>
+
+<style>
+    .expand-collapse {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .expand-collapse p {
+        padding: 20px;
+        margin: 0;
+    }
+    .expand-collapse div {
+        padding: 0;
+        margin: -2px 0 0 0;
+    }
+    .expand-collapse h4 {
+        cursor:  pointer;
+        padding: 20px;
+        margin: 0 0 2px;
+        text-align:center;
+        opacity: 30%;
+    }
+    .expand-collapse > h4:hover {
+        opacity: 100%;
+        transition: 0.75s ease-in-out;
+    }
+
+    .expand-collapse > h4.active {
+        opacity: 100%;
+        transition: 0.75s ease-in-out;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('.expand-collapse h4').each(function() {
+            var tis = $(this), state = false, answer = tis.next('div').slideUp();
+            tis.click(function() {
+                state = !state;
+                answer.slideToggle(state);
+                tis.toggleClass('active',state);
+            });
+        });
+    });
+</script>

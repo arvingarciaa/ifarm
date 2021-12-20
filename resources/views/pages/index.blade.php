@@ -27,35 +27,35 @@ $user = auth()->user();
         @endif
     </nav>
 </div> 
-<div class="container-fluid">
-    <div class="content-margin">   
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item mx-2">
-                        <a href="home" class="nav-link bg-ghost"><i class="fa fa-home"></i> Dashboard</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="planting" class="nav-link bg-ghost" id="tabFrmPlant"><i class="fa fa-seedling"></i> Planting </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="harvesting" class="nav-link bg-ghost" id="tabFrmHarvest"><i class="fa fa-sign-language"></i> Harvesting </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="damage-assessment" class="nav-link bg-ghost" id="tabFrmDmg"><i class="fa fa-clipboard-check"></i> Damage assessment </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="rehabilitation-and-interventions" class="nav-link bg-ghost" id="tabFrmRehab"><i class="fa fa-hands-helping"></i> Rehabilitation and interventions </a>
-                    </li>
-                    <li class="nav-item active mx-2">
-                        <a href="crop" class="nav-link bg-white"><i class="fa fa-home"></i> Crop Monitoring</a>
-                    </li>
-                </ul>
-            </div>
+<div class="container">   
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="home" class="nav-link bg-ghost"><i class="fa fa-home"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planting" class="nav-link bg-ghost" id="tabFrmPlant"><i class="fa fa-seedling"></i> Planting </a>
+                </li>
+                <li class="nav-item">
+                    <a href="harvesting" class="nav-link bg-ghost" id="tabFrmHarvest"><i class="fa fa-sign-language"></i> Harvesting </a>
+                </li>
+                <li class="nav-item">
+                    <a href="damage-assessment" class="nav-link bg-ghost" id="tabFrmDmg"><i class="fa fa-clipboard-check"></i> Damage assessment </a>
+                </li>
+                <li class="nav-item">
+                    <a href="rehabilitation-and-interventions" class="nav-link bg-ghost" id="tabFrmRehab"><i class="fa fa-hands-helping"></i> Rehabilitation and interventions </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="crop" class="nav-link bg-white"><i class="fa fa-home"></i> Crop Monitoring</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="content-margin" style="background-color:white">
-        @include('sections.topBanner')
+</div>
+<div class="container" style="background-color:white; border: 1px solid lightgray; border-top-color: white;">
+    @include('sections.topBanner')
+    <div style="padding-left:2%; padding-right:2%">
         @include('sections.croppingAdvisories')
         <hr class="my-0">
         @include('sections.bulletin')
@@ -130,6 +130,22 @@ $user = auth()->user();
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;  
         overflow: hidden;
+    }
+    .fill-container{
+        margin-left:-2%;
+        margin-right:-2%;
+    }
+    .nav-item{
+        font-size:smaller !important;
+    }
+    .nav-tabs > li > a{
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        border: 1px solid lightgray !important;
+    }
+
+    .nav-item.active > a {
+        color:black !important;
     }
 </style>
 

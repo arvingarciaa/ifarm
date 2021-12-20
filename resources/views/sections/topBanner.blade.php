@@ -1,4 +1,4 @@
-<div class="{{request()->edit == '1' ? 'overlay-container' : ''}}">
+<div class="{{request()->edit == '1' ? 'overlay-container' : ''}} fill-container">
     <img alt="iFarm Banner" src="/storage/page_images/ifarm_v3.png" style="width:100%">
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    

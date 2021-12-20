@@ -1,4 +1,4 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}} px-5">
+<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
     <div class="title-section">
         <h1 class="text-center">News and Information from Central Luzon</h1>
         <h5 class="text-center">
