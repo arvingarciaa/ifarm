@@ -1,7 +1,7 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
-    <h1 class="text-center">Analytics Dashboard</h1>
+    <h1 class="text-center">NDVI Map</h1>
     <h5 class="text-center">
-        Analytics dashboard aids key management decisions using site-specific data translated into graphs, tables, and infographics.
+        Find out recent NDVI map results about rice and corn production in La Paz and Concepcion, Tarlac.
     </h5>
     <div class="row mt-4">
         <div class="col-sm-3 text-center">

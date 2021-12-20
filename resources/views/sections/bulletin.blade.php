@@ -61,13 +61,7 @@
         <img alt="iFarm Banner" src="/storage/page_images/20.png" style="width:75%" class="mb-1">
     </div>
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
-        <b>Advisory:</b> In this other major corn-after-rice producing Region, rice crop by May should be the consideration (as in Region 1 &amp;
-        4B). Hence corn harvesting should be by April which means January planting of corn at the latest. Decline in rainfall is
-        expected in December except Aurora which still have rainfall beyond 100mm. Hence we expect the usual good corn-
-        after-rice production from the Region in 1 st and 2 nd quarter coming mainly from the provinces of Tarlac, Pampanga and
-        Nueva Ecija. Aurora’s highest corn production in 2 nd quarter could be ascribed to still good rain in December and more
-        than 100m rainfall from Jan to March. Its total annual rainfall is also close to 3m a little less than Regns 5, 8 and
-        CARAGA
+        <b>Advisory:</b> In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.
     </h5>
 
     @if(request()->edit == 1)

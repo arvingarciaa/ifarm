@@ -2,8 +2,7 @@
     <div class="title-section">
         <h1 class="text-center">News and Information from Central Luzon</h1>
         <h5 class="text-center">
-            We craft site-specific recommendations for the representative sites of the different climate types.<br>
-            Recommendations may or may not be the same with other sites with the same climate type.
+            Latest news and information on agricultural activities and initiatives from Central Luzon.
         </h5>
         @if(request()->edit == 1)
             <div class="hover-overlay" style="width:100%; height:0">    
