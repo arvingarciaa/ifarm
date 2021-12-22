@@ -1,4 +1,4 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}} fill-container" style="background-color:#5893CB !important;">
+<div class="{{request()->edit == '1' ? 'overlay-container' : ''}} fill-container" >
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

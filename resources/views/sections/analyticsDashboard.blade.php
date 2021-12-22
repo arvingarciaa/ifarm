@@ -1,37 +1,28 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
-    <h1 class="text-center">NDVI Map</h1>
+    <h1 class="text-center">Farm-level Monitoring</h1>
     <h5 class="text-center">
         Find out recent NDVI map results about rice and corn production in La Paz and Concepcion, Tarlac.
     </h5>
     <div class="row mt-4">
-        <div class="col-sm-3 text-center">
-            <select class="form-control">
-                <option>Corn</option>
-                <option>Rice</option>
-            </select>
+        <div class="offset-3">
+
         </div>
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-2 text-center">
             <select class="form-control">
                 <option>Select Date Range</option>
               </select>
         </div>
         <div class="col-sm-2 text-center">
             <select class="form-control">
+                <option>Select Province</option>
                 <option>Tarlac</option>
               </select>
         </div>
         <div class="col-sm-2 text-center">
             <select class="form-control">
+                <option>Select Municipality</option>
                 <option>La Paz</option>
                 <option>Concepcion</option>
-              </select>
-        </div>
-        <div class="col-sm-2 text-center">
-            <select class="form-control">
-                <option>Castillo</option>
-                <option>Magao</option>
-                <option>Balanoy</option>
-                <option>Caut</option>
               </select>
         </div>
     </div>

@@ -1,3 +1,10 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="">
     <h1 class="text-center">Corn Bulletin</h1>
     <h4 class="text-center">(December 2021 – April 2022 based on November 2021 Condition)</h4>
@@ -8,61 +15,13 @@
     <h2 class="mt-2" style="text-align: center;">
         <button type="button" class="btn btn-outline-secondary">Download Nationwide Bulletin</button>
     </h2>
-    <!--
-    <table class="table mt-2" style="table-layout: fixed;">
-        <thead bgcolor="308CDD">
-          <tr>
-            <th scope="col" style="border: 1px solid #308CDD;"></th>
-            <th scope="col" style="border: 1px solid #ddd;" colspan=5>Rainfall Forecast</th>
-            <th scope="col" style="border: 1px solid #ddd;" colspan=5>40-year average of province</th>
-            <th scope="col" style="border: 1px solid #ddd;" colspan=5>% of 40-year avg.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td bgcolor="308CDD" style="border: 1px solid #308CDD;font-size:14px;"><b></b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:12px;"><b>December</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:13px;"><b>January</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>February</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>March</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>April</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:12px;"><b>December</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:13px;"><b>January</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>February</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>March</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>April</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:12px;"><b>December</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:13px;"><b>January</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>February</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>March</b></td>
-            <td bgcolor="6eb6f5" style="border: 1px solid #ddd;font-size:14px;"><b>April</b></td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #dee2e6;;" bgcolor="308CDD"><b>Tarlac</b></td>
-            <td style="border: 1px solid #dee2e6;;">209mm</td>
-            <td style="border: 1px solid #dee2e6;;">97mm</td>
-            <td style="border: 1px solid #dee2e6;;">37mm</td>
-            <td style="border: 1px solid #dee2e6;;">14mm</td>
-            <td style="border: 1px solid #dee2e6;;">10mm</td>
-            <td style="border: 1px solid #dee2e6;;">213mm</td>
-            <td style="border: 1px solid #dee2e6;;">62mm</td>
-            <td style="border: 1px solid #dee2e6;;">14mm</td>
-            <td style="border: 1px solid #dee2e6;;">2mm</td>
-            <td style="border: 1px solid #dee2e6;;">8mm</td>
-            <td style="border: 1px solid #dee2e6;;">98%</td>
-            <td style="border: 1px solid #dee2e6;;">156%</td>
-            <td style="border: 1px solid #dee2e6;;">255%</td>
-            <td style="border: 1px solid #dee2e6;;">621%</td>
-            <td style="border: 1px solid #dee2e6;;">129%</td>
-          </tr>
-        </tbody>
-    </table>-->
-    <div class="text-center">
-        <img alt="iFarm Banner" src="/storage/page_images/20.png" style="width:75%" class="mb-1">
-    </div>
+
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
         <b>Advisory:</b> In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.
     </h5>
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
 
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    
@@ -71,7 +30,176 @@
     @endif
 </div>
 
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Tarlac rainfall forecast vs 40-year average rainfall',
+            align: 'center'
+        },
+        subtitle: {
+            text: 'Dr. Artemio Salazar, Project SARAi',
+            align: 'center'
+        },
+        xAxis: [{
+            categories: ['Dec 21', 'Jan 22', 'Feb 22', 'Mar 22', 'Apr 22'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            title: {
+                text: '% of change',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            opposite: true
 
+        }, { // Secondary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: 'Rainfall',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} mm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            }
+
+        }, ],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 80,
+            verticalAlign: 'top',
+            y: 55,
+            floating: true,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || // theme
+                'rgba(255,255,255,0.25)'
+        },
+        series: [{
+            name: 'Current Rainfall Forecast',
+            type: 'column',
+            yAxis: 1,
+            data: [33, 14, 11, 27, 58],
+            tooltip: {
+                valueSuffix: ' mm'
+            }
+
+        }, {
+            name: '40-year average rainfall',
+            type: 'column',
+            yAxis: 1,
+            data: [14, 2, 8, 22, 61],
+            tooltip: {
+                valueSuffix: ' mm'
+            }
+
+        }, {
+            name: '% of change',
+            type: 'spline',
+            data: [233, 626, 134, 124, 119],
+            tooltip: {
+                valueSuffix: '%'
+            }
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        floating: false,
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        x: 0,
+                        y: 0
+                    },
+                    yAxis: [{
+                        labels: {
+                            align: 'right',
+                            x: 0,
+                            y: -6
+                        },
+                        showLastLabel: false
+                    }, {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -6
+                        },
+                        showLastLabel: false
+                    }, {
+                        visible: false
+                    }]
+                }
+            }]
+        }
+    });
+</script>
+<style>
+    #container{
+        overflow: unset !important;
+    }
+    .highcharts-figure,
+    .highcharts-data-table table {
+        min-width: 310px;
+        margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #ebebeb;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+
+</style>
 <div class="modal fade" id="editBulletinSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

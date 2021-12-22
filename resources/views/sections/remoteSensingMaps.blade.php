@@ -1,8 +1,8 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
     <div class="title-section">
-        <h1 class="text-center">Remote Sensing for Precision Farming</h1>
-        <h5 class="text-center">
-            Nationwide crop forecasting and advisories using satellite data.
+        <h1 class="text-center" style="color:white">DRRM Maps</h1>
+        <h5 class="text-center" style="color:white">
+            Nationwide crop advisory and damage assessment tools to mitigate the impact of disasters.
         </h5>
         @if(request()->edit == 1)
             <div class="hover-overlay" style="width:100%; height:0">    

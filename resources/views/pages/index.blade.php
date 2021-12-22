@@ -27,52 +27,43 @@ $user = auth()->user();
         @endif
     </nav>
 </div> 
-<div class="container">   
-    <div class="row">
-        <div class="col-12">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="home" class="nav-link bg-ghost"><i class="fa fa-home"></i> Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a href="planting" class="nav-link bg-ghost" id="tabFrmPlant"><i class="fa fa-seedling"></i> Planting </a>
-                </li>
-                <li class="nav-item">
-                    <a href="harvesting" class="nav-link bg-ghost" id="tabFrmHarvest"><i class="fa fa-sign-language"></i> Harvesting </a>
-                </li>
-                <li class="nav-item">
-                    <a href="damage-assessment" class="nav-link bg-ghost" id="tabFrmDmg"><i class="fa fa-clipboard-check"></i> Damage assessment </a>
-                </li>
-                <li class="nav-item">
-                    <a href="rehabilitation-and-interventions" class="nav-link bg-ghost" id="tabFrmRehab"><i class="fa fa-hands-helping"></i> Rehabilitation and interventions </a>
-                </li>
-                <li class="nav-item active">
-                    <a href="crop" class="nav-link bg-white"><i class="fa fa-home"></i> Crop Monitoring</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="container" style="background-color:white; border: 1px solid lightgray; border-top-color: white;">
+<div class="container-fluid" style="background-color:white;">
     @include('sections.topBanner')
-    <div style="padding-left:2%; padding-right:2%">
-        @include('sections.croppingAdvisories')
-        <hr class="my-0">
-        @include('sections.bulletin')
-        <hr class="my-0">
+</div>
+<div class="container-fluid col-sm-10 section-padding">
+    @include('sections.croppingAdvisories')
+</div>
+<hr class="my-0">
+<div class="container-fluid col-sm-10 section-padding">
+    @include('sections.bulletin')
+</div>
+<hr class="my-0">
+<div class="container-fluid col-sm-10 section-padding">
+    @include('sections.analyticsDashboard')
+</div>
+<hr class="my-0">
+<div class="container-fluid" style="background-color:#0a3f20 !important;">
+    <div class="container-fluid col-sm-10 section-padding" style="background-color:#0a3f20 !important;">
         @include('sections.remoteSensingMaps')
-        <hr class="my-0">
-        @include('sections.analyticsDashboard')
-        <hr class="my-0">
-        @include('sections.newsAndInformation')
-        <hr class="my-0">
-        @include('sections.appDownload')
     </div>
 </div>
-<footer class="mt-5">
+<hr class="my-0">
+<div class="container-fluid col-sm-10 section-padding">
+    @include('sections.newsAndInformation')
+</div>
+<hr class="my-0">
+<div class="container-fluid py-5" style="background-color:#5893CB !important;">
+    @include('sections.appDownload')
+</div>
+
+<footer class="">
     <img alt="iFarm Footer" src="/storage/page_images/ifarm_footer.png" style="width:100%">
 </footer>
 <style>
+    .section-padding{
+        padding:40px;
+        background-color:white;
+    }
     .bg-ghost{
         background-color:ghostwhite;
     }

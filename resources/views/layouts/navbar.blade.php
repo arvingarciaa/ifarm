@@ -50,6 +50,11 @@
                       
                     </div>   
                 </div> 
+                <div class="btn-group">
+                    <button class="btn navbar-btn btn-white ml-1 text-white"> Crop Monitoring</button>
+                    
+                </div> 
+
 
                 
                                         

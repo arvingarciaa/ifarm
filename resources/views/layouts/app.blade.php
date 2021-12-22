@@ -77,12 +77,12 @@
 
 
 </head>
-<body style="background-color:#E8E8E8">
+<body style="background-color:white">
     <div id="app">
         <section class="sticky-top">
             @extends('layouts.navbar')
         </section>
-        <div class="mt-5 pt-4">
+        <div class="mt-4 pt-4">
             @yield('content')
         </div>
     </div>
