@@ -7,12 +7,11 @@
         <div class="col-lg-6 col-sm-12" style="margin:auto">
             <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center">
                 <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
-                <h6 style="color:blue">Click to see Interactive Map</h6>
             </a>
         </div>
         <div class="col-lg-6 col-sm-12">
             <div class="text-center">
-                <select class="form-control" style="width: 50%; dipslay:inline">
+                <select class="form-control" style="width: 50%; display:inline">
                     <option selected>Select Site</option>
                     <option>La Paz, Tarlac</option>
                     <option>Concepcion, Tarlac</option>
@@ -113,6 +112,12 @@
                     </h2>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-6">
+            <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
+            <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
+        </div>
+        <div class="col-lg-6">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
             <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to see weather data from DOST-PAGASA</h6></a>   
         </div>
