@@ -6,15 +6,15 @@
     <div class="row mt-4">
         <div class="col-lg-6 col-sm-12">
             <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center">
-                <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
-                <h6>Click to see Interactive Map</h6>
+                <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%;height:535px" class="mb-1">
+                <h6 style="color:blue">Click to see Interactive Map</h6>
             </a>
         </div>
         <div class="col-lg-6 col-sm-12">
             <div class="text-center">
                 <select class="form-control" style="width: 50%; display:inline">
-                    <option disabled>Select Site</option>
-                    <option selected>La Paz, Tarlac</option>
+                    <option selected>Select Site</option>
+                    <option>La Paz, Tarlac</option>
                     <option>Concepcion, Tarlac</option>
                 </select>
             </div>
@@ -25,11 +25,11 @@
                 <table class="col-12 text-center forecast-table">
                     <tr>
                         <th></th>
-                        <td><img src="/storage/page_images/weather_3.png" style="width:45px"></td>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><img src="/storage/page_images/weather_6.png" style="width:45px"></td>
+                        <td><img src="/storage/page_images/weather_4.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_7.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_6.png" style="width:35px"></td>
                     </tr>
                     <tr style="font-size:90%">
                         <th>Date</th>
@@ -41,11 +41,11 @@
                     </tr>
                     <tr style="font-size:90%">
                         <th>Precipitation</th>
-                        <td style="width:15%">6% chance of <br>< 1 mm rain</td>
-                        <td style="width:15%">81% chance of<br> 3.53 mm rain</td>
-                        <td style="width:15%">12% chance of<br> < 1 mm rain</td>
-                        <td style="width:15%">20% chance of<br> < 1 mm rain</td>
-                        <td style="width:15%">34% chance of<br> 1.03 mm rain</td>
+                        <td style="width:15%">78% chance of <br> 3.74 mm rain</td>
+                        <td style="width:15%">49% chance of<br> 0.41 mm rain</td>
+                        <td style="width:15%">50% chance of<br> 1.41 mm rain</td>
+                        <td style="width:15%">11% chance of<br> < 0.01 mm rain</td>
+                        <td style="width:15%">13% chance of<br> < 0.01 mm rain</td>
                     </tr>
                 </table>
             </div>
@@ -56,11 +56,11 @@
             <table class="col-12 text-center forecast-table">
                 <tr>
                     <th></th>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:45px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:45px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:45px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:45px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:45px"></td>
+                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
+                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
+                    <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:30px"></td>
+                    <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
+                    <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:30px"></td>
                 </tr>
                 <tr style="font-size:90%">
                     <th>Month</th>
@@ -81,51 +81,54 @@
             </table>
             <hr class="rounded">
             <h5 class="text-center"><b>
-                Quick farm stats on the area</b>
+                Quick farm stats on the area as of December 3, 2021</b>
             </h5>
             <div class="row">
                 <div class="offset-1"></div>
                 <div class="col-5">
                     <h5>Number of Farm Lots</h5>
-                    <h3 style="font-weight:700 !important">
-                        494
-                    </h3>
+                    <h2 style="font-weight:700 !important">
+                        587
+                    </h2>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
-                    <h6>Percent of Plots Harvested</h6>
-                    <h3 style="font-weight:700 !important">
-                        31%
-                    </h3>
+                    <h5>Percent of Plots Harvested</h5>
+                    <h2 style="font-weight:700 !important">
+                        9%
+                    </h2>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
                     <h5>Percent of Plots in Vegetative State</h5>
-                    <h3 style="font-weight:700 !important">
-                        24%
-                    </h3>
+                    <h2 style="font-weight:700 !important">
+                        84%
+                    </h2>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
                     <h5>Percent of Plots in Reproductive State</h5>
-                    <h3 style="font-weight:700 !important">
-                        45%
-                    </h3>
+                    <h2 style="font-weight:700 !important">
+                        7%
+                    </h2>
                 </div>
             </div>
+            <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
+            <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to see weather data from DOST-PAGASA</h6></a>   
         </div>
+
         <div class="expand-collapse">
             <h4 id="collapse-button" style="padding-bottom:8px">Click to see more weather data in the area<br><i class="fas fa-angle-down"></i>
             </h4>
             <div class="collapse-content">
                 <h2>Tarlac City, Tarlac, Philippines</h2>
-                <h4 class="text-muted"><img src="/storage/page_images/weather_5.png" style="width:30px"> Feels like 33°C. Broken clouds. Light breeze | High <span style="color:#d5202a">31°C</span> | Low <span style="color:#0053ae">28°C</span></h4>
+                <h4 class="text-muted"><img src="/storage/page_images/weather_5.png" style="width:30px"> Feels like 33°C. Broken clouds. Light breeze | High <span style="color:#d5202a">32°C</span> | Low <span style="color:#0053ae">22°C</span></h4>
                 <br>
+                <hr class="rounded">
                 <h4>10-Day Weather Forecast</h4>
                 <table class="col-12 text-center mt-4 forecast-table">
                     <tr>
-                        <td>Today 12/22</td>
-                        <td>Thurs 12/23</td>
+                        <td>Today 12/23</td>
                         <td>Fri 12/24</td>
                         <td>Sat 12/25</td>
                         <td>Sun 12/26</td>
@@ -134,30 +137,31 @@
                         <td>Wed 12/29</td>
                         <td>Thu 12/30</td>
                         <td>Fri 12/31</td>
+                        <td>Sat 1/01</td>
                     </tr>
                     <tr>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">28°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">33°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_7.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_6.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
                     </tr>
                     <tr style="font-size:90%">
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>87% chance of 3.17 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
-                        <td>92% chance of 8.67 mm rain</td>
+                        <td>78% chance of 3.74 mm rain</td>
+                        <td>49% chance of 0.41 mm rain</td>
+                        <td>50% chance of 1.41 mm rain</td>
+                        <td>11% chance of 0.01 mm rain</td>
+                        <td>13% chance of 0.01 mm rain</td>
+                        <td>3% chance of 0.01 mm rain</td>
+                        <td>3% chance of 0.01 mm rain</td>
+                        <td>5% chance of 0.01 mm rain</td>
+                        <td>7% chance of 0.01 mm rain</td>
+                        <td>11% chance of 0.01 mm rain</td>
                     </tr>
                     <tr style="font-size:90%">
                         <td>Mostly Cloudy</td>
@@ -168,12 +172,13 @@
                         <td>Partly Cloudy</td>
                         <td>Mostly Cloudy</td>
                         <td>Clear Sky</td>
-                        <td>Isolated Thunderstorms</td>
+                        <td>Partly Cloudy</td>
                         <td>Partly Cloudy</td>
                     </tr>
                 </table>
 
-                <h4 class="mt-5 mb-3">Hourly Forecast for Today</h4>
+                <hr class="rounded mt-5 mb-3">
+                <h4 class="">Hourly Forecast for Today</h4>
                 <img src="/storage/page_images/21.png" style="width:1000px">
                 <hr class="rounded mb-3">
                 <table class="table table-striped table-hover">
@@ -194,88 +199,306 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">12:00 mn</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
-                        <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
-                      </tr>
-                      <tr>
                         <th scope="row">1:00 am</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
-                        <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>24°C</td>
+                        <td>24°C</td>
+                        <td>7%</td>
+                        <td>0mm</td>
+                        <td>65%</td>
+                        <td>23°C</td>
+                        <td>95%</td>
+                        <td>0 km/h W</td>
+                        <td>1,012.60 hPa</td>
                       </tr>
                       <tr>
-                        <th scope="row">2:00 mn</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
-                        <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
+                        <th scope="row">2:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>24°C</td>
+                        <td>24°C</td>
+                        <td>7%</td>
+                        <td>0 mm</td>
+                        <td>65%</td>
+                        <td>23°C</td>
+                        <td>95%</td>
+                        <td>0 km/h W</td>
+                        <td>1,012.60 hPa</td>
                       </tr>
                       <tr>
                         <th scope="row">3:00 am</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
-                        <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>23°C</td>
+                        <td>23°C</td>
+                        <td>6%</td>
+                        <td>0 mm</td>
+                        <td>72%</td>
+                        <td>22°C</td>
+                        <td>95%</td>
+                        <td>0 km/h W</td>
+                        <td>1,012.60 hPa</td>
                       </tr>
                       <tr>
-                        <th scope="row">4:00 mn</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
-                        <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
+                        <th scope="row">4:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>23°C</td>
+                        <td>23°C</td>
+                        <td>6%</td>
+                        <td>0 mm</td>
+                        <td>68%</td>
+                        <td>22°C</td>
+                        <td>95%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,011.90 hPa</td>
                       </tr>
                       <tr>
                         <th scope="row">5:00 am</th>
-                        <td><img src="/storage/page_images/weather_5.png" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>33°C</td>
-                        <td>34%</td>
-                        <td>3.1mm</td>
-                        <td>80%</td>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>23°C</td>
+                        <td>23°C</td>
+                        <td>3%</td>
+                        <td>0 mm</td>
+                        <td>68%</td>
+                        <td>22°C</td>
+                        <td>95%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,012.00 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>23°C</td>
+                        <td>23°C</td>
+                        <td>3%</td>
+                        <td>0mm</td>
+                        <td>65%</td>
+                        <td>22°C</td>
+                        <td>95%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,012.90 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>24°C</td>
+                        <td>24°C</td>
+                        <td>3%</td>
+                        <td>0 mm</td>
+                        <td>63%</td>
+                        <td>23°C</td>
+                        <td>94%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,013.40 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>25°C</td>
+                        <td>28°C</td>
+                        <td>8%</td>
+                        <td>0 mm</td>
+                        <td>68%</td>
+                        <td>23°C</td>
+                        <td>88%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,013.40 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>27°C</td>
                         <td>30°C</td>
-                        <td>96%</td>
-                        <td>0 kph WNW</td>
-                        <td>29.92 in</td>
+                        <td>6%</td>
+                        <td>0 mm</td>
+                        <td>64%</td>
+                        <td>23°C</td>
+                        <td>80%</td>
+                        <td>0 km/h WSW</td>
+                        <td>1,013.50 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
+                        <td>28°C</td>
+                        <td>32°C</td>
+                        <td>12%</td>
+                        <td>0 mm</td>
+                        <td>60%</td>
+                        <td>23°C</td>
+                        <td>69%</td>
+                        <td>2 km/h S</td>
+                        <td>1,013.50 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">11:00 am</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>30°C</td>
+                        <td>34°C</td>
+                        <td>20%</td>
+                        <td>0 mm</td>
+                        <td>55%</td>
+                        <td>23°C</td>
+                        <td>69%</td>
+                        <td>4 km/h ESE</td>
+                        <td>1,012.70 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">12:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>31°C</td>
+                        <td>36°C</td>
+                        <td>17%</td>
+                        <td>0 mm</td>
+                        <td>51%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>6 km/h ESE</td>
+                        <td>1,011.70 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>31°C</td>
+                        <td>36°C</td>
+                        <td>13%</td>
+                        <td>0 mm</td>
+                        <td>49%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>6 km/h ESE</td>
+                        <td>1,011.70 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>32°C</td>
+                        <td>36°C</td>
+                        <td>23%</td>
+                        <td>0 mm</td>
+                        <td>49%</td>
+                        <td>23°C</td>
+                        <td>61%</td>
+                        <td>7 km/h SE</td>
+                        <td>1,009.70 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>31°C</td>
+                        <td>36°C</td>
+                        <td>22%</td>
+                        <td>0 mm</td>
+                        <td>47%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>8 km/h SE</td>
+                        <td>1,009.75 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/37.svg" style="width:25px"> Isolated Thunderstorms</td>
+                        <td>31°C</td>
+                        <td>35°C</td>
+                        <td>32%</td>
+                        <td>0.20 mm</td>
+                        <td>50%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>8 km/h SE</td>
+                        <td>1,009.75 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>29°C</td>
+                        <td>33°C</td>
+                        <td>20%</td>
+                        <td>0 mm</td>
+                        <td>47%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>7 km/h SE</td>
+                        <td>1,010.20 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>28°C</td>
+                        <td>31°C</td>
+                        <td>22%</td>
+                        <td>0 mm</td>
+                        <td>47%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>6 km/h SSE</td>
+                        <td>1,010.20 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>27°C</td>
+                        <td>30°C</td>
+                        <td>24%</td>
+                        <td>0 mm</td>
+                        <td>51%</td>
+                        <td>23°C</td>
+                        <td>62%</td>
+                        <td>4 km/h SSE</td>
+                        <td>1,012.20 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>26°C</td>
+                        <td>29°C</td>
+                        <td>10%</td>
+                        <td>0 mm</td>
+                        <td>54%</td>
+                        <td>22°C</td>
+                        <td>62%</td>
+                        <td>3 km/h S</td>
+                        <td>1,012.20 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>25°C</td>
+                        <td>28°C</td>
+                        <td>13%</td>
+                        <td>0 mm</td>
+                        <td>48%</td>
+                        <td>22°C</td>
+                        <td>85%</td>
+                        <td>1 km/h SSW</td>
+                        <td>1,012.50 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>25°C</td>
+                        <td>27°C</td>
+                        <td>11%</td>
+                        <td>0 mm</td>
+                        <td>40%</td>
+                        <td>22°C</td>
+                        <td>87%</td>
+                        <td>0 km/h SW</td>
+                        <td>1,012.80 hPa</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">11:00 pm</th>
+                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
+                        <td>24°C</td>
+                        <td>27°C</td>
+                        <td>8%</td>
+                        <td>0 mm</td>
+                        <td>35%</td>
+                        <td>22°C</td>
+                        <td>89%</td>
+                        <td>0 km/h SW</td>
+                        <td>1,012.80 hPa</td>
                       </tr>
                     </tbody>
-                  </table>
-                <h2 class="mt-2" style="text-align: center;">
-                    <button type="button" class="btn btn-outline-secondary">Click here to see weather data from DOST-PAGASA</button>
-                </h2>            
+                  </table>        
             </div>
         </div>
     </div>

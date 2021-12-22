@@ -72,7 +72,7 @@ $user = auth()->user();
         margin-right: 15rem;
     }
     .section{
-        padding-top:3rem;
+        padding-top:2.5rem;
         padding-bottom:3rem;
     }
     .hover-overlay {

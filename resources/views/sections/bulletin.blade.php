@@ -13,7 +13,7 @@
     </h5>
 
     <h2 class="mt-2" style="text-align: center;">
-        <button type="button" class="btn btn-outline-secondary">Download Nationwide Bulletin</button>
+        <button type="button" class="btn btn-outline-primary">Download Nationwide Bulletin</button>
     </h2>
 
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
@@ -44,7 +44,10 @@
             align: 'center'
         },
         xAxis: [{
-            categories: ['Dec 21', 'Jan 22', 'Feb 22', 'Mar 22', 'Apr 22'],
+            title: {
+                text: 'Month and Year'
+            },
+            categories: ["Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022", "Apr 2022"],
             crosshair: true
         }],
         yAxis: [{ // Primary yAxis

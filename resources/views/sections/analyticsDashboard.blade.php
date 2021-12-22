@@ -1,7 +1,7 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
-    <h1 class="text-center">Farm-level Monitoring</h1>
+    <h1 class="text-center">Monitoring of Farm-level Vegetation Cover</h1>
     <h5 class="text-center">
-        Find out recent NDVI map results about rice and corn production in La Paz and Concepcion, Tarlac.
+        Percentage of the farm area with vegetation cover and without planted crops.
     </h5>
     <div class="row mt-4">
         <div class="offset-3">

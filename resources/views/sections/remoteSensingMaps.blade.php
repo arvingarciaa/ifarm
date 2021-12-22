@@ -1,8 +1,8 @@
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
     <div class="title-section">
-        <h1 class="text-center" style="color:white">DRRM Maps</h1>
+        <h1 class="text-center" style="color:white">Disaster Risk Reduction and Management Maps</h1>
         <h5 class="text-center" style="color:white">
-            Nationwide crop advisory and damage assessment tools to mitigate the impact of disasters.
+            Damage assessment tools to mitigate the impact of disasters.
         </h5>
         @if(request()->edit == 1)
             <div class="hover-overlay" style="width:100%; height:0">    
