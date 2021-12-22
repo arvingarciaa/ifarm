@@ -12,9 +12,9 @@
         </div>
         <div class="col-lg-6 col-sm-12">
             <div class="text-center">
-                <h4 class="">Site</h4>
                 <select class="form-control" style="width: 50%; display:inline">
-                    <option>La Paz, Tarlac</option>
+                    <option disabled>Select Site</option>
+                    <option selected>La Paz, Tarlac</option>
                     <option>Concepcion, Tarlac</option>
                 </select>
             </div>
@@ -46,14 +46,6 @@
                         <td style="width:15%">12% chance of<br> < 1 mm rain</td>
                         <td style="width:15%">20% chance of<br> < 1 mm rain</td>
                         <td style="width:15%">34% chance of<br> 1.03 mm rain</td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <th>Forecast</th>
-                        <td style="width:15%">Mostly Cloudy</td>
-                        <td style="width:15%">Thunderstorms</td>
-                        <td style="width:15%">Partly Cloudy</td>
-                        <td style="width:15%">Partly Cloudy</td>
-                        <td style="width:15%">Isolated Thunderstorms</td>
                     </tr>
                 </table>
             </div>
@@ -94,31 +86,31 @@
             <div class="row">
                 <div class="offset-1"></div>
                 <div class="col-5">
-                    <h6>Number of Farm Lots</h6>
-                    <h4 style="font-weight:700 !important">
+                    <h5>Number of Farm Lots</h5>
+                    <h3 style="font-weight:700 !important">
                         494
-                    </h4>
+                    </h3>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
                     <h6>Percent of Plots Harvested</h6>
-                    <h4 style="font-weight:700 !important">
+                    <h3 style="font-weight:700 !important">
                         31%
-                    </h4>
+                    </h3>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
-                    <h6>Percent of Plots in Vegetative State</h6>
-                    <h4 style="font-weight:700 !important">
+                    <h5>Percent of Plots in Vegetative State</h5>
+                    <h3 style="font-weight:700 !important">
                         24%
-                    </h4>
+                    </h3>
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-5">
-                    <h6>Percent of Plots in Reproductive State</h6>
-                    <h4 style="font-weight:700 !important">
+                    <h5>Percent of Plots in Reproductive State</h5>
+                    <h3 style="font-weight:700 !important">
                         45%
-                    </h4>
+                    </h3>
                 </div>
             </div>
         </div>
