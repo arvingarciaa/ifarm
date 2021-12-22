@@ -10,7 +10,7 @@
                 <h6 style="color:blue">Click to see Interactive Map</h6>
             </a>
         </div>
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-6 col-sm-12" style="margin:auto">
             <div class="text-center">
                 <select class="form-control" style="width: 50%; display:inline">
                     <option selected>Select Site</option>
