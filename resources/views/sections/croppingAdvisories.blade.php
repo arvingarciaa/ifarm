@@ -33,10 +33,10 @@
                     <tr style="font-size:90%">
                         <th>Date</th>
                         <td style="width:15%">Today</td>
-                        <td style="width:15%">Dec 23</td>
                         <td style="width:15%">Dec 24</td>
                         <td style="width:15%">Dec 25</td>
                         <td style="width:15%">Dec 26</td>
+                        <td style="width:15%">Dec 27</td>
                     </tr>
                     <tr style="font-size:90%">
                         <th>Precipitation</th>
