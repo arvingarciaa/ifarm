@@ -31,7 +31,7 @@
                         <td><img src="/storage/page_images/weather_6.png" style="width:35px"></td>
                     </tr>
                     <tr style="font-size:90%">
-                        <th>Date</th>
+                        <th style="width:25%">Date</th>
                         <td style="width:15%">Today</td>
                         <td style="width:15%">Dec 24</td>
                         <td style="width:15%">Dec 25</td>
@@ -39,7 +39,7 @@
                         <td style="width:15%">Dec 27</td>
                     </tr>
                     <tr style="font-size:90%">
-                        <th>Precipitation</th>
+                        <th style="width:25%">Precipitation</th>
                         <td style="width:15%">78% chance of <br> 3.74 mm rain</td>
                         <td style="width:15%">49% chance of<br> 0.41 mm rain</td>
                         <td style="width:15%">50% chance of<br> 1.41 mm rain</td>
@@ -52,32 +52,34 @@
             <h5 class="text-center"><b>
                 Rainfall Outlook for December, 2021 to April, 2022</b>
             </h5>
-            <table class="col-12 text-center forecast-table">
-                <tr>
-                    <th></th>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:30px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
-                    <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:30px"></td>
-                </tr>
-                <tr style="font-size:90%">
-                    <th>Month</th>
-                    <td style="width:15%">Dec 2021</td>
-                    <td style="width:15%">Jan 2021</td>
-                    <td style="width:15%">Feb 2022</td>
-                    <td style="width:15%">Mar 2022</td>
-                    <td style="width:15%">Apr 2022</td>
-                </tr>
-                <tr style="font-size:90%">
-                    <th>Monthly Ave</th>
-                    <td style="width:15%">33 mm</td>
-                    <td style="width:15%">14 mm</td>
-                    <td style="width:15%">11 mm</td>
-                    <td style="width:15%">27 mm</td>
-                    <td style="width:15%">58 mm</td>
-                </tr>
-            </table>
+            <div class="row">
+                <table class="col-12 text-center forecast-table">
+                    <tr>
+                        <th style="width:25%"></th>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:30px"></td>
+                    </tr>
+                    <tr style="font-size:90%">
+                        <th style="width:25%">Month</th>
+                        <td style="width:15%">Dec 2021</td>
+                        <td style="width:15%">Jan 2021</td>
+                        <td style="width:15%">Feb 2022</td>
+                        <td style="width:15%">Mar 2022</td>
+                        <td style="width:15%">Apr 2022</td>
+                    </tr>
+                    <tr style="font-size:90%">
+                        <th style="width:25%">Monthly Ave</th>
+                        <td style="width:15%">33 mm</td>
+                        <td style="width:15%">14 mm</td>
+                        <td style="width:15%">11 mm</td>
+                        <td style="width:15%">27 mm</td>
+                        <td style="width:15%">58 mm</td>
+                    </tr>
+                </table>
+            </div>
             <hr class="rounded">
             <h5 class="text-center"><b>
                 Quick farm stats on the area as of December 3, 2021</b>
