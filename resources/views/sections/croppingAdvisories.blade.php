@@ -50,7 +50,7 @@
             </div>
             <hr class="rounded">
             <h5 class="text-center"><b>
-                Rainfall Outlook for November, 2021 to March, 2022</b>
+                Rainfall Outlook for December, 2021 to April, 2022</b>
             </h5>
             <table class="col-12 text-center forecast-table">
                 <tr>
@@ -63,19 +63,19 @@
                 </tr>
                 <tr style="font-size:90%">
                     <th>Month</th>
-                    <td style="width:15%">Nov 21</td>
-                    <td style="width:15%">Dec 21</td>
-                    <td style="width:15%">Jan 22</td>
-                    <td style="width:15%">Feb 22</td>
-                    <td style="width:15%">Mar 22</td>
+                    <td style="width:15%">Dec 2021</td>
+                    <td style="width:15%">Jan 2021</td>
+                    <td style="width:15%">Feb 2022</td>
+                    <td style="width:15%">Mar 2022</td>
+                    <td style="width:15%">Apr 2022</td>
                 </tr>
                 <tr style="font-size:90%">
                     <th>Monthly Ave</th>
-                    <td style="width:15%">101 mm</td>
-                    <td style="width:15%">18 mm</td>
-                    <td style="width:15%">15 mm</td>
-                    <td style="width:15%">55 mm</td>
-                    <td style="width:15%">68 mm</td>
+                    <td style="width:15%">33 mm</td>
+                    <td style="width:15%">14 mm</td>
+                    <td style="width:15%">11 mm</td>
+                    <td style="width:15%">27 mm</td>
+                    <td style="width:15%">58 mm</td>
                 </tr>
             </table>
             <hr class="rounded">
