@@ -36,6 +36,15 @@
         <div class="col-lg-4 col-md-12">
             <img alt="iFarm Banner" src="/storage/page_images/ndvi_3.png" style="width:100%">
         </div>
+        <div class="col-lg-4 col-md-12">
+            <img alt="iFarm Banner" src="/storage/page_images/ndvi_4.png" style="width:100%">
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <img alt="iFarm Banner" src="/storage/page_images/ndvi_5.png" style="width:100%">
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <img alt="iFarm Banner" src="/storage/page_images/ndvi_6.png" style="width:100%">
+        </div>
     </div>
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    
