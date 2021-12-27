@@ -1,3 +1,8 @@
+<?php 
+    $weather = App\Models\WeatherData::first();
+    $weather_data = json_decode($weather->wunderground_data, TRUE);
+?>
+
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="padding-bottom:0px !important">
     <h1 class="text-center">Weather Forecast and Rainfall Outlook</h1>
     <h5 class="text-center">
@@ -33,18 +38,18 @@
                     <tr style="font-size:90%">
                         <th style="width:25%">Date</th>
                         <td style="width:15%">Today</td>
-                        <td style="width:15%">Dec 24</td>
-                        <td style="width:15%">Dec 25</td>
-                        <td style="width:15%">Dec 26</td>
-                        <td style="width:15%">Dec 27</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][1]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][2]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][3]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][4]))->format('M d')}}</td>
                     </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Precipitation</th>
-                        <td style="width:15%">78% chance of <br> 3.74 mm rain</td>
-                        <td style="width:15%">49% chance of<br> 0.41 mm rain</td>
-                        <td style="width:15%">50% chance of<br> 1.41 mm rain</td>
-                        <td style="width:15%">11% chance of<br> < 0.01 mm rain</td>
-                        <td style="width:15%">13% chance of<br> < 0.01 mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][0]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][1]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][1] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][1]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][2]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][3]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][3] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][3]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][4]}}mm rain</td>
                     </tr>
                 </table>
             </div>
@@ -56,11 +61,11 @@
                 <table class="col-12 text-center forecast-table">
                     <tr>
                         <th style="width:25%"></th>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_2.png" style="width:30px"></td>
                         <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:30px"></td>
                         <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:30px"></td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
                     </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Month</th>
@@ -129,7 +134,7 @@
             </h4>
             <div class="collapse-content">
                 <h2>Tarlac City, Tarlac, Philippines</h2>
-                <h4 class="text-muted"><img src="/storage/page_images/weather_5.png" style="width:30px"> Feels like 33°C. Broken clouds. Light breeze | High <span style="color:#d5202a">32°C</span> | Low <span style="color:#0053ae">22°C</span></h4>
+                <h4 class="text-muted"><img src="/storage/page_images/weather_5.png" style="width:30px"> {{$weather_data['daypart'][0]['narrative'][0]}}</h4>
                 <br>
                 <hr class="rounded">
                 <h4>10-Day Weather Forecast</h4>
