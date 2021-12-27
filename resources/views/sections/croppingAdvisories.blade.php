@@ -30,10 +30,10 @@
                     <tr>
                         <th></th>
                         <td><img src="/storage/page_images/weather_4.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_7.png" style="width:35px"></td>
                         <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
                         <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_6.png" style="width:35px"></td>
+                        <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
                     </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Date</th>
@@ -46,10 +46,10 @@
                     <tr style="font-size:90%">
                         <th style="width:25%">Precipitation</th>
                         <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][0]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][1]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][1] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][1]}}mm rain</td>
                         <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][2]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][3]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][3] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][3]}}mm rain</td>
                         <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][4]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][6]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][8]}}mm rain</td>
                     </tr>
                 </table>
             </div>
@@ -140,23 +140,23 @@
                 <h4>10-Day Weather Forecast</h4>
                 <table class="col-12 text-center mt-4 forecast-table">
                     <tr>
-                        <td>Today 12/23</td>
-                        <td>Fri 12/24</td>
-                        <td>Sat 12/25</td>
-                        <td>Sun 12/26</td>
-                        <td>Mon 12/27</td>
+                        <td>Today 12/27</td>
                         <td>Tue 12/28</td>
                         <td>Wed 12/29</td>
                         <td>Thu 12/30</td>
                         <td>Fri 12/31</td>
                         <td>Sat 1/01</td>
+                        <td>Sun 1/02</td>
+                        <td>Mon 1/03</td>
+                        <td>Tue 1/04</td>
+                        <td>Wed 1/05</td>
                     </tr>
                     <tr>
                         <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">33°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_7.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">33°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_6.png" style="width:45px"></td>
+                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
@@ -164,11 +164,11 @@
                         <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
                     </tr>
                     <tr style="font-size:90%">
-                        <td>78% chance of 3.74 mm rain</td>
-                        <td>49% chance of 0.41 mm rain</td>
-                        <td>50% chance of 1.41 mm rain</td>
-                        <td>11% chance of 0.01 mm rain</td>
-                        <td>13% chance of 0.01 mm rain</td>
+                        <td>{{$weather_data['daypart'][0]['precipChance'][0]}}% chance of {{$weather_data['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][0]}}mm rain</td>
+                        <td>{{$weather_data['daypart'][0]['precipChance'][2]}}% chance of {{$weather_data['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][2]}}mm rain</td>
+                        <td>{{$weather_data['daypart'][0]['precipChance'][4]}}% chance of {{$weather_data['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][4]}}mm rain</td>
+                        <td>{{$weather_data['daypart'][0]['precipChance'][6]}}% chance of {{$weather_data['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][6]}}mm rain</td>
+                        <td>{{$weather_data['daypart'][0]['precipChance'][8]}}% chance of {{$weather_data['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][8]}}mm rain</td>
                         <td>3% chance of 0.01 mm rain</td>
                         <td>3% chance of 0.01 mm rain</td>
                         <td>5% chance of 0.01 mm rain</td>
@@ -177,10 +177,10 @@
                     </tr>
                     <tr style="font-size:90%">
                         <td>Mostly Cloudy</td>
-                        <td>Thunderstorms</td>
                         <td>Partly Cloudy</td>
+                        <td>Mostly Cloudy</td>
                         <td>Partly Cloudy</td>
-                        <td>Isolated Thunderstorms</td>
+                        <td>Mostly Cloudy</td>
                         <td>Partly Cloudy</td>
                         <td>Mostly Cloudy</td>
                         <td>Clear Sky</td>
