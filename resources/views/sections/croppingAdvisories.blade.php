@@ -1,6 +1,8 @@
 <?php 
-    $weather = App\Models\WeatherData::first();
-    $weather_data = json_decode($weather->wunderground_data, TRUE);
+    $wunderground = App\Models\WeatherData::where('source', '=', 'wunderground')->first();
+    $openweathermap = App\Models\WeatherData::where('source', '=', 'openweathermap')->first();
+    $weather_data_wunderground = json_decode($wunderground->data, TRUE);
+    $weather_data_openweathermap = json_decode($openweathermap->data, TRUE);
 ?>
 
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="padding-bottom:0px !important">
@@ -38,18 +40,18 @@
                     <tr style="font-size:90%">
                         <th style="width:25%">Date</th>
                         <td style="width:15%">Today</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][1]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][2]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][3]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data['validTimeLocal'][4]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][1]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][2]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][3]))->format('M d')}}</td>
+                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][4]))->format('M d')}}</td>
                     </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Precipitation</th>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][0]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][2]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][4]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][6]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][8]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
+                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
                     </tr>
                 </table>
             </div>
@@ -59,14 +61,6 @@
             </h5>
             <div class="row">
                 <table class="col-12 text-center forecast-table">
-                    <tr>
-                        <th style="width:25%"></th>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_2.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_3.png" style="width:30px"></td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:30px"></td>
-                    </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Month</th>
                         <td style="width:15%">Dec 2021</td>
@@ -77,11 +71,11 @@
                     </tr>
                     <tr style="font-size:90%">
                         <th style="width:25%">Monthly Ave</th>
-                        <td style="width:15%">33 mm</td>
-                        <td style="width:15%">14 mm</td>
-                        <td style="width:15%">11 mm</td>
-                        <td style="width:15%">27 mm</td>
-                        <td style="width:15%">58 mm</td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:15px">33 mm</td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_2.png" style="width:15px">14 mm</td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">11 mm</td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:15px">27 mm</td>
+                        <td style="width:15%"><img src="/storage/page_images/rainfall_6.png" style="width:15px">58 mm</td>
                     </tr>
                 </table>
             </div>
@@ -134,10 +128,10 @@
             </h4>
             <div class="collapse-content">
                 <h2>Tarlac City, Tarlac, Philippines</h2>
-                <h4 class="text-muted"><img src="/storage/page_images/weather_5.png" style="width:30px"> {{$weather_data['daypart'][0]['narrative'][0]}}</h4>
+                <h4 class="text-muted">{{$weather_data_wunderground['daypart'][0]['narrative'][0]}}</h4>
                 <br>
                 <hr class="rounded">
-                <h4>10-Day Weather Forecast</h4>
+                <h4>8-Day Weather Forecast</h4>
                 <table class="col-12 text-center mt-4 forecast-table">
                     <tr>
                         <td>Today 12/27</td>
@@ -148,8 +142,6 @@
                         <td>Sat 1/01</td>
                         <td>Sun 1/02</td>
                         <td>Mon 1/03</td>
-                        <td>Tue 1/04</td>
-                        <td>Wed 1/05</td>
                     </tr>
                     <tr>
                         <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
@@ -160,20 +152,16 @@
                         <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
                         <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
                     </tr>
                     <tr style="font-size:90%">
-                        <td>{{$weather_data['daypart'][0]['precipChance'][0]}}% chance of {{$weather_data['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][0]}}mm rain</td>
-                        <td>{{$weather_data['daypart'][0]['precipChance'][2]}}% chance of {{$weather_data['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][2]}}mm rain</td>
-                        <td>{{$weather_data['daypart'][0]['precipChance'][4]}}% chance of {{$weather_data['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][4]}}mm rain</td>
-                        <td>{{$weather_data['daypart'][0]['precipChance'][6]}}% chance of {{$weather_data['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][6]}}mm rain</td>
-                        <td>{{$weather_data['daypart'][0]['precipChance'][8]}}% chance of {{$weather_data['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data['daypart'][0]['qpf'][8]}}mm rain</td>
+                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
+                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
+                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
+                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
+                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
                         <td>3% chance of 0.01 mm rain</td>
                         <td>3% chance of 0.01 mm rain</td>
                         <td>5% chance of 0.01 mm rain</td>
-                        <td>7% chance of 0.01 mm rain</td>
-                        <td>11% chance of 0.01 mm rain</td>
                     </tr>
                     <tr style="font-size:90%">
                         <td>Mostly Cloudy</td>
@@ -184,8 +172,6 @@
                         <td>Partly Cloudy</td>
                         <td>Mostly Cloudy</td>
                         <td>Clear Sky</td>
-                        <td>Partly Cloudy</td>
-                        <td>Partly Cloudy</td>
                     </tr>
                 </table>
 

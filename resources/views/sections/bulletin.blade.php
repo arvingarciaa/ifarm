@@ -54,13 +54,13 @@
             labels: {
                 format: '{value}%',
                 style: {
-                    color: Highcharts.getOptions().colors[2]
+                    color: Highcharts.getOptions().colors[5]
                 }
             },
             title: {
                 text: '% of change',
                 style: {
-                    color: Highcharts.getOptions().colors[2]
+                    color: Highcharts.getOptions().colors[5]
                 }
             },
             opposite: true
@@ -119,7 +119,8 @@
             data: [233, 626, 134, 124, 119],
             tooltip: {
                 valueSuffix: '%'
-            }
+            }, 
+            color: Highcharts.getOptions().colors[5]
         }],
         responsive: {
             rules: [{

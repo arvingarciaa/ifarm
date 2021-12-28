@@ -16,7 +16,8 @@ class CreateWeatherDataTable extends Migration
         Schema::create('weather_data', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->longtext('wunderground_data')->nullable();
+            $table->String('source')->nullable();
+            $table->longtext('data')->nullable();
         });
     }
 
