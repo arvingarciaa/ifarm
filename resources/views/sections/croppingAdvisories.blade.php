@@ -12,115 +12,131 @@
     </h5>
     <div class="row mt-4">
         <div class="col-lg-6 col-sm-12" style="margin:auto">
-            <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center">
-                <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
-            </a>
-        </div>
-        <div class="col-lg-6 col-sm-12">
-            <div class="text-center">
-                <select class="form-control" style="width: 50%; display:inline">
-                    <option selected>Select Site</option>
-                    <option>La Paz, Tarlac</option>
-                    <option>Concepcion, Tarlac</option>
-                </select>
-            </div>
-            <h5 class="text-center mt-4"><b>
-                Weather Forecast for the next 5 days</b>
-            </h5>
-            <div class="row mt-2">
-                <table class="col-12 text-center forecast-table">
-                    <tr>
-                        <th></th>
-                        <td><img src="/storage/page_images/weather_4.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
-                        <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <th style="width:25%">Date</th>
-                        <td style="width:15%">Today</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][1]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][2]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][3]))->format('M d')}}</td>
-                        <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][4]))->format('M d')}}</td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <th style="width:25%">Precipitation</th>
-                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
-                        <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
-                    </tr>
-                </table>
-            </div>
-            <hr class="rounded">
-            <h5 class="text-center"><b>
-                Rainfall Outlook for December, 2021 to April, 2022</b>
-            </h5>
             <div class="row">
-                <table class="col-12 text-center forecast-table">
-                    <tr style="font-size:90%">
-                        <th style="width:25%">Month</th>
-                        <td style="width:15%">Dec 2021</td>
-                        <td style="width:15%">Jan 2021</td>
-                        <td style="width:15%">Feb 2022</td>
-                        <td style="width:15%">Mar 2022</td>
-                        <td style="width:15%">Apr 2022</td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <th style="width:25%">Monthly Ave</th>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:15px">33 mm</td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_2.png" style="width:15px">14 mm</td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">11 mm</td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:15px">27 mm</td>
-                        <td style="width:15%"><img src="/storage/page_images/rainfall_6.png" style="width:15px">58 mm</td>
-                    </tr>
-                </table>
-            </div>
-            <hr class="rounded">
-            <h5 class="text-center"><b>
-                Quick farm stats on the area as of December 3, 2021</b>
-            </h5>
-            <div class="row">
-                <div class="offset-1"></div>
-                <div class="col-5">
-                    <h5>Number of Farm Lots</h5>
-                    <h2 style="font-weight:700 !important">
-                        587
-                    </h2>
+                <div class="col-12">
+                    <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center">
+                        <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
+                    </a>
                 </div>
-                <div class="offset-1"></div>
-                <div class="col-5">
-                    <h5>Percent of Plots Harvested</h5>
-                    <h2 style="font-weight:700 !important">
-                        9%
-                    </h2>
-                </div>
-                <div class="offset-1"></div>
-                <div class="col-5">
-                    <h5>Percent of Plots in Vegetative State</h5>
-                    <h2 style="font-weight:700 !important">
-                        84%
-                    </h2>
-                </div>
-                <div class="offset-1"></div>
-                <div class="col-5">
-                    <h5>Percent of Plots in Reproductive State</h5>
-                    <h2 style="font-weight:700 !important">
-                        7%
-                    </h2>
+                <div class="col-12 text-center show-when-mobile" style="display:none">
+                    <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
+                    <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-sm-12">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <select class="form-control" style="width: 50%; display:inline">
+                            <option selected>Select Site</option>
+                            <option>La Paz, Tarlac</option>
+                            <option>Concepcion, Tarlac</option>
+                        </select>
+                    </div>
+                    <h5 class="text-center mt-4"><b>
+                        Weather Forecast for the next 5 days</b>
+                    </h5>
+                    <div class="row mt-2">
+                        <table class="col-12 text-center forecast-table">
+                            <tr>
+                                <th></th>
+                                <td><img src="/storage/page_images/weather_4.png" style="width:35px"></td>
+                                <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
+                                <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
+                                <td><img src="/storage/page_images/weather_2.png" style="width:35px"></td>
+                                <td><img src="/storage/page_images/weather_3.png" style="width:35px"></td>
+                            </tr>
+                            <tr style="font-size:90%">
+                                <th style="width:25%">Date</th>
+                                <td style="width:15%">Today</td>
+                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][1]))->format('M d')}}</td>
+                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][2]))->format('M d')}}</td>
+                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][3]))->format('M d')}}</td>
+                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][4]))->format('M d')}}</td>
+                            </tr>
+                            <tr style="font-size:90%">
+                                <th style="width:25%">Precipitation</th>
+                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr class="rounded">
+                    <h5 class="text-center"><b>
+                        Rainfall Outlook for December, 2021 to April, 2022</b>
+                    </h5>
+                    <div class="row">
+                        <table class="col-12 text-center forecast-table">
+                            <tr style="font-size:90%">
+                                <th style="width:25%">Month</th>
+                                <td style="width:15%">Dec 2021</td>
+                                <td style="width:15%">Jan 2021</td>
+                                <td style="width:15%">Feb 2022</td>
+                                <td style="width:15%">Mar 2022</td>
+                                <td style="width:15%">Apr 2022</td>
+                            </tr>
+                            <tr style="font-size:90%">
+                                <th style="width:25%">Monthly Ave</th>
+                                <td style="width:15%"><img src="/storage/page_images/rainfall_5.png" style="width:15px">33 mm</td>
+                                <td style="width:15%"><img src="/storage/page_images/rainfall_2.png" style="width:15px">14 mm</td>
+                                <td style="width:15%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">11 mm</td>
+                                <td style="width:15%"><img src="/storage/page_images/rainfall_4.png" style="width:15px">27 mm</td>
+                                <td style="width:15%"><img src="/storage/page_images/rainfall_6.png" style="width:15px">58 mm</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr class="rounded">
+                    <h5 class="text-center"><b>
+                        Quick farm stats on the area as of December 3, 2021</b>
+                    </h5>
+                    <div class="row">
+                        <div class="offset-1"></div>
+                        <div class="col-5">
+                            <h5>Number of Farm Lots</h5>
+                            <h2 style="font-weight:700 !important">
+                                587
+                            </h2>
+                        </div>
+                        <div class="offset-1"></div>
+                        <div class="col-5">
+                            <h5>Percent of Plots Harvested</h5>
+                            <h2 style="font-weight:700 !important">
+                                9%
+                            </h2>
+                        </div>
+                        <div class="offset-1"></div>
+                        <div class="col-5">
+                            <h5>Percent of Plots in Vegetative State</h5>
+                            <h2 style="font-weight:700 !important">
+                                84%
+                            </h2>
+                        </div>
+                        <div class="offset-1"></div>
+                        <div class="col-5">
+                            <h5>Percent of Plots in Reproductive State</h5>
+                            <h2 style="font-weight:700 !important">
+                                7%
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 show-when-mobile" style="display:none">
+                    <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
+                    <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to see weather data from DOST-PAGASA</h6></a>   
+                </div>
+            </div>
+        </div>
+        <div class="col-6 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
             <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
         </div>
-        <div class="col-lg-6">
+        <div class="col-6 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-            <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to see weather data from DOST-PAGASA</h6></a>   
+            <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
         </div>
 
         <div class="expand-collapse">
@@ -128,375 +144,166 @@
             </h4>
             <div class="collapse-content">
                 <h2>Tarlac City, Tarlac, Philippines</h2>
-                <h4 class="text-muted">{{$weather_data_wunderground['daypart'][0]['narrative'][0]}}</h4>
+                
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-3">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="https://www.wunderground.com/static/i/c/v4/{{$weather_data_wunderground['daypart'][0]['iconCode'][0]}}.svg" style="max-width:60px">
+                            </div>
+                            <div class="col-10 row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][0]}}</b> {{date('m/d')}}
+                                        </div>
+                                        <div class="col-6">
+                                            <b style="color:rgb(90,132,160); text-decoration:underline">
+                                                {{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][0]}}mm
+                                            </b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    {{$weather_data_wunderground['daypart'][0]['narrative'][0]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-3">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="https://www.wunderground.com/static/i/c/v4/{{$weather_data_wunderground['daypart'][0]['iconCode'][1]}}.svg" style="max-width:60px">
+                            </div>
+                            <div class="col-10 row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][1]}}</b> {{date('m/d')}}
+                                        </div>
+                                        <div class="col-6">
+                                            <b style="color:rgb(90,132,160); text-decoration:underline">
+                                                {{$weather_data_wunderground['daypart'][0]['precipChance'][1]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][1]}}mm
+                                            </b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    {{$weather_data_wunderground['daypart'][0]['narrative'][1]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4 mt-3">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="https://www.wunderground.com/static/i/c/v4/{{$weather_data_wunderground['daypart'][0]['iconCode'][2]}}.svg" style="max-width:60px">
+                            </div>
+                            <div class="col-10 row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][2]}}</b> {{date('m/d')}}
+                                        </div>
+                                        <div class="col-6">
+                                            <b style="color:rgb(90,132,160); text-decoration:underline">
+                                                {{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][2]}}mm
+                                            </b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    {{$weather_data_wunderground['daypart'][0]['narrative'][2]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br>
                 <hr class="rounded">
                 <h4>8-Day Weather Forecast</h4>
-                <table class="col-12 text-center mt-4 forecast-table">
-                    <tr>
-                        <td>Today 12/27</td>
-                        <td>Tue 12/28</td>
-                        <td>Wed 12/29</td>
-                        <td>Thu 12/30</td>
-                        <td>Fri 12/31</td>
-                        <td>Sat 1/01</td>
-                        <td>Sun 1/02</td>
-                        <td>Mon 1/03</td>
-                    </tr>
-                    <tr>
-                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">33°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">32°</span> | <span style="color: #0053ae">23°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_2.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_3.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">30°</span> | <span style="color: #0053ae">21°C</span><br> <img src="/storage/page_images/weather_4.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_5.png" style="width:45px"></td>
-                        <td><span style="color:#d5202a">31°</span> | <span style="color: #0053ae">22°C</span><br> <img src="/storage/page_images/weather_1.png" style="width:45px"></td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
-                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
-                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
-                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
-                        <td>{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
-                        <td>3% chance of 0.01 mm rain</td>
-                        <td>3% chance of 0.01 mm rain</td>
-                        <td>5% chance of 0.01 mm rain</td>
-                    </tr>
-                    <tr style="font-size:90%">
-                        <td>Mostly Cloudy</td>
-                        <td>Partly Cloudy</td>
-                        <td>Mostly Cloudy</td>
-                        <td>Partly Cloudy</td>
-                        <td>Mostly Cloudy</td>
-                        <td>Partly Cloudy</td>
-                        <td>Mostly Cloudy</td>
-                        <td>Clear Sky</td>
-                    </tr>
-                </table>
-
+                <div class="table-responsive">
+                    <table class="col-12 text-center mt-4 forecast-table">
+                        <tr>
+                            <td>Today {{date('m/d')}}</td>
+                            <td>{{date('D m/d', strtotime("+1 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+2 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+3 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+4 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+5 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+6 day"))}}</td>
+                            <td>{{date('D m/d', strtotime("+7 day"))}}</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][0]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][0]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][0]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][1]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][1]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][1]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][2]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][2]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][2]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][3]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][3]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][3]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][4]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][4]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][4]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][5]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][5]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][5]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][6]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][6]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][6]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                            <td><span style="color:#d5202a">{{$weather_data_openweathermap['daily'][7]['temp']['max']}}°C</span> | <span style="color: #0053ae">{{$weather_data_openweathermap['daily'][7]['temp']['min']}}°C</span><br> <img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['daily'][7]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                        </tr>
+                        <tr style="font-size:90%">
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][0]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][0]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][0]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][1]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][1]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][1]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][2]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][2]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][2]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][3]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][3]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][3]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][4]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][4]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][4]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][5]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][5]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][5]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][6]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][6]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][6]['rain']}}mm rain</td>
+                            <td class="px-2">{{$weather_data_openweathermap['daily'][7]['pop']*100}}% chance of {{!isset($weather_data_openweathermap['daily'][7]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][7]['rain']}}mm rain</td>
+                        </tr>
+                        <tr style="font-size:90%">
+                            <td>{{ucwords($weather_data_openweathermap['daily'][0]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][1]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][2]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][3]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][4]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][5]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][6]['weather'][0]['description'])}}</td>
+                            <td>{{ucwords($weather_data_openweathermap['daily'][7]['weather'][0]['description'])}}</td>
+                        </tr>
+                    </table>
+                </div>
                 <hr class="rounded mt-5 mb-3">
-                <h4 class="">Hourly Forecast for Today</h4>
-                <img src="/storage/page_images/21.png" style="width:1000px">
-                <hr class="rounded mb-3">
-                <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Time</th>
-                        <th scope="col">Conditions</th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels Like</th>
-                        <th scope="col">Precip</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Cloud Cover</th>
-                        <th scope="col">Dew Point</th>
-                        <th scope="col">Humidity</th>
-                        <th scope="col">Wind</th>
-                        <th scope="col">Pressure</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>24°C</td>
-                        <td>24°C</td>
-                        <td>7%</td>
-                        <td>0mm</td>
-                        <td>65%</td>
-                        <td>23°C</td>
-                        <td>95%</td>
-                        <td>0 km/h W</td>
-                        <td>1,012.60 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>24°C</td>
-                        <td>24°C</td>
-                        <td>7%</td>
-                        <td>0 mm</td>
-                        <td>65%</td>
-                        <td>23°C</td>
-                        <td>95%</td>
-                        <td>0 km/h W</td>
-                        <td>1,012.60 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>23°C</td>
-                        <td>23°C</td>
-                        <td>6%</td>
-                        <td>0 mm</td>
-                        <td>72%</td>
-                        <td>22°C</td>
-                        <td>95%</td>
-                        <td>0 km/h W</td>
-                        <td>1,012.60 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>23°C</td>
-                        <td>23°C</td>
-                        <td>6%</td>
-                        <td>0 mm</td>
-                        <td>68%</td>
-                        <td>22°C</td>
-                        <td>95%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,011.90 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>23°C</td>
-                        <td>23°C</td>
-                        <td>3%</td>
-                        <td>0 mm</td>
-                        <td>68%</td>
-                        <td>22°C</td>
-                        <td>95%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,012.00 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/27.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>23°C</td>
-                        <td>23°C</td>
-                        <td>3%</td>
-                        <td>0mm</td>
-                        <td>65%</td>
-                        <td>22°C</td>
-                        <td>95%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,012.90 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>24°C</td>
-                        <td>24°C</td>
-                        <td>3%</td>
-                        <td>0 mm</td>
-                        <td>63%</td>
-                        <td>23°C</td>
-                        <td>94%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,013.40 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>25°C</td>
-                        <td>28°C</td>
-                        <td>8%</td>
-                        <td>0 mm</td>
-                        <td>68%</td>
-                        <td>23°C</td>
-                        <td>88%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,013.40 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>27°C</td>
-                        <td>30°C</td>
-                        <td>6%</td>
-                        <td>0 mm</td>
-                        <td>64%</td>
-                        <td>23°C</td>
-                        <td>80%</td>
-                        <td>0 km/h WSW</td>
-                        <td>1,013.50 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">10:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/28.svg" style="width:25px"> Mostly Cloudy</td>
-                        <td>28°C</td>
-                        <td>32°C</td>
-                        <td>12%</td>
-                        <td>0 mm</td>
-                        <td>60%</td>
-                        <td>23°C</td>
-                        <td>69%</td>
-                        <td>2 km/h S</td>
-                        <td>1,013.50 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">11:00 am</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>30°C</td>
-                        <td>34°C</td>
-                        <td>20%</td>
-                        <td>0 mm</td>
-                        <td>55%</td>
-                        <td>23°C</td>
-                        <td>69%</td>
-                        <td>4 km/h ESE</td>
-                        <td>1,012.70 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">12:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>31°C</td>
-                        <td>36°C</td>
-                        <td>17%</td>
-                        <td>0 mm</td>
-                        <td>51%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>6 km/h ESE</td>
-                        <td>1,011.70 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>31°C</td>
-                        <td>36°C</td>
-                        <td>13%</td>
-                        <td>0 mm</td>
-                        <td>49%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>6 km/h ESE</td>
-                        <td>1,011.70 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>32°C</td>
-                        <td>36°C</td>
-                        <td>23%</td>
-                        <td>0 mm</td>
-                        <td>49%</td>
-                        <td>23°C</td>
-                        <td>61%</td>
-                        <td>7 km/h SE</td>
-                        <td>1,009.70 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>31°C</td>
-                        <td>36°C</td>
-                        <td>22%</td>
-                        <td>0 mm</td>
-                        <td>47%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>8 km/h SE</td>
-                        <td>1,009.75 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/37.svg" style="width:25px"> Isolated Thunderstorms</td>
-                        <td>31°C</td>
-                        <td>35°C</td>
-                        <td>32%</td>
-                        <td>0.20 mm</td>
-                        <td>50%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>8 km/h SE</td>
-                        <td>1,009.75 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/30.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>29°C</td>
-                        <td>33°C</td>
-                        <td>20%</td>
-                        <td>0 mm</td>
-                        <td>47%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>7 km/h SE</td>
-                        <td>1,010.20 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>28°C</td>
-                        <td>31°C</td>
-                        <td>22%</td>
-                        <td>0 mm</td>
-                        <td>47%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>6 km/h SSE</td>
-                        <td>1,010.20 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>27°C</td>
-                        <td>30°C</td>
-                        <td>24%</td>
-                        <td>0 mm</td>
-                        <td>51%</td>
-                        <td>23°C</td>
-                        <td>62%</td>
-                        <td>4 km/h SSE</td>
-                        <td>1,012.20 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>26°C</td>
-                        <td>29°C</td>
-                        <td>10%</td>
-                        <td>0 mm</td>
-                        <td>54%</td>
-                        <td>22°C</td>
-                        <td>62%</td>
-                        <td>3 km/h S</td>
-                        <td>1,012.20 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>25°C</td>
-                        <td>28°C</td>
-                        <td>13%</td>
-                        <td>0 mm</td>
-                        <td>48%</td>
-                        <td>22°C</td>
-                        <td>85%</td>
-                        <td>1 km/h SSW</td>
-                        <td>1,012.50 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">10:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>25°C</td>
-                        <td>27°C</td>
-                        <td>11%</td>
-                        <td>0 mm</td>
-                        <td>40%</td>
-                        <td>22°C</td>
-                        <td>87%</td>
-                        <td>0 km/h SW</td>
-                        <td>1,012.80 hPa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">11:00 pm</th>
-                        <td><img src="https://www.wunderground.com/static/i/c/v4/29.svg" style="width:25px"> Partly Cloudy</td>
-                        <td>24°C</td>
-                        <td>27°C</td>
-                        <td>8%</td>
-                        <td>0 mm</td>
-                        <td>35%</td>
-                        <td>22°C</td>
-                        <td>89%</td>
-                        <td>0 km/h SW</td>
-                        <td>1,012.80 hPa</td>
-                      </tr>
-                    </tbody>
-                  </table>        
+                <h4 class="mb-4 mt-2">Hourly Forecast for Today</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="border-top:0px" scope="col">Time</th>
+                                <th style="border-top:0px" scope="col">Conditions</th>
+                                <th style="border-top:0px" scope="col">Temp</th>
+                                <th style="border-top:0px" scope="col">Feels Like</th>
+                                <th style="border-top:0px" scope="col">Precip</th>
+                                <th style="border-top:0px" scope="col">Amount</th>
+                                <th style="border-top:0px" scope="col">Cloud Cover</th>
+                                <th style="border-top:0px" scope="col">Dew Point</th>
+                                <th style="border-top:0px" scope="col">Humidity</th>
+                                <th style="border-top:0px" scope="col">Wind</th>
+                                <th style="border-top:0px" scope="col">Pressure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for($i = 0; $i < 24; $i++)
+                                <tr>
+                                    <th style="max-width:100%; white-space:nowrap;font-size:14px" scope="row">{{gmdate("h:i A", $weather_data_openweathermap['hourly'][$i]['dt'])}}</th>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px"><img src="http://openweathermap.org/img/wn/{{$weather_data_openweathermap['hourly'][$i]['weather'][0]['icon']}}@2x.png" style="max-width:35px"> {{ucwords($weather_data_openweathermap['hourly'][$i]['weather'][0]['description'])}}</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['temp']}}°C</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['feels_like']}}°C</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['pop']*100}}%</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{!isset($weather_data_openweathermap['hourly'][$i]['rain']['1h']) ? '< 0.01' : $weather_data_openweathermap['hourly'][$i]['rain']['1h']}}mm</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['clouds']}}%</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['dew_point']}}</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['humidity']}}%</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['wind_speed']}} m/s {{$weather_data_openweathermap['hourly'][$i]['wind_deg']}} deg</td>
+                                    <td style="max-width:100%; white-space:nowrap;font-size:14px">{{$weather_data_openweathermap['hourly'][$i]['pressure']}} hPa</td>
+                                </tr>
+                            @endfor
+                        </tbody>
+                    </table>    
+                </div>    
             </div>
         </div>
     </div>
@@ -595,12 +402,22 @@
         opacity: 100%;
         transition: 0.75s ease-in-out;
     }
+    @media (max-width: 992px) {
+        .hide-when-mobile {
+            visibility: hidden;
+            display: none;
+        }
+        .show-when-mobile{
+            visibility: visible;
+            display:block !important;
+        }
+    }
 </style>
 
 <script>
     $(document).ready(function() {
         $('.expand-collapse h4').each(function() {
-            var tis = $(this), state = false, answer = tis.next('div').slideUp();
+            var tis = $(this), state = false, answer = tis.next('.collapse-content').slideUp();
             tis.click(function() {
                 state = !state;
                 answer.slideToggle(state);
