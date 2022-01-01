@@ -44,7 +44,7 @@ class UpdateWeather extends Command
 
         $wunderground_db = WeatherData::updateOrCreate(
             ['source' => 'wunderground'],
-            ['data' => $json_wunderground]
+            ['data' => json_encode($json_wunderground)]
         );
 
         $url_openweather = file_get_contents("http://api.openweathermap.org/data/2.5/onecall?lat=14.156233&lon=121.262197&units=metric&appid=8da14edfb48e4bd083619be0df91f4a3");
@@ -52,7 +52,7 @@ class UpdateWeather extends Command
 
         $openweather_db = WeatherData::updateOrCreate(
             ['source' => 'openweathermap'],
-            ['data' => $json_openweather]
+            ['data' => json_encode($json_openweather)]
         );
     }
 }
