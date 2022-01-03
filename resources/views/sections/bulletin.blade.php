@@ -11,10 +11,13 @@
     <h5 class="text-center">
         {!!isset($landing_page->bulletin_subtitle) ? nl2br($landing_page->bulletin_subtitle) : 'Site-specific advisories using meteorological information for better farm management decision-making.<br>Source: Dr. Artemio Salazar, Project SARAi'!!}
     </h5>
-
-    <h2 class="mt-2" style="text-align: center;">
-        <button type="button" class="btn btn-outline-primary">Download Nationwide Bulletin</button>
-    </h2>
+    @if($landing_page->bulletin_file != null)
+    <a href="/storage/files/{{$landing_page->bulletin_file}}">
+        <h2 class="mt-2" style="text-align: center;">
+            <button type="button" class="btn btn-outline-primary">Download Nationwide Bulletin</button>
+        </h2>
+    </a>
+    @endif
 
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
         <b>Advisory:</b> {!!isset($landing_page->bulletin_advisory) ? nl2br($landing_page->bulletin_advisory) : 'In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.'!!}
@@ -94,7 +97,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
             </div>
-            {{Form::close()}}
+            {{Form::close()}}   
         </div>
     </div>
 </div>
