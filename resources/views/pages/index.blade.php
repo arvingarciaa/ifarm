@@ -11,7 +11,8 @@
 @section('content')
 
 <?php
-$user = auth()->user();
+    $user = auth()->user();
+    $landing_page = App\Models\LandingPage::first();
 ?>
 
 @include('layouts.messages')
@@ -30,8 +31,11 @@ $user = auth()->user();
 <div class="container-fluid" style="background-color:white;">
     @include('sections.topBanner')
 </div>
-<div class="container-fluid col-sm-10 section-padding">
-    @include('sections.croppingAdvisories')
+
+<div style="{{$landing_page->weather_background_type == 0 ? 'background-color:'.$landing_page->weather_background. '!important;' : ''}}">
+    <div class="container-fluid col-sm-10 section-padding" style="background-color:inherit">
+        @include('sections.weather')
+    </div>
 </div>
 <hr class="my-0">
 <div class="container-fluid col-sm-10 section-padding">
@@ -39,17 +43,21 @@ $user = auth()->user();
 </div>
 <hr class="my-0">
 <div class="container-fluid col-sm-10 section-padding">
-    @include('sections.analyticsDashboard')
+    @include('sections.vegetation')
+</div>
+<hr class="my-0">
+<div class="container-fluid col-sm-10 section-padding">
+    @include('sections.plantingStatus')
 </div>
 <hr class="my-0">
 <div class="container-fluid" style="background-color:#0a3f20 !important;">
     <div class="container-fluid col-sm-10 section-padding" style="background-color:#0a3f20 !important;">
-        @include('sections.remoteSensingMaps')
+        @include('sections.maps')
     </div>
 </div>
 <hr class="my-0">
 <div class="container-fluid col-sm-10 section-padding">
-    @include('sections.newsAndInformation')
+    @include('sections.news')
 </div>
 <hr class="my-0">
 <div class="container-fluid py-5" style="background-color:#5893CB !important;">
@@ -61,7 +69,7 @@ $user = auth()->user();
 </footer>
 <style>
     .section-padding{
-        padding:40px;
+        padding:0px 40px 40px 40px;
         background-color:white;
     }
     .bg-ghost{

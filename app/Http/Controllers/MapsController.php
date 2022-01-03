@@ -62,7 +62,7 @@ class MapsController extends Controller
     }
 
     public function deleteMap($map_id, Request $request){
-        $map = Maps::find($map_id);
+        $map = Map::find($map_id);
         if($map->thumbnail != null){
             $image_path = public_path().'/storage/page_images/'.$map->thumbnail;
             if(file_exists($image_path)){

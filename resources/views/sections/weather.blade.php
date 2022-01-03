@@ -6,21 +6,21 @@
 ?>
 
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="padding-bottom:0px !important">
-    <h1 class="text-center">Weather Forecast and Rainfall Outlook</h1>
+    <h1 class="text-center">{!!isset($landing_page->weather_title) ? nl2br($landing_page->weather_title) : 'Weather Forecast and Rainfall Outlook'!!}</h1>
     <h5 class="text-center">
-        Weather Forecast for the next 5 days and Rainfall Outlook for the next 5 months. <br>Summary of farm information of the selected site.
+        {!!isset($landing_page->weather_subtitle) ? nl2br($landing_page->weather_subtitle) : 'Weather Forecast for the next 5 days and Rainfall Outlook for the next 5 months. Summary of farm information of the selected site.'!!}
     </h5>
     <div class="row mt-4">
         <div class="col-lg-6 col-sm-12" style="margin:auto">
             <div class="row">
                 <div class="col-12">
-                    <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center">
-                        <img alt="iFarm Banner" src="/storage/page_images/15.png" style="width:100%" class="mb-1">
+                    <a href="{!!isset($landing_page->weather_link) ? $landing_page->weather_link : 'https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi'!!}" target="_blank" class="text-center">
+                        <img alt="iFarm Banner" src="/storage/page_images/{!!isset($landing_page->weather_image) ? $landing_page->weather_image : '15.png'!!}" style="width:100%" class="mb-1">
                     </a>
                 </div>
                 <div class="col-12 text-center show-when-mobile" style="display:none">
                     <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-                    <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
+                    <a href="{!!isset($landing_page->weather_link) ? $landing_page->weather_link : 'https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi'!!}" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
                 </div>
             </div>
         </div>
@@ -50,18 +50,18 @@
                             <tr style="font-size:90%">
                                 <th style="width:25%">Date</th>
                                 <td style="width:15%">Today</td>
-                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][1]))->format('M d')}}</td>
-                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][2]))->format('M d')}}</td>
-                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][3]))->format('M d')}}</td>
-                                <td style="width:15%">{{(new \DateTime($weather_data_wunderground['validTimeLocal'][4]))->format('M d')}}</td>
+                                <td style="width:15%">{{date('M d', strtotime("+1 day"))}}</td>
+                                <td style="width:15%">{{date('M d', strtotime("+2 day"))}}</td>
+                                <td style="width:15%">{{date('M d', strtotime("+3 day"))}}</td>
+                                <td style="width:15%">{{date('M d', strtotime("+4 day"))}}</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:25%">Precipitation</th>
-                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][0] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][0]}}mm rain</td>
-                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][2] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][2]}}mm rain</td>
-                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][4]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][4] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][4]}}mm rain</td>
-                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][6]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][6] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][6]}}mm rain</td>
-                                <td style="width:15%">{{$weather_data_wunderground['daypart'][0]['precipChance'][8]}}% chance of<br> {{$weather_data_wunderground['daypart'][0]['qpf'][8] == 0 ? '< 0.01' : $weather_data_wunderground['daypart'][0]['qpf'][8]}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_openweathermap['daily'][0]['pop']*100}}% chance of<br> {{!isset($weather_data_openweathermap['daily'][0]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][0]['rain']}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_openweathermap['daily'][1]['pop']*100}}% chance of<br> {{!isset($weather_data_openweathermap['daily'][1]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][1]['rain']}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_openweathermap['daily'][2]['pop']*100}}% chance of<br> {{!isset($weather_data_openweathermap['daily'][2]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][2]['rain']}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_openweathermap['daily'][3]['pop']*100}}% chance of<br> {{!isset($weather_data_openweathermap['daily'][3]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][3]['rain']}}mm rain</td>
+                                <td style="width:15%">{{$weather_data_openweathermap['daily'][4]['pop']*100}}% chance of<br> {{!isset($weather_data_openweathermap['daily'][4]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][4]['rain']}}mm rain</td>
                             </tr>
                         </table>
                     </div>
@@ -132,11 +132,11 @@
         </div>
         <div class="col-6 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-            <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
+            <a href="{!!isset($landing_page->weather_link) ? $landing_page->weather_link : 'https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi'!!}" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
         </div>
         <div class="col-6 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-            <a href="https://oahajj.users.earthengine.app/view/ifarm-farm-level-ndvi" target="_blank" class="text-center" style="color:blue"><h6>Click to see Interactive Map</h6></a>   
+            <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to visit PAGASA website</h6></a>   
         </div>
 
         <div class="expand-collapse">
@@ -154,12 +154,12 @@
                             <div class="col-10 row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-5">
                                             <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][0]}}</b> {{date('m/d')}}
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-7">
                                             <b style="color:rgb(90,132,160); text-decoration:underline">
-                                                {{$weather_data_wunderground['daypart'][0]['precipChance'][0]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][0]}}mm
+                                                {{$weather_data_openweathermap['daily'][0]['pop']*100}}% chance of rain / {{!isset($weather_data_openweathermap['daily'][0]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][0]['rain']}}mm
                                             </b>
                                         </div>
                                     </div>
@@ -178,10 +178,10 @@
                             <div class="col-10 row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-5">
                                             <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][1]}}</b> {{date('m/d')}}
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-7">
                                             <b style="color:rgb(90,132,160); text-decoration:underline">
                                                 {{$weather_data_wunderground['daypart'][0]['precipChance'][1]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][1]}}mm
                                             </b>
@@ -202,12 +202,12 @@
                             <div class="col-10 row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-6">
-                                            <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][2]}}</b> {{date('m/d')}}
+                                        <div class="col-5">
+                                            <b>{{$weather_data_wunderground['daypart'][0]['daypartName'][2]}}</b> {{date('m/d', strtotime("+1 day"))}}
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-7">
                                             <b style="color:rgb(90,132,160); text-decoration:underline">
-                                                {{$weather_data_wunderground['daypart'][0]['precipChance'][2]}}% chance of rain / {{$weather_data_wunderground['daypart'][0]['qpf'][2]}}mm
+                                                {{$weather_data_openweathermap['daily'][1]['pop']*100}}% chance of rain / {{!isset($weather_data_openweathermap['daily'][0]['rain']) ? '< 0.01' : $weather_data_openweathermap['daily'][1]['rain']}}mm
                                             </b>
                                         </div>
                                     </div>
@@ -309,59 +309,83 @@
     </div>
     @if(request()->edit == 1)
         <div class="hover-overlay" style="width:100%">    
-            <button type="button" class="btn btn-xs btn-primary" data-target="#editCroppingAdvisoriesSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
+            <button type="button" class="btn btn-xs btn-primary" data-target="#editWeatherSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
         </div>
     @endif
 </div>
 
 
-<div class="modal fade" id="editCroppingAdvisoriesSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editWeatherSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Edit Cropping Advisories Section</h6>
+                <h6 class="modal-title" id="exampleModalLabel">Edit Weather Forecast Section</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            {{ Form::open(['action' => ['PagesController@updateWeatherSection'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
             <div class="modal-body">
                 <div class="form-group">
-                    {{Form::label('latest_aanr_subheader', 'Enable Section?', ['class' => 'col-form-label required'])}}
-                    <input type="checkbox" checked data-toggle="toggle">
+                    {{Form::label('weather_visibility', 'Enable Section?', ['class' => 'col-form-label required'])}}
+                    <input type="checkbox" checked data-toggle="toggle" name="weather_visibility">
                 </div>
                 <div class="form-group">
-                    {{Form::label('latest_aanr_header', 'Cropping Advisories Header', ['class' => 'col-form-label required'])}}
-                    {{Form::text('latest_aanr_header', 'iFarm Cropping Advisories', ['class' => 'form-control'])}}
+                    {{Form::label('weather_title', 'Weather Forecast Section Title', ['class' => 'col-form-label required'])}}
+                    {{Form::text('weather_title', $landing_page->weather_title, ['class' => 'form-control'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('latest_aanr_subheader', 'Cropping Advisories Subheader', ['class' => 'col-form-label required'])}}
-                    {{Form::textarea('latest_aanr_subheader', 'We craft site-specific recommendations for the representative sites of the different climate types. Recommendations may or may not be the same with other sites with the same climate type.
-                    ', ['class' => 'form-control', 'rows' => '4'])}}
+                    {{Form::label('weather_subtitle', 'Weather Forecast Section Subtitle', ['class' => 'col-form-label required'])}}
+                    {{Form::textarea('weather_subtitle', $landing_page->weather_subtitle, ['class' => 'form-control', 'rows' => '4'])}}
                 </div>
-                {{Form::label('banner', 'Change Section Background', ['class' => 'col-form-label'])}}
+                <div class="form-group">
+                    {{Form::label('weather_map', 'Change Interactive Map (La Paz, Tarlac)', ['class' => 'col-form-label'])}}
+                    <img src="/storage/page_images/15.png" class="card-img-top" style="object-fit: cover;overflow:hidden;width:100%;border:1px solid rgba(100,100,100,0.25)" >
+                    {{ Form::file('weather_section_background_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('weather_map', 'Change Interactive Map (Concepcion, Tarlac)', ['class' => 'col-form-label'])}}
+                    <div class="card-img-top center-vertically px-3" style="height:225px; width:100%; background-color: rgb(227, 227, 227);">
+                        <span class="font-weight-bold" style="font-size: 17px;line-height: 1.5em;color: #2b2b2b;">
+                            Upload a 700x500px image for the map.
+                        </span>
+                    </div>
+                    {{ Form::file('weather_section_background_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                </div>
+                <hr class="my-0">
+                {{Form::label('weather_section_background_banner', 'Change Section Background', ['class' => 'col-form-label'])}}
                 <div class="input-group">
-                    <label class="mr-2 radio-inline"><input type="radio" name="banner_color_radio_latest_aanr" value="1" checked> Block color</label>
-                    <label class="mx-2 radio-inline"><input type="radio" name="banner_color_radio_latest_aanr" value="0"> Image</label>
+                    <label class="mr-2 radio-inline"><input type="radio" name="weather_background_color_radio" value="0" {{$landing_page->weather_background_type == 0 ? 'checked' : ''}}> Block color</label>
+                    <label class="mx-2 radio-inline"><input type="radio" name="weather_background_color_radio" value="1" {{$landing_page->weather_background_type == 1 ? 'checked' : ''}}> Image</label>
                 </div>
-                <div class="form-group block-color-form_latest_aanr" style="">
-                    {{Form::label('banner_color', 'Change block color', ['class' => 'col-form-label'])}}
-                    {{Form::text('banner_color', '', ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
+                <div class="form-group block-color-form-weather" style="{{$landing_page->weather_background_type == 1 ? 'display:none' : ''}}">
+                    {{Form::label('weather_section_background_color', 'Set Block Color', ['class' => 'col-form-label'])}}
+                    @if($landing_page->weather_background != null && $landing_page->weather_background_type == 0)
+                    {{Form::text('weather_section_background_color', $landing_page->weather_background, ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
+                    @else
+                    {{Form::text('weather_section_background_color', '', ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
+                    @endif
                 </div>
-                <div class="form-group gradient-color-form_latest_aanr" style="display:none">
-                    {{Form::label('image', 'Latest AANR Section Background', ['class' => 'col-form-label required'])}}
+                <div class="form-group background-image-form-weather" style="{{$landing_page->weather_background_type == 0 ? 'display:none' : ''}}">
+                    {{Form::label('weather_section_background_image', 'Set Background Image', ['class' => 'col-form-label required'])}}
                     <br>
+                    @if($landing_page->weather_background != null && $landing_page->weather_background_type == 1)
+                    <img src="/storage/page_images/{{$landing_page->weather_background}}" class="card-img-top" style="object-fit: cover;overflow:hidden;width:100%;border:1px solid rgba(100,100,100,0.25)" >
+                    @else
                     <div class="card-img-top center-vertically px-3" style="height:225px; width:100%; background-color: rgb(227, 227, 227);">
                         <span class="font-weight-bold" style="font-size: 17px;line-height: 1.5em;color: #2b2b2b;">
                             Upload a 1800x550px logo for the background.
                         </span>
                     </div>
-                    {{ Form::file('image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                    @endif
+                    {{ Form::file('weather_section_background_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
             </div>
+            {{ Form::close() }}
         </div>
     </div>
 </div>
@@ -423,6 +447,16 @@
                 answer.slideToggle(state);
                 tis.toggleClass('active',state);
             });
+        });
+        $('input[name$="weather_background_color_radio"]').click(function() {
+            if($(this).val() == '0') {
+                $('.background-image-form-weather').hide();  
+                $('.block-color-form-weather').show();            
+            }
+            else {
+                $('.block-color-form-weather').hide();  
+                $('.background-image-form-weather').show();   
+            }
         });
     });
 </script>

@@ -6,10 +6,10 @@
 
 
 <div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="">
-    <h1 class="text-center">Corn Bulletin</h1>
-    <h4 class="text-center">(December 2021 – April 2022 based on November 2021 Condition)</h4>
+    <h1 class="text-center">{!!isset($landing_page->bulletin_title) ? nl2br($landing_page->bulletin_title) : 'Corn Bulletin'!!}</h1>
+    <h4 class="text-center">{!!isset($landing_page->bulletin_date) ? nl2br($landing_page->bulletin_date) : 'Corn Bulletin'!!}</h4>
     <h5 class="text-center">
-        Site-specific advisories using meteorological information for better farm management decision-making. <br>Source: Dr. Artemio Salazar, Project SARAi
+        {!!isset($landing_page->bulletin_subtitle) ? nl2br($landing_page->bulletin_subtitle) : 'Site-specific advisories using meteorological information for better farm management decision-making.<br>Source: Dr. Artemio Salazar, Project SARAi'!!}
     </h5>
 
     <h2 class="mt-2" style="text-align: center;">
@@ -17,7 +17,7 @@
     </h2>
 
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
-        <b>Advisory:</b> In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.
+        <b>Advisory:</b> {!!isset($landing_page->bulletin_advisory) ? nl2br($landing_page->bulletin_advisory) : 'In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.'!!}
     </h5>
     <figure class="highcharts-figure">
         <div id="container"></div>
@@ -30,6 +30,74 @@
     @endif
 </div>
 
+<div class="modal fade" id="editBulletinSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Edit Corn Bulletin Section</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{ Form::open(['action' => ['PagesController@updateBulletinSection'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+            <div class="modal-body">
+                <div class="form-group">
+                    {{Form::label('bulletin_visibility', 'Enable Section?', ['class' => 'col-form-label required'])}}
+                    <input type="checkbox" checked data-toggle="toggle">
+                </div>
+                <div class="form-group">
+                    {{Form::label('bulletin_title', 'Corn Bulletin Section Title', ['class' => 'col-form-label required'])}}
+                    {{Form::text('bulletin_title', $landing_page->bulletin_title, ['class' => 'form-control'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('bulletin_date', 'Corn Bulletin Date', ['class' => 'col-form-label required'])}}
+                    {{Form::text('bulletin_date', $landing_page->bulletin_date, ['class' => 'form-control'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('bulletin_subtitle', 'Corn Bulletin Section Subtitle', ['class' => 'col-form-label required'])}}
+                    {{Form::textarea('bulletin_subtitle', $landing_page->bulletin_subtitle, ['class' => 'form-control', 'rows' => '4'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('bulletin_file', 'Upload Corn Bulletin File', ['class' => 'col-form-label required'])}}
+                    {{Form::file('bulletin_file', ['class' => 'form-control mb-3 pb-2'])}}
+                </div>
+                <hr class="my-0">
+                {{Form::label('bulletin_section_background_banner', 'Change Section Background', ['class' => 'col-form-label'])}}
+                <div class="input-group">
+                    <label class="mr-2 radio-inline"><input type="radio" name="bulletin_background_color_radio" value="0" {{$landing_page->bulletin_background_type == 0 ? 'checked' : ''}}> Block color</label>
+                    <label class="mx-2 radio-inline"><input type="radio" name="bulletin_background_color_radio" value="1" {{$landing_page->bulletin_background_type == 1 ? 'checked' : ''}}> Image</label>
+                </div>
+                <div class="form-group block-color-form-bulletin" style="{{$landing_page->bulletin_background_type == 1 ? 'display:none' : ''}}">
+                    {{Form::label('bulletin_section_background_color', 'Set Block Color', ['class' => 'col-form-label'])}}
+                    @if($landing_page->bulletin_background != null && $landing_page->bulletin_background_type == 0)
+                    {{Form::text('bulletin_section_background_color', $landing_page->bulletin_background, ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
+                    @else
+                    {{Form::text('bulletin_section_background_color', '', ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
+                    @endif
+                </div>
+                <div class="form-group background-image-form-bulletin" style="{{$landing_page->bulletin_background_type == 0 ? 'display:none' : ''}}">
+                    {{Form::label('bulletin_section_background_image', 'Set Background Image', ['class' => 'col-form-label required'])}}
+                    <br>
+                    @if($landing_page->bulletin_background != null && $landing_page->bulletin_background_type == 1)
+                    <img src="/storage/page_images/{{$landing_page->bulletin_background}}" class="card-img-top" style="object-fit: cover;overflow:hidden;width:100%;border:1px solid rgba(100,100,100,0.25)" >
+                    @else
+                    <div class="card-img-top center-vertically px-3" style="height:225px; width:100%; background-color: rgb(227, 227, 227);">
+                        <span class="font-weight-bold" style="font-size: 17px;line-height: 1.5em;color: #2b2b2b;">
+                            Upload a 1800x550px logo for the background.
+                        </span>
+                    </div>
+                    @endif
+                    {{ Form::file('bulletin_section_background_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
+            </div>
+            {{Form::close()}}
+        </div>
+    </div>
+</div>
 <script>
     Highcharts.chart('container', {
         chart: {
@@ -157,6 +225,18 @@
             }]
         }
     });
+    $(document).ready(function() {
+        $('input[name$="bulletin_background_color_radio"]').click(function() {
+            if($(this).val() == '0') {
+                $('.background-image-form-bulletin').hide();  
+                $('.block-color-form-bulletin').show();            
+            }
+            else {
+                $('.block-color-form-bulletin').hide();  
+                $('.background-image-form-bulletin').show();   
+            }
+        });
+    });
 </script>
 <style>
     #container{
@@ -204,53 +284,3 @@
     }
 
 </style>
-<div class="modal fade" id="editBulletinSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Edit ICMF Bulletin Section</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    {{Form::label('latest_aanr_subheader', 'Enable Section?', ['class' => 'col-form-label required'])}}
-                    <input type="checkbox" checked data-toggle="toggle">
-                </div>
-                <div class="form-group">
-                    {{Form::label('latest_aanr_header', 'ICMF Bulletin Header', ['class' => 'col-form-label required'])}}
-                    {{Form::text('latest_aanr_header', 'ICMF Corn Bulletin', ['class' => 'form-control'])}}
-                </div>
-                <div class="form-group">
-                    {{Form::label('latest_aanr_subheader', 'ICMF Bulletin Subheader', ['class' => 'col-form-label required'])}}
-                    {{Form::textarea('latest_aanr_subheader', 'We generate science-based site-specific advisories using meteorological information for better farm management decision-making. Source: Dr. Artemio Salazar; Project 3.3 Integrating Research Results, Communication Planning, and Linking Science to Policy
-                    ', ['class' => 'form-control', 'rows' => '4'])}}
-                </div>
-                {{Form::label('banner', 'Change Section Background', ['class' => 'col-form-label'])}}
-                <div class="input-group">
-                    <label class="mr-2 radio-inline"><input type="radio" name="banner_color_radio_latest_aanr" value="1" checked> Block color</label>
-                    <label class="mx-2 radio-inline"><input type="radio" name="banner_color_radio_latest_aanr" value="0"> Image</label>
-                </div>
-                <div class="form-group block-color-form_latest_aanr" style="">
-                    {{Form::label('banner_color', 'Change block color', ['class' => 'col-form-label'])}}
-                    {{Form::text('banner_color', '', ['class' => 'form-control', 'placeholder' => 'Add a hex'])}}
-                </div>
-                <div class="form-group gradient-color-form_latest_aanr" style="display:none">
-                    {{Form::label('image', 'Latest AANR Section Background', ['class' => 'col-form-label required'])}}
-                    <br>
-                    <div class="card-img-top center-vertically px-3" style="height:225px; width:100%; background-color: rgb(227, 227, 227);">
-                        <span class="font-weight-bold" style="font-size: 17px;line-height: 1.5em;color: #2b2b2b;">
-                            Upload a 1800x550px logo for the background.
-                        </span>
-                    </div>
-                    {{ Form::file('image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
-            </div>
-        </div>
-    </div>
-</div>

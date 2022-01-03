@@ -1,4 +1,4 @@
-<div class="{{request()->edit == '1' ? 'overlay-container' : ''}} fill-container" >
+<div class="{{request()->edit == '1' ? 'overlay-container' : ''}}" >
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
