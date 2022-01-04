@@ -32,33 +32,41 @@
     @include('sections.topBanner')
 </div>
 
-<div style="{{$landing_page->weather_background_type == 0 ? 'background-color:'.$landing_page->weather_background. '!important;' : ''}}">
-    <div class="container-fluid col-sm-10 section-padding" style="background-color:inherit">
+<section class="parallax-section" style="{{$landing_page->weather_background_type == 0 ? 'background:'.$landing_page->weather_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->weather_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
         @include('sections.weather')
     </div>
-</div>
+</section>
 <hr class="my-0">
-<div class="container-fluid col-sm-10 section-padding">
-    @include('sections.bulletin')
-</div>
+<section class="parallax-section" style="{{$landing_page->bulletin_background_type == 0 ? 'background:'.$landing_page->bulletin_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->bulletin_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
+        @include('sections.bulletin')
+    </div>
+</section>
 <hr class="my-0">
-<div class="container-fluid col-sm-10 section-padding">
-    @include('sections.vegetation')
-</div>
+<section class="parallax-section" style="{{$landing_page->vegetation_background_type == 0 ? 'background:'.$landing_page->vegetation_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->vegetation_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
+        @include('sections.vegetation')
+    </div>
+</section>
 <hr class="my-0">
-<div class="container-fluid col-sm-10 section-padding">
-    @include('sections.plantingStatus')
-</div>
+<section class="parallax-section" style="{{$landing_page->planting_status_background_type == 0 ? 'background:'.$landing_page->planting_status_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->planting_status_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
+        @include('sections.plantingStatus')
+    </div>
+</section>
 <hr class="my-0">
-<div class="container-fluid" style="background-color:#0a3f20 !important;">
-    <div class="container-fluid col-sm-10 section-padding" style="background-color:#0a3f20 !important;">
+<section class="parallax-section" style="{{$landing_page->maps_background_type == 0 ? 'background:'.$landing_page->maps_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->maps_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
         @include('sections.maps')
     </div>
-</div>
+</section>
 <hr class="my-0">
-<div class="container-fluid col-sm-10 section-padding">
-    @include('sections.news')
-</div>
+<section class="parallax-section" style="{{$landing_page->news_background_type == 0 ? 'background:'.$landing_page->news_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->news_background.'")'}}">
+    <div class="container-fluid col-sm-10 section-padding">
+        @include('sections.news')
+    </div>
+</section>
 <hr class="my-0">
 <div class="container-fluid py-5" style="background-color:#5893CB !important;">
     @include('sections.appDownload')
@@ -68,9 +76,13 @@
     <img alt="iFarm Footer" src="/storage/page_images/ifarm_footer.png" style="width:100%">
 </footer>
 <style>
+    .parallax-section{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .section-padding{
         padding:0px 40px 40px 40px;
-        background-color:white;
     }
     .bg-ghost{
         background-color:ghostwhite;

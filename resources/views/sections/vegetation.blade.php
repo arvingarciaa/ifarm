@@ -35,7 +35,7 @@
     </div>
     <div class="row">
         @foreach(App\Models\VegetationMap::all() as $vegetationMap)
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12 mt-3">
                 @if(request()->edit == 1)
                     <div class="card">
                         <a href="{{$vegetationMap->link}}" target="_blank" style="text-decorations:none; color:inherit">
@@ -270,7 +270,6 @@
         </div>
     </div>
 @endforeach
-
 
 <script>
     $(document).ready(function() {
