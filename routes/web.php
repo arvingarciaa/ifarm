@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 //Pages Controller
 Route::get('/', 'PagesController@getLandingPage')->name('getLandingPage');
 Route::post('/update/topBanner', 'PagesController@updateTopBanner')->name('updateTopBanner');
@@ -38,3 +40,6 @@ Route::delete('/{id}/deleteMap', 'MapsController@deleteMap')->name('deleteMap');
 Route::post('/addVegetationMap', 'VegetationMapsController@addVegetationMap')->name('addVegetationMap');
 Route::post('/{id}/editVegetationMap', 'VegetationMapsController@editVegetationMap')->name('editVegetationMap');
 Route::delete('/{id}/deleteVegetationMap', 'VegetationMapsController@deleteVegetationMap')->name('deleteVegetationMap');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
