@@ -5,7 +5,7 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}" style="">
+<div class="section {{request()->edit == '1' && $user != null ? 'overlay-container' : ''}}" style="">
     <h1 class="text-center">{!!isset($landing_page->bulletin_title) ? nl2br($landing_page->bulletin_title) : 'Corn Bulletin'!!}</h1>
     <h4 class="text-center">{!!isset($landing_page->bulletin_date) ? nl2br($landing_page->bulletin_date) : 'Corn Bulletin'!!}</h4>
     <h5 class="text-center">
@@ -26,7 +26,7 @@
         <div id="container"></div>
     </figure>
 
-    @if(request()->edit == 1)
+    @if(request()->edit == 1 && $user != null)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editBulletinSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
         </div>

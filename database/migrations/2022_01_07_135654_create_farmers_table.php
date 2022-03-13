@@ -18,7 +18,7 @@ class CreateFarmersTable extends Migration
             $table->timestamps();
             $table->string('last_name')->nullable();
             $table->string('first_name')->nullable();
-            $table->string('baranggay')->nullable();
+            $table->string('barangay')->nullable();
             $table->string('source')->nullable();
             $table->string('parcel_no')->nullable();
             $table->string('parcel_area')->nullable();

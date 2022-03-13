@@ -15,19 +15,23 @@
     $landing_page = App\Models\LandingPage::first();
 ?>
 
+
 @include('layouts.messages')
-<div class="edit-bar">
-    <nav class="navbar navbar-expand-lg shadow rounded" style="background-color:{{request()->edit == 1 ? '#53ade9' : '#05b52c'}}; height:52px">
-        <div class="col-auto text-white font-weight-bold">
-            You are viewing in {{request()->edit == 1 ? 'EDIT' : 'LIVE'}} mode
-        </div>
-        @if(request()->edit == 1)
-            <a href="{{route('getLandingPage')}}" class="btn btn-success">View Live</a>
-        @else
-            <a href="{{route('getLandingPage', ['edit' => '1'])}}" class="btn btn-light">Edit</a>
-        @endif
-    </nav>
-</div> 
+
+@if($user != null)
+    <div class="edit-bar">
+        <nav class="navbar navbar-expand-lg shadow rounded" style="background-color:{{request()->edit == 1 && $user != null ? '#53ade9' : '#05b52c'}}; height:52px">
+            <div class="col-auto text-white font-weight-bold">
+                You are viewing in {{request()->edit == 1 && $user != null ? 'EDIT' : 'LIVE'}} mode
+            </div>
+            @if(request()->edit == 1 && $user != null)
+                <a href="{{route('getLandingPage')}}" class="btn btn-success">View Live</a>
+            @else
+                <a href="{{route('getLandingPage', ['edit' => '1'])}}" class="btn btn-light">Edit</a>
+            @endif
+        </nav>
+    </div> 
+@endif
 <div class="container-fluid" style="background-color:white;">
     @include('sections.topBanner')
 </div>
@@ -44,12 +48,14 @@
     </div>
 </section>
 <hr class="my-0">
+<a id="vegetation-maps-anchor" style=";position:relative"></a>
 <section class="parallax-section" style="{{$landing_page->vegetation_background_type == 0 ? 'background:'.$landing_page->vegetation_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->vegetation_background.'")'}}">
     <div class="container-fluid col-sm-10 section-padding">
         @include('sections.vegetation')
     </div>
 </section>
 <hr class="my-0">
+<a id="planting-status-anchor" style=";position:relative"></a>
 <section class="parallax-section" style="{{$landing_page->planting_status_background_type == 0 ? 'background:'.$landing_page->planting_status_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->planting_status_background.'")'}}">
     <div class="container-fluid col-sm-10 section-padding">
         @include('sections.plantingStatus')
@@ -68,7 +74,7 @@
     </div>
 </section>
 <hr class="my-0">
-<div class="container-fluid py-5" style="background-color:#5893CB !important;">
+<div class="container-fluid py-5" style="background-color:#228B22 !important;">
     @include('sections.appDownload')
 </div>
 

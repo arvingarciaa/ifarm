@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm fixed-top">             
+<nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top" style="background-color:#006400">             
     <div class="container">
         <a class="navbar-brand" href="https://competense.com/ifarm">
             <h4 style="color:white"><i class="fa fa-puzzle-piece"></i> i-FARM</h4>
@@ -12,7 +12,7 @@
             <ul class="navbar-nav mr-auto">
                 <div class="btn-group">
                     <button class="btn navbar-btn dropdown-toggle navbar-btn btn-white ml-2 text-white" data-toggle="dropdown"> Forms</button>
-                    <div class="dropdown-menu navbar-dark text-white bg-primary">
+                    <div class="dropdown-menu navbar-dark text-white" style="background-color:#006400">
                       
                       <a id="mnuFrmPlant" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/planting"><i class="fa fa-seedling"></i> Planting</a> 
                       <a id="mnuFrmHarvest" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/harvesting"><i class="fa fa-sign-language"></i> Harvesting</a> 
@@ -22,7 +22,7 @@
                 </div> 
                     <div class="btn-group">
                         <button class="btn navbar-btn dropdown-toggle navbar-btn btn-white ml-2 text-white" data-toggle="dropdown"> Lookups</button>
-                        <div class="dropdown-menu bg-primary text-white">
+                        <div class="dropdown-menu text-white" style="background-color:#006400">
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Cause-of-damage" data-id="4"><i class="fa fa-search"></i> Cause of damage</a>
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Commodity" data-id="4"><i class="fa fa-search"></i> Commodity</a>	                                
                             <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/lookup/Ecosystem" data-id="4"><i class="fa fa-search"></i> Ecosystem</a>	                
@@ -38,7 +38,7 @@
                     </div> 
                 <div class="btn-group">
                     <button class="btn navbar-btn dropdown-toggle navbar-btn btn-white ml-2 text-white" data-toggle="dropdown"> Reports</button>
-                    <div class="dropdown-menu bg-primary text-white">
+                    <div class="dropdown-menu text-white" style="background-color:#006400">
                       
                       <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/report/Planting-general" data-id="4"><i class="fa fa-newspaper"></i> Planting - general</a>                              
                       <a onclick="dummy()" class="dropdown-item nav-link text-white" href="https://competense.com/ifarm/report/Planting-accomplishment-rice" data-id="4"><i class="fa fa-newspaper"></i> Planting accomplishment - Rice</a>
@@ -59,11 +59,13 @@
                 <li class="nav-item">
                     <a class="nav-link" style="color:white !important" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                 </li>
+                <!--
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a class="nav-link" style="color:white !important" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                     </li>
                 @endif
+                -->
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" style="color:white !important" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -82,25 +84,8 @@
                     </li>
                 @endguest
             </ul>
-            <!-- Right Side Of Navbar 
-            <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="">
-                            Concepcion Khan
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://competense.com/ifarm/logout" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="https://competense.com/ifarm/logout" method="POST" class="d-none">
-                                <input type="hidden" name="_token" value="5glCFSsAgQ3Hnufx3waRmDGBcTi8PhhfqY0WWsrd">                                    </form>
-                        </div>
-                    </li>
-                                    </ul>-->
         </div>
     </div>
 </nav>
+
   

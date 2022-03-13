@@ -4,12 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\LandingPage;
+use App\Models\FarmStat;
+use App\Models\Farmer;
+use App\Models\VegetationMap;
 
 class PagesController extends Controller
 {
     //
-    public function getLandingPage(){
-        return view('pages.index');
+    public function getLandingPage(Request $request){
+        if(request()->filter == 'at_risk'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'Vegetative')
+                                ->orWhere('development_stage', '=', 'Reproductive')
+                                ->orWhere('development_stage', '=', 'Maturity')
+                                ->get();
+        }
+        elseif(request()->filter == 'no_crop'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'No Crop')->get();
+        } 
+        elseif(request()->filter == 'vegetative'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'Vegetative')->get();
+        }
+        elseif(request()->filter == 'reproductive'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'Reproductive')->get();
+        }
+        elseif(request()->filter == 'maturity'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'Maturity')->get();
+        }
+        elseif(request()->filter == 'harvested'){
+            $farmer_entries = Farmer::where('development_stage', '=', 'Harvested')->get();
+        }
+        else {
+            $farmer_entries = Farmer::all();
+        }
+        $vegetation_maps = VegetationMap::orderBy('date', 'desc')->paginate(3);
+        return view('pages.index')
+            ->withVegetationMaps($vegetation_maps)
+            ->withFarmerEntries($farmer_entries);
     }
 
     public function updateTopBanner(Request $request){
@@ -205,6 +235,9 @@ class PagesController extends Controller
         }
         $page->planting_status_title = $request->planting_status_title;
         $page->planting_status_subtitle = $request->planting_status_subtitle;
+        $page->planting_status_map_title = $request->planting_status_map_title;
+        $page->planting_status_map_subtitle = $request->planting_status_map_subtitle;
+        $page->planting_status_map_link = $request->planting_status_map_link;
         $page->planting_status_position = $request->planting_status_position;
         if($request->planting_status_background_color_radio == 0){
             //delete previously saved background image if exists
@@ -234,6 +267,19 @@ class PagesController extends Controller
             }
             $page->planting_status_background = $imageName;
             $page->planting_status_background_type = 1;
+        }
+
+        if($request->hasFile('planting_status_map_image')){
+            if($page->planting_status_map_image != null){
+                $image_path = public_path().'/storage/page_images/'.$page->planting_status_map_image;
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $imageFile = $request->file('planting_status_map_image');
+            $imageName = uniqid().$imageFile->getClientOriginalName();
+            $imageFile->move(public_path('/storage/page_images/'), $imageName);
+            $page->planting_status_map_image = $imageName;
         }
 
         $page->save();
@@ -333,5 +379,51 @@ class PagesController extends Controller
         }
         $page->save();
         return redirect('/?edit=1')->with('success', 'News Section Updated');
+    }
+
+    public function editFarmerTableConfig(Request $request){
+        $this->validate($request, array(
+        ));
+        $page = LandingPage::first();
+        $page->first_name_access = $request->first_name_access;
+        $page->last_name_access = $request->last_name_access;
+        $page->barangay_access = $request->barangay_access;
+        $page->municipality_access = $request->municipality_access;
+        $page->rsbsa_no_access = $request->rsbsa_no_access;
+        $page->gpx_id_access = $request->gpx_id_access;
+        $page->parcel_name_access = $request->parcel_name_access;
+        $page->planted_area_access = $request->planted_area_access;
+        $page->commodity_access = $request->commodity_access;
+        $page->date_planted_access = $request->date_planted_access;
+        $page->development_stage_access = $request->development_stage_access;
+        $page->save();
+        return redirect()->back()->with('success','Farmer Table Config Updated.'); 
+    }
+
+    public function updateFarmStats(Request $request){
+        if(!$request->farm_stats_location_selector){
+            return redirect('/?edit=1')->with('error', 'No Location Selected');
+        }
+        $farm = FarmStat::find($request->farm_stats_location_selector);
+        $farm->number_of_farm_lots = $request->number_of_farm_lots;
+        $farm->plots_harvested = $request->plots_harvested;
+        $farm->plots_in_vegetative_state = $request->plots_in_vegetative_state;
+        $farm->plots_in_reproductive_state = $request->plots_in_reproductive_state;
+        if($request->hasFile('map_image')){
+            if($farm->map_image != null){
+                $image_path = public_path().'/storage/page_images/'.$farm->map_image;
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $imageFile = $request->file('map_image');
+            $imageName = uniqid().$imageFile->getClientOriginalName();
+            $imageFile->move(public_path('/storage/page_images/'), $imageName);
+            $farm->map_image = $imageName;
+        }
+        $farm->map_link = $request->map_link;
+
+        $farm->save();
+        return redirect('/?edit=1')->with('success', 'Maps Section Updated');
     }
 }

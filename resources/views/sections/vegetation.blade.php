@@ -1,10 +1,10 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
+<div class="section {{request()->edit == '1' && $user != null ? 'overlay-container' : ''}}">
     <div class="title-section">
         <h1 class="text-center">{!!isset($landing_page->vegetation_title) ? nl2br($landing_page->vegetation_title) : 'Monitoring of Farm-level Vegetation Cover'!!}</h1>
         <h5 class="text-center">
             {!!isset($landing_page->vegetation_subtitle) ? nl2br($landing_page->vegetation_subtitle) : 'Percentage of the farm area with vegetation cover and without planted crops.'!!}
         </h5>
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="hover-overlay" style="width:100%; height:0">     
                 <button type="button" class="btn btn-xs btn-primary" data-target="#editVegetationSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
             </div>
@@ -14,18 +14,13 @@
         <div class="offset-3">
 
         </div>
-        <div class="col-sm-2 text-center">
-            <select class="form-control">
-                <option>Select Date Range</option>
-              </select>
-        </div>
-        <div class="col-sm-2 text-center">
-            <select class="form-control">
+        <div class="col-sm-3 text-center">
+            <select disabled class="form-control">
                 <option>Select Province</option>
-                <option>Tarlac</option>
+                <option selected>Tarlac</option>
               </select>
         </div>
-        <div class="col-sm-2 text-center">
+        <div class="col-sm-3 text-center">
             <select class="form-control">
                 <option>Select Municipality</option>
                 <option>La Paz</option>
@@ -34,9 +29,9 @@
         </div>
     </div>
     <div class="row">
-        @foreach(App\Models\VegetationMap::all() as $vegetationMap)
+        @foreach($vegetationMaps as $vegetationMap)
             <div class="col-lg-4 col-md-12 mt-3">
-                @if(request()->edit == 1)
+                @if(request()->edit == 1 && $user != null)
                     <div class="card">
                         <a href="{{$vegetationMap->link}}" target="_blank" style="text-decorations:none; color:inherit">
                         <img class="card-img-top" src="/storage/page_images/{{$vegetationMap->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
@@ -45,24 +40,48 @@
                             <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$vegetationMap->title}}</b></h5>
                             <p class="card-text">
                                 {{$vegetationMap->description}}
+                                <br>
+                                <small class="card-text">
+                                    {{$vegetationMap->date}}
+                                </small>
                             </p>
-                            @if(request()->edit == 1)
+                            @if(request()->edit == 1 && $user != null)
                                 <button type="button" data-toggle="modal" data-target="#editVegetationMapModal-{{$vegetationMap->id}}" class="btn btn-dark">Edit</button>
                                 <button type="button" data-toggle="modal" data-target="#deleteVegetationMapModal-{{$vegetationMap->id}}" class="btn btn-dark">Delete</button>
                             @endif
                         </div>
                     </div>
                 @else
-                    <img alt="{{$vegetationMap->title}}" src="/storage/page_images/{{$vegetationMap->thumbnail}}" style="width:100%">
+                    <div class="card">
+                        <a href="/storage/page_images/{{$vegetationMap->thumbnail}}" target="_blank" style="text-decorations:none; color:inherit">
+                        <img class="card-img-top" src="/storage/page_images/{{$vegetationMap->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
+                        </a>
+                        <div class="card-body pl-3 pr-3">
+                            <a href="/storage/page_images/{{$vegetationMap->thumbnail}}" target="_blank" style="text-decorations:none; color:inherit">
+                                <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$vegetationMap->title}}</b></h5>
+                            </a>
+                            <p class="card-text">
+                                {{$vegetationMap->description}} <br>
+                                <small>{{$vegetationMap->date}}</small>
+                            </p>
+                        </div>
+                    </div>
                 @endif
             </div>
         @endforeach
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="col-lg-4" style="margin-top: 25px !important;">
                 <button type="button" style="height:311px;width:100%" data-toggle="modal" data-target="#createVegetationMapModal" class="btn btn-primary">Add a map<br><i class="fas fa-plus"></i></button>
             </div>
         @endif
     </div>
+    <nav style="padding-top: 45px">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                {{$vegetationMaps->appends(request()->input())->fragment('vegetation-maps-anchor')->links('pagination::bootstrap-4')}}
+            </li>
+        </ul>
+    </nav> 
 </div>
 
 <div class="modal fade" id="editVegetationSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

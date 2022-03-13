@@ -1,10 +1,10 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
+<div class="section {{request()->edit == '1' && $user != null ? 'overlay-container' : ''}}">
     <div class="title-section">
         <h1 class="text-center" style="color:white">{!!isset($landing_page->maps_title) ? nl2br($landing_page->maps_title) : 'Disaster Risk Reduction and Management Maps'!!}</h1>
         <h5 class="text-center" style="color:white">
             {!!isset($landing_page->maps_title) ? nl2br($landing_page->maps_subtitle) : 'Damage assessment tools to mitigate the impact of disasters'!!}
         </h5>
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="hover-overlay" style="width:100%; height:0">    
                 <button type="button" class="btn btn-xs btn-primary" data-target="#editMapsSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
             </div>
@@ -24,7 +24,7 @@
                             <p class="card-text">
                                 {{$map->description}}
                             </p>
-                            @if(request()->edit == 1)
+                            @if(request()->edit == 1 && $user != null)
                                 <button type="button" data-toggle="modal" data-target="#editMapModal-{{$map->id}}" class="btn btn-dark">Edit</button>
                                 <button type="button" data-toggle="modal" data-target="#deleteMapModal-{{$map->id}}" class="btn btn-dark">Delete</button>
                             @endif
@@ -32,7 +32,7 @@
                     </div>
             </div>
         @endforeach
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="col-lg-4" style="margin-top: 25px !important;">
                 <button type="button" style="height:311px;width:100%" data-toggle="modal" data-target="#createMapModal" class="btn btn-primary">Add a map<br><i class="fas fa-plus"></i></button>
             </div>

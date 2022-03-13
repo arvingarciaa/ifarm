@@ -54,5 +54,21 @@ class UpdateWeather extends Command
             ['source' => 'openweathermap'],
             ['data' => json_encode($json_openweather)]
         );
+
+        $url_openweather_la_paz = file_get_contents("http://api.openweathermap.org/data/2.5/onecall?lat=15.441130&lon=120.729580&units=metric&appid=8da14edfb48e4bd083619be0df91f4a3");
+        $json_openweather_la_paz = json_decode($url_openweather_la_paz, true);
+
+        $openweather_la_paz_db = WeatherData::updateOrCreate(
+            ['source' => 'openweathermap_la_paz'],
+            ['data' => json_encode($json_openweather_la_paz)]
+        );
+
+        $url_openweather_concepcion = file_get_contents("http://api.openweathermap.org/data/2.5/onecall?lat=15.323900&lon=120.655460&units=metric&appid=8da14edfb48e4bd083619be0df91f4a3");
+        $json_openweather_concepcion = json_decode($url_openweather_concepcion, true);
+
+        $openweather_concepcion_db = WeatherData::updateOrCreate(
+            ['source' => 'openweathermap_concepcion'],
+            ['data' => json_encode($json_openweather_concepcion)]
+        );
     }
 }

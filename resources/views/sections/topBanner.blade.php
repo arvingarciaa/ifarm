@@ -1,6 +1,6 @@
-<div class="{{request()->edit == '1' ? 'overlay-container' : ''}} fill-container">
+<div class="{{request()->edit == '1' && $user != null ? 'overlay-container' : ''}} fill-container">
     <img alt="iFarm Banner" src="/storage/page_images/{{isset($landing_page->top_banner) ? $landing_page->top_banner : 'ifarm_v3.png'}}" style="width:100%">
-    @if(request()->edit == 1)
+    @if(request()->edit == 1 && $user != null)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editTopBannerSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
         </div>

@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    @if(request()->edit == 1)
+    @if(request()->edit == 1 && $user != null)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editCroppingAdvisoriesSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
         </div>

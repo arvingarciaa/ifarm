@@ -1,10 +1,10 @@
-<div class="section {{request()->edit == '1' ? 'overlay-container' : ''}}">
+<div class="section {{request()->edit == '1' && $user != null ? 'overlay-container' : ''}}">
     <div class="title-section">
         <h1 class="text-center">{!!isset($landing_page->news_title) ? nl2br($landing_page->news_title) : 'News and Information from Central Luzon'!!}</h1>
         <h5 class="text-center">
             {!!isset($landing_page->news_subtitle) ? nl2br($landing_page->news_subtitle) : 'Latest news and information on agricultural activities and initiatives from Central Luzon.'!!}
         </h5>
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="hover-overlay" style="width:100%; height:0">    
                 <button type="button" class="btn btn-xs btn-primary" data-target="#editNewsSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
             </div>
@@ -22,7 +22,7 @@
                         </p>
                         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#viewNewsModal-{{$news_entry->id}}">Read</button>
                         
-                        @if(request()->edit == 1)
+                        @if(request()->edit == 1 && $user != null)
                             <button type="button" data-toggle="modal" data-target="#editNewsModal-{{$news_entry->id}}" class="btn btn-dark">Edit</button>
                             <button type="button" data-toggle="modal" data-target="#deleteNewsModal-{{$news_entry->id}}" class="btn btn-dark">Delete</button>
                         @endif
@@ -30,7 +30,7 @@
                 </div>
             </div>
         @endforeach
-        @if(request()->edit == 1)
+        @if(request()->edit == 1 && $user != null)
             <div class="col-lg-3" style="margin-top: 25px !important;">
                 <button type="button" style="height:311px;width:100%" data-toggle="modal" data-target="#createNewsModal" class="btn btn-primary">Add a unit<br><i class="fas fa-plus"></i></button>
             </div>

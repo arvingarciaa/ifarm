@@ -24,12 +24,17 @@ Route::post('/update/vegetation', 'PagesController@updateVegetationSection')->na
 Route::post('/update/plantingStatus', 'PagesController@updatePlantingStatusSection')->name('updatePlantingStatusSection');
 Route::post('/update/maps', 'PagesController@updateMapsSection')->name('updateMapsSection');
 Route::post('/update/news', 'PagesController@updateNewsSection')->name('updateNewsSection');
+Route::post('/update/editFarmerTableConfig', 'PagesController@editFarmerTableConfig')->name('editFarmerTableConfig');
+Route::post('/update/updateFarmStats', 'PagesController@updateFarmStats')->name('updateFarmStats');
 
 
 //News Controller
 Route::post('/addNews', 'NewsController@addNews')->name('addNews');
 Route::post('/{id}/editNews', 'NewsController@editNews')->name('editNews');
 Route::delete('/{id}/deleteNews', 'NewsController@deleteNews')->name('deleteNews');
+
+//Farm Stat Controller
+Route::post('/editFarmStat', 'FarmStatsController@editFarmStat')->name('editFarmStat');
 
 //Maps Controller
 Route::post('/addMap', 'MapsController@addMap')->name('addMap');
@@ -41,5 +46,10 @@ Route::post('/addVegetationMap', 'VegetationMapsController@addVegetationMap')->n
 Route::post('/{id}/editVegetationMap', 'VegetationMapsController@editVegetationMap')->name('editVegetationMap');
 Route::delete('/{id}/deleteVegetationMap', 'VegetationMapsController@deleteVegetationMap')->name('deleteVegetationMap');
 Auth::routes();
+
+//Farmers Controller
+Route::post('/addFarmer', 'FarmersController@addFarmer')->name('addFarmer');
+Route::post('/{id}/editFarmer', 'FarmersController@editFarmer')->name('editFarmer');
+Route::delete('/{id}/deleteFarmer', 'FarmersController@deleteFarmer')->name('deleteFarmer');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
