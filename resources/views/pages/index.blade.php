@@ -79,7 +79,7 @@
 </div>
 
 <footer class="">
-    <img alt="iFarm Footer" src="/storage/page_images/ifarm_footer.png" style="width:100%">
+    <img alt="iFarm Footer" src="/storage/website_assets/ifarm_footer.png" style="width:100%">
 </footer>
 <style>
     .parallax-section{

@@ -106,30 +106,30 @@
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Min</th>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Max</th>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/page_images/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Mean</th>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_5.png" style="width:15px">33 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_2.png" style="width:15px">14 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_1.png" style="width:15px">11 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_4.png" style="width:15px">27 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_6.png" style="width:15px">58 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/page_images/rainfall_6.png" style="width:15px">58 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">33 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_2.png" style="width:15px">14 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">11 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">27 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">58 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">58 mm</td>
                             </tr>
                         </table>
                     </div>
