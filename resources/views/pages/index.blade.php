@@ -56,7 +56,7 @@
 </section>
 <hr class="my-0">
 <a id="planting-status-anchor" style=";position:relative"></a>
-<section class="parallax-section" style="{{$landing_page->planting_status_background_type == 0 ? 'background:'.$landing_page->planting_status_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->planting_status_background.'")'}}">
+<section class="parallax-section" style="{{$user==null ? 'display:none;' : ''}}{{$landing_page->planting_status_background_type == 0 ? 'background:'.$landing_page->planting_status_background. '!important;' : 'background-image: url("/storage/page_images/'.$landing_page->planting_status_background.'")'}}">
     <div class="container-fluid col-sm-10 section-padding">
         @include('sections.plantingStatus')
     </div>
@@ -74,7 +74,7 @@
     </div>
 </section>
 <hr class="my-0">
-<div class="container-fluid py-5" style="background-color:#228B22 !important;">
+<div class="container-fluid py-5" style="background-color:#228B22 !important;display:none">
     @include('sections.appDownload')
 </div>
 

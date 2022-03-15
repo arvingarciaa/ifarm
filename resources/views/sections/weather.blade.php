@@ -183,7 +183,10 @@
         </div>
         <div class="col-7 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-            <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Source: PAGASA website</h6></a>   
+            <span>
+                <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Source: PAGASA website</h6></a>  
+                <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Download Rainfall Outlook</h6></a>
+            </span>    
         </div>
         <div class="expand-collapse">
             <h4 id="collapse-button" style="padding-bottom:8px">Click to see more weather data in the area<br><i class="fas fa-angle-down"></i>
