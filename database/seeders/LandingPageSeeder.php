@@ -35,6 +35,9 @@ class LandingPageSeeder extends Seeder
             'news_subtitle' => 'Latest news and information on agricultural activities and initiatives from Central Luzon.',
             'planting_status_title' => 'Farm-level Planting Status',
             'planting_status_subtitle' => 'List of farmers and farm areas with stages of planting status.',
+            'mobile_download_title' => 'iFarm Crop Monitoring App',
+            'mobile_download_subtitle' => 'Want to access the iFarm outputs on your mobile phones? Download our mobile application now!',
+            'mobile_download_note' => '*Please note that the application is still on testing phase so you may need to download the latest version once a month'
         ]);
     }
 }

@@ -13,23 +13,23 @@
     <div class="row">
         @foreach(App\Models\Map::all() as $map)
             <div class="col-lg-4">
-                    <div class="card">
+                <div class="card">
+                    <a href="{{$map->link}}" target="_blank" style="text-decorations:none; color:inherit">
+                    <img class="card-img-top" src="/storage/page_images/{{$map->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
+                    </a>
+                    <div class="card-body pl-3 pr-3">
                         <a href="{{$map->link}}" target="_blank" style="text-decorations:none; color:inherit">
-                        <img class="card-img-top" src="/storage/page_images/{{$map->thumbnail}}" alt="Card image cap" height="320px" style="overflow: hidden;object-fit: cover;">
+                            <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$map->title}}</b></h5>
                         </a>
-                        <div class="card-body pl-3 pr-3">
-                            <a href="{{$map->link}}" target="_blank" style="text-decorations:none; color:inherit">
-                                <h5 class="card-title line-clamp" style="text-transform: uppercase"><b>{{$map->title}}</b></h5>
-                            </a>
-                            <p class="card-text">
-                                {{$map->description}}
-                            </p>
-                            @if(request()->edit == 1 && $user != null)
-                                <button type="button" data-toggle="modal" data-target="#editMapModal-{{$map->id}}" class="btn btn-dark">Edit</button>
-                                <button type="button" data-toggle="modal" data-target="#deleteMapModal-{{$map->id}}" class="btn btn-dark">Delete</button>
-                            @endif
-                        </div>
+                        <p class="card-text">
+                            {{$map->description}}
+                        </p>
+                        @if(request()->edit == 1 && $user != null)
+                            <button type="button" data-toggle="modal" data-target="#editMapModal-{{$map->id}}" class="btn btn-dark">Edit</button>
+                            <button type="button" data-toggle="modal" data-target="#deleteMapModal-{{$map->id}}" class="btn btn-dark">Delete</button>
+                        @endif
                     </div>
+                </div>
             </div>
         @endforeach
         @if(request()->edit == 1 && $user != null)

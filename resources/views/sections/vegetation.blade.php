@@ -20,12 +20,14 @@
                 <option selected>Tarlac</option>
               </select>
         </div>
-        <div class="col-sm-3 text-center">
-            <select class="form-control">
-                <option>Select Municipality</option>
-                <option>La Paz</option>
-                <option>Concepcion</option>
-              </select>
+        <div class="col-sm-3">
+            <button class="btn btn-outline-secondary form-control btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret">{!!request()->vegetation ? '<b>'.ucwords(str_replace("_", " ", request()->vegetation)).'</b>' : 'Select Municipality'!!}</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ route('getLandingPage', ['vegetation' => 'la_paz'])}}#vegetation-maps-anchor">La Paz</a>
+                <a class="dropdown-item" href="{{ route('getLandingPage', ['vegetation' => 'concepcion'])}}#vegetation-maps-anchor">Concepcion</a>
+            </div>
         </div>
     </div>
     <div class="row">

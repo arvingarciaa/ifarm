@@ -404,26 +404,97 @@ class PagesController extends Controller
         if(!$request->farm_stats_location_selector){
             return redirect('/?edit=1')->with('error', 'No Location Selected');
         }
-        $farm = FarmStat::find($request->farm_stats_location_selector);
-        $farm->number_of_farm_lots = $request->number_of_farm_lots;
-        $farm->plots_harvested = $request->plots_harvested;
-        $farm->plots_in_vegetative_state = $request->plots_in_vegetative_state;
-        $farm->plots_in_reproductive_state = $request->plots_in_reproductive_state;
-        if($request->hasFile('map_image')){
-            if($farm->map_image != null){
-                $image_path = public_path().'/storage/page_images/'.$farm->map_image;
+        $farm_1 = FarmStat::find(1);
+        $farm_1->quick_farm_stats_date = $request->quick_farm_stats_date_1;
+        $farm_1->planting_status_image_date	= $request->planting_status_image_date_1;
+        $farm_1->number_of_farm_lots = $request->number_of_farm_lots_1;
+        $farm_1->plots_harvested = $request->plots_harvested_1;
+        $farm_1->plots_in_vegetative_state = $request->plots_in_vegetative_state_1;
+        $farm_1->plots_in_reproductive_state = $request->plots_in_reproductive_state_1;
+        if($request->hasFile('map_image_1')){
+            if($farm_1->map_image != null){
+                $image_path = public_path().'/storage/page_images/'.$farm_1->map_image;
                 if(file_exists($image_path)){
                     unlink($image_path);
                 }
             }
-            $imageFile = $request->file('map_image');
+            $imageFile = $request->file('map_image_1');
             $imageName = uniqid().$imageFile->getClientOriginalName();
             $imageFile->move(public_path('/storage/page_images/'), $imageName);
-            $farm->map_image = $imageName;
+            $farm_1->map_image = $imageName;
         }
-        $farm->map_link = $request->map_link;
+        $farm_1->map_link = $request->map_link_1;
+        $farm_1->save();
 
-        $farm->save();
-        return redirect('/?edit=1')->with('success', 'Maps Section Updated');
+        $farm_2 = FarmStat::find(2);
+        $farm_1->quick_farm_stats_date = $request->quick_farm_stats_date_2;
+        $farm_1->planting_status_image_date	= $request->planting_status_image_date_2;
+        $farm_2->number_of_farm_lots = $request->number_of_farm_lots_2;
+        $farm_2->plots_harvested = $request->plots_harvested_2;
+        $farm_2->plots_in_vegetative_state = $request->plots_in_vegetative_state_2;
+        $farm_2->plots_in_reproductive_state = $request->plots_in_reproductive_state_2;
+        if($request->hasFile('map_image_2')){
+            if($farm_2->map_image != null){
+                $image_path = public_path().'/storage/page_images/'.$farm_2->map_image;
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $imageFile = $request->file('map_image_2');
+            $imageName = uniqid().$imageFile->getClientOriginalName();
+            $imageFile->move(public_path('/storage/page_images/'), $imageName);
+            $farm_2->map_image = $imageName;
+        }
+        $farm_2->map_link = $request->map_link_2;
+        $farm_2->save();
+        return redirect('/?edit=1')->with('success', 'Farm Stats Updated');
+    }
+
+    public function editRainfallOutlook(Request $request){
+        $page = LandingPage::first();
+        $page->outlook_month = $request->date_1;
+        $page->min_1 = $request->min_1;
+        $page->min_2 = $request->min_2;
+        $page->min_3 = $request->min_3;
+        $page->min_4 = $request->min_4;
+        $page->min_5 = $request->min_5;
+        $page->min_6 = $request->min_6;
+        $page->max_1 = $request->max_1;
+        $page->max_2 = $request->max_2;
+        $page->max_3 = $request->max_3;
+        $page->max_4 = $request->max_4;
+        $page->max_5 = $request->max_5;
+        $page->max_6 = $request->max_6;
+        $page->mean_1 = $request->mean_1;
+        $page->mean_2 = $request->mean_2;
+        $page->mean_3 = $request->mean_3;
+        $page->mean_4 = $request->mean_4;
+        $page->mean_5 = $request->mean_5;
+        $page->mean_6 = $request->mean_6;
+        $page->save();
+        return redirect()->back()->with('success','Rainfall Outlook Updated.'); 
+    }
+
+    public function updateMobileDownloadSection(Request $request){
+        $page = LandingPage::first();
+        $page->mobile_download_title = $request->mobile_download_title;
+        $page->mobile_download_subtitle = $request->mobile_download_subtitle;
+        $page->mobile_download_note = $request->mobile_download_note;
+        if($request->hasFile('mobile_download_image')){
+            if($page->mobile_download_image != null){
+                $image_path = public_path().'/storage/page_images/'.$page->mobile_download_image;
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $imageFile = $request->file('mobile_download_image');
+            $imageName = uniqid().$imageFile->getClientOriginalName();
+            $imageFile->move(public_path('/storage/page_images/'), $imageName);
+            $page->mobile_download_image = $imageName;
+        }
+        $page->mobile_download_link = $request->mobile_download_link;
+
+        $page->save();
+        return redirect('/?edit=1')->with('success', 'Mobile App Section Updated');
     }
 }

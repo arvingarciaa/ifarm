@@ -147,6 +147,8 @@
                     {{Form::label('planting_status_visibility', 'Enable Section?', ['class' => 'col-form-label required'])}}
                     <input type="checkbox" checked data-toggle="toggle">
                 </div>
+                <hr class="my-0 my-3">
+                <h4>Farm-level Planting Status Table Section</h4>
                 <div class="form-group">
                     {{Form::label('planting_status_title', 'Planting Status Section Title', ['class' => 'col-form-label required'])}}
                     {{Form::text('planting_status_title', $landing_page->planting_status_title, ['class' => 'form-control'])}}
@@ -184,6 +186,7 @@
                     {{ Form::file('planting_status_section_background_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
                 </div>
                 <hr class="my-0 my-3">
+                <h4>Farm-level NDVI Map Section</h4>
                 <div class="form-group">
                     {{Form::label('planting_status_map_title', 'Planting Status Map Title', ['class' => 'col-form-label required'])}}
                     {{Form::text('planting_status_map_title', $landing_page->planting_status_map_title, ['class' => 'form-control'])}}

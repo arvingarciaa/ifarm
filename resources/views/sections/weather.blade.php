@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-12">
                     <h5 class="text-center mt-4"><b>
-                        Farm-level Planting Status as of March 11, 2022</b>
+                        Farm-level Planting Status as of {{isset($farm_stats_map->planting_status_image_date) ? $farm_stats_map->planting_status_image_date->format('M Y') : '--'}}</b>
                     </h5>
                     <a href="{{$farm_stats_map->map_link}}" target="_blank" class="text-center">
                         <img alt="iFarm Banner" src="storage/page_images/{!!$farm_stats_map->map_image!!}" style="width:100%;max-width:700px;max-height:480px" class="mb-1">
@@ -91,55 +91,55 @@
                     @endforeach
                     <hr class="rounded">
                     <h5 class="text-center"><b>
-                        Rainfall Outlook for Tarlac (December 2021 to May 2022)</b>
+                        Rainfall Outlook for Tarlac ({{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('M Y') : '--'}} to {{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(5)->format('M Y') : '--'}})</b>
                     </h5>
                     <div class="row">
                         <table class="col-12 text-center forecast-table">
                             <tr style="font-size:90%">
                                 <th style="width:14%">Month</th>
-                                <td style="width:14%">Dec 2021</td>
-                                <td style="width:14%">Jan 2021</td>
-                                <td style="width:14%">Feb 2022</td>
-                                <td style="width:14%">Mar 2022</td>
-                                <td style="width:14%">Apr 2022</td>
-                                <td style="width:14%">May 2022</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('M Y') : '--'}}</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(1)->format('M Y') : '--'}}</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(2)->format('M Y') : '--'}}</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(3)->format('M Y') : '--'}}</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(4)->format('M Y') : '--'}}</td>
+                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(5)->format('M Y') : '--'}}</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Min</th>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_1) ? $landing_page->min_1 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_2) ? $landing_page->min_2 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->min_3) ? $landing_page->min_3 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_4) ? $landing_page->min_4 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->min_5) ? $landing_page->min_5 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_6) ? $landing_page->min_6 : '--'}} mm</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Max</th>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">-- mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_1) ? $landing_page->max_1 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_2) ? $landing_page->max_2 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->max_3) ? $landing_page->max_3 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_4) ? $landing_page->max_4 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_5) ? $landing_page->max_5 : '--'}} mm</td>
+                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_6) ? $landing_page->max_6 : '--'}} mm</td>
                             </tr>
                             <tr style="font-size:90%">
                                 <th style="width:14%">Mean</th>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">33 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_2.png" style="width:15px">14 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">11 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">27 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">58 mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">58 mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->mean_1) ? $landing_page->mean_1 : '--'}} mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_2.png" style="width:15px">{{isset($landing_page->mean_2) ? $landing_page->mean_2 : '--'}} mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->mean_3) ? $landing_page->mean_3 : '--'}} mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->mean_4) ? $landing_page->mean_4 : '--'}} mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_5) ? $landing_page->mean_5 : '--'}} mm</td>
+                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_6) ? $landing_page->mean_6 : '--'}} mm</td>
                             </tr>
                         </table>
                     </div>
                     <hr class="rounded">
-                    <h5 class="text-center"><b>
-                        Quick farm stats on the area as of December 3, 2021</b>
-                     </h5>
-
                     @foreach(App\Models\FarmStat::all() as $farm_stats_data)
                     <div class="row stats-all" style="display:{{$loop->first ? 'flex' : 'none'}}" id="stat-{{$farm_stats_data->id}}">
+
+                        <h5 class="text-center col-12"><b>
+                            Quick farm stats on the area as of {{isset($farm_stats_data->quick_farm_stats_date) ? $farm_stats_data->quick_farm_stats_date->format('M Y') : '--'}}</b>
+                        </h5>
                         <div class="offset-1"></div>
                         <div class="col-5">
                             <h5>Number of Farm Lots</h5>
@@ -350,6 +350,7 @@
     @if(request()->edit == 1 && $user != null)
         <div class="hover-overlay" style="width:100%">    
             <button type="button" class="btn btn-xs btn-primary" data-target="#editWeatherSectionModal" data-toggle="modal"><i class="fas fa-cog"></i> Configure Section</button>  
+            <button type="button" class="btn btn-xs btn-primary" data-target="#editRainfallOutlookModal" data-toggle="modal"><i class="fas fa-edit"></i> Edit Rainfall Outlook</button>      
             <button type="button" class="btn btn-xs btn-primary" data-target="#editFarmStatsModal" data-toggle="modal"><i class="fas fa-edit"></i> Edit Farm Stats</button>       
         </div>
     @endif
@@ -417,7 +418,7 @@
                     <h2 class="mt-2">Edit {{$farm_stats_location->location}}</h2>
                     <div class="row">
                         <div class="form-group col-12">
-                            {{Form::label('map_image', 'Change Interactive Map', ['class' => 'col-form-label required'])}}
+                            {{Form::label('map_image'.$farm_stats_location->id, 'Change Interactive Map', ['class' => 'col-form-label required'])}}
                             <br>
                             @if($farm_stats_location->map_image!=null)
                                 <img src="/storage/page_images/{{$farm_stats_location->map_image}}" class="card-img-top" style="object-fit: cover;overflow:hidden;width:100%;border:1px solid rgba(100,100,100,0.25)" >
@@ -428,57 +429,46 @@
                                     </span>
                                 </div>
                             @endif
-                            {{ Form::file('map_image', ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                            {{ Form::file('map_image_'.$farm_stats_location->id, ['class' => 'form-control mt-2 mb-3 pt-1'])}}
+                        </div>
+
+                        <div class="form-group col-6">  
+                                {{Form::label('planting_status_image_date_'.$farm_stats_location->id, 'Planting Status Image Date', ['class' => 'col-form-label required'])}}
+                                <div class="input-append date" id="planting_status_image_date" data-date-format="mm-yyyy">
+                                    <input class="form-control" type="text" placeholder="Add month" name="planting_status_image_date_{{$farm_stats_location->id}}" value="{{isset($landing_page->planting_status_image_date) ? $landing_page->planting_status_image_date->format('Y-M') : ''}}">    
+                                    <span class="add-on"><i class="icon-th"></i></span>      
+                                </div>    
                         </div>
                         <div class="form-group col-12">
-                            {{Form::label('map_link', 'Link to Map', ['class' => 'col-form-label required'])}}
-                            {{Form::text('map_link', $farm_stats_location->map_link, ['class' => 'form-control'])}}
+                            {{Form::label('map_link_'.$farm_stats_location->id, 'Link to Map', ['class' => 'col-form-label required'])}}
+                            {{Form::text('map_link_'.$farm_stats_location->id, $farm_stats_location->map_link, ['class' => 'form-control'])}}
                         </div>
                     </div>
-                        <hr class="my-0">
-                        <h4 class="mt-2">Rainfall Outlook</h4>
-                        <div class="row">   
-                            <div class="form-group col-6">
-                                {{Form::label('date_1', 'Date 1', ['class' => 'col-form-label required'])}}
-                                <div class="input-append date" id="date_1" data-date-format="mm-yyyy">
-                                    <input class="form-control" type="text" placeholder="Add first month" name="date_1" >    
-                                    <span class="add-on"><i class="icon-th"></i></span>      
-                                </div>     
-                            </div>
-                            <div class="form-group col-6">
-                                {{Form::label('outlook_1', 'Outlook 1', ['class' => 'col-form-label required'])}}
-                                {{Form::text('outlook_1', $farm_stats_location->outlook_1, ['class' => 'form-control', 'placeholder' => 'ex. 10mm'])}}
-                            </div>
-                            <div class="form-group col-6">
-                                {{Form::label('date_2', 'Date 2', ['class' => 'col-form-label required'])}}
-                                <div class="input-append date" id="date_2" data-date-format="mm-yyyy">
-                                    <input class="form-control" type="text" disabled readonly="readonly" name="date_2" >    
-                                    <span class="add-on"><i class="icon-th"></i></span>      
-                                </div>   
-                            </div>
-                            <div class="form-group col-6">
-                                {{Form::label('outlook_2', 'Outlook 2', ['class' => 'col-form-label required'])}}
-                                {{Form::text('outlook_2', $farm_stats_location->outlook_2, ['class' => 'form-control', 'placeholder' => 'ex. 10mm'])}}
-                            </div>
-                        </div>
-                        <hr class="my-0">
-                        <h4 class="mt-2">Farm Stats</h4>
+                    <hr class="my-0 mt-3">
+                    <h4 class="mt-2">Farm Stats</h4>
                     <div class="row">
-                        <div class="form-group col-6">
-                            {{Form::label('number_of_farm_lots', 'Number of Farm Lots', ['class' => 'col-form-label required'])}}
-                            {{Form::text('number_of_farm_lots', $farm_stats_location->number_of_farm_lots, ['class' => 'form-control'])}}
+                        <div class="col-6">
+                            {{Form::label('quick_farm_stats_date', 'Farm Stats Date', ['class' => 'col-form-label required'])}}
+                            <div class="input-append date" id="quick_farm_stats_date" data-date-format="mm-yyyy">
+                                <input class="form-control" type="text" placeholder="Add month" name="quick_farm_stats_date_{{$farm_stats_location->id}}" value="{{isset($landing_page->quick_farm_stats_date) ? $landing_page->quick_farm_stats_date->format('Y-M') : ''}}">    
+                                <span class="add-on"><i class="icon-th"></i></span>      
+                            </div>     
                         </div>
                         <div class="form-group col-6">
-                            {{Form::label('plots_harvested', 'Percent of Plots Harvested', ['class' => 'col-form-label required'])}}
-                            {{Form::text('plots_harvested', $farm_stats_location->plots_harvested, ['class' => 'form-control'])}}
+                            {{Form::label('number_of_farm_lots_'.$farm_stats_location->id, 'Number of Farm Lots', ['class' => 'col-form-label required'])}}
+                            {{Form::text('number_of_farm_lots_'.$farm_stats_location->id, $farm_stats_location->number_of_farm_lots, ['class' => 'form-control'])}}
                         </div>
                         <div class="form-group col-6">
-                            {{Form::label('plots_in_vegetative_state', 'Percent of Plots in Vegetative State', ['class' => 'col-form-label required'])}}
-                            {{Form::text('plots_in_vegetative_state', $farm_stats_location->plots_in_vegetative_state, ['class' => 'form-control'])}}
+                            {{Form::label('plots_harvested_'.$farm_stats_location->id, 'Percent of Plots Harvested', ['class' => 'col-form-label required'])}}
+                            {{Form::text('plots_harvested_'.$farm_stats_location->id, $farm_stats_location->plots_harvested, ['class' => 'form-control'])}}
                         </div>
                         <div class="form-group col-6">
-                            {{Form::label('plots_in_reproductive_state', 'Percent of Plots in Reproductive State', ['class' => 'col-form-label required'])}}
-                            {{Form::text('plots_in_reproductive_state', $farm_stats_location->plots_in_reproductive_state, ['class' => 'form-control'])}}
+                            {{Form::label('plots_in_vegetative_state_'.$farm_stats_location->id, 'Percent of Plots in Vegetative State', ['class' => 'col-form-label required'])}}
+                            {{Form::text('plots_in_vegetative_state_'.$farm_stats_location->id, $farm_stats_location->plots_in_vegetative_state, ['class' => 'form-control'])}}
+                        </div>
+                        <div class="form-group col-6">
+                            {{Form::label('plots_in_reproductive_state_'.$farm_stats_location->id, 'Percent of Plots in Reproductive State', ['class' => 'col-form-label required'])}}
+                            {{Form::text('plots_in_reproductive_state_'.$farm_stats_location->id, $farm_stats_location->plots_in_reproductive_state, ['class' => 'form-control'])}}
                         </div>
                     </div>
                 </div>
@@ -493,23 +483,143 @@
     </div>
 </div>
 
+<div class="modal fade" id="editRainfallOutlookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Edit Rainfall Outlook</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{ Form::open(['action' => ['PagesController@editRainfallOutlook'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+            <div class="modal-body">
+                <h4 class="mt-2">Rainfall Outlook</h4>
+                <div class="row form-group">   
+                    <div class="col-6">
+                        {{Form::label('date_1', 'Date for first month', ['class' => 'col-form-label required'])}}
+                        <div class="input-append date" id="date_1" data-date-format="mm-yyyy">
+                            <input class="form-control" type="text" placeholder="Add first month" name="date_1" value="{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('Y-M') : ''}}">    
+                            <span class="add-on"><i class="icon-th"></i></span>      
+                        </div>     
+                    </div>
+                </div>
+                <div class="row">
+                    <h5 class="col-12 mb-0">Month 1</h5>
+                    <div class="col-4">
+                        {{Form::label('min_1', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_1', $landing_page->min_1, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_1', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_1', $landing_page->max_1, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_1', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_1', $landing_page->mean_1, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 2</h5>
+                    <div class="col-4">
+                        {{Form::label('min_2', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_2', $landing_page->min_2, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_2', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_2', $landing_page->max_2, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_2', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_2', $landing_page->mean_2, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 3</h5>
+                    <div class="col-4">
+                        {{Form::label('min_3', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_3', $landing_page->min_3, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_3', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_3', $landing_page->max_3, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_3', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_3', $landing_page->mean_3, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 4</h5>
+                    <div class="col-4">
+                        {{Form::label('min_4', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_4', $landing_page->min_4, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_4', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_4', $landing_page->max_4, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_4', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_4', $landing_page->mean_4, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 5</h5>
+                    <div class="col-4">
+                        {{Form::label('min_5', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_5', $landing_page->min_5, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_5', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_5', $landing_page->max_5, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_5', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_5', $landing_page->mean_5, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 6</h5>
+                    <div class="col-4">
+                        {{Form::label('min_6', 'Min', ['class' => 'col-form-label required'])}}
+                        {{Form::text('min_6', $landing_page->min_6, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('max_6', 'Max', ['class' => 'col-form-label required'])}}
+                        {{Form::text('max_6', $landing_page->max_6, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4">
+                        {{Form::label('mean_6', 'Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_6', $landing_page->mean_6, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
+            </div>
+            {{ Form::close() }}
+        </div>
+    </div>
+</div>
+
 <script>
     $("#date_1").datepicker( {
-        format: "mm-yyyy",
+        format: "yyyy-M",
         startView: "months", 
         minViewMode: "months",
         autoclose: true,
-        onSelect: function () {
-            $('#date_2').val(new Date());
-        }
     });
+    $("#date_1").blur(function(e) { $(this).datepicker("hide"); });
 
-    $('#date_2').datepicker({
-        format: "mm-yyyy",
+
+    $("#planting_status_image_date").datepicker( {
+        format: "yyyy-M",
         startView: "months", 
         minViewMode: "months",
         autoclose: true,
     });
+    $("#planting_status_image_date").blur(function(e) { $(this).datepicker("hide"); });
+
+    $("#quick_farm_stats_date").datepicker( {
+        format: "yyyy-M",
+        startView: "months", 
+        minViewMode: "months",
+        autoclose: true,
+    });
+    $("#quick_farm_stats_date").blur(function(e) { $(this).datepicker("hide"); });
+
     $( "#editFarmStatsModal" ).scroll(function() {
         $('.date').datepicker('place')
     });
@@ -595,7 +705,7 @@
             }
             document.getElementById('location-'+e.target.value).style.display = 'initial';
         });
-
+        
         document.getElementById('stats_site_selector').addEventListener("change", function (e) {
             var divsToHideSite = document.getElementsByClassName("sites-all"); //divsToHide is an array
             for(var i = 0; i < divsToHideSite.length; i++){

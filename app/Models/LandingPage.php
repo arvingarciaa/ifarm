@@ -9,4 +9,6 @@ class LandingPage extends Model
 {
     use HasFactory;
     protected $table = 'landing_page';
+    protected $dates = ['outlook_month'];
+    
 }

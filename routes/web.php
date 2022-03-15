@@ -26,6 +26,8 @@ Route::post('/update/maps', 'PagesController@updateMapsSection')->name('updateMa
 Route::post('/update/news', 'PagesController@updateNewsSection')->name('updateNewsSection');
 Route::post('/update/editFarmerTableConfig', 'PagesController@editFarmerTableConfig')->name('editFarmerTableConfig');
 Route::post('/update/updateFarmStats', 'PagesController@updateFarmStats')->name('updateFarmStats');
+Route::post('/update/editRainfallOutlook', 'PagesController@editRainfallOutlook')->name('editRainfallOutlook');
+Route::post('/update/updateMobileDownloadSection', 'PagesController@updateMobileDownloadSection')->name('updateMobileDownloadSection');
 
 
 //News Controller
@@ -34,7 +36,7 @@ Route::post('/{id}/editNews', 'NewsController@editNews')->name('editNews');
 Route::delete('/{id}/deleteNews', 'NewsController@deleteNews')->name('deleteNews');
 
 //Farm Stat Controller
-Route::post('/editFarmStat', 'FarmStatsController@editFarmStat')->name('editFarmStat');
+//Route::post('/editFarmStat', 'FarmStatsController@editFarmStat')->name('editFarmStat');
 
 //Maps Controller
 Route::post('/addMap', 'MapsController@addMap')->name('addMap');

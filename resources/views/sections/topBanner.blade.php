@@ -20,7 +20,7 @@
             {{ Form::open(['action' => ['PagesController@updateTopBanner'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
             <div class="modal-body">
                 <div class="form-group">
-                    {{Form::label('latest_aanr_subheader', 'Enable Section?', ['class' => 'col-form-label required'])}}
+                    {{Form::label('top_banner_visibility', 'Enable Section?', ['class' => 'col-form-label required'])}}
                     <input type="checkbox" checked data-toggle="toggle">
                 </div>
                 <div class="form-group">
