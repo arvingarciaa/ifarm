@@ -20,7 +20,7 @@
     @endif
 
     <h5 class="mt-4" style="text-align:justify;margin: 0 auto;width: 85%;">
-        <b>Advisory:</b> {!!isset($landing_page->bulletin_advisory) ? nl2br($landing_page->bulletin_advisory) : 'In Tarlac (Region III), decline in rainfall is expected in December. Corn planting should be done by January at latest.   Corn harvesting should be done by April since rice crop will be planted by May. We expect the usual good corn-after-rice production in the 1st and 2nd quarter of the year.'!!}
+        <b>Advisory:</b> {!!isset($landing_page->bulletin_advisory) ? nl2br($landing_page->bulletin_advisory) : '--'!!}
     </h5>
     <figure class="highcharts-figure">
         <div id="container"></div>
@@ -59,6 +59,10 @@
                 <div class="form-group">
                     {{Form::label('bulletin_subtitle', 'Corn Bulletin Section Subtitle', ['class' => 'col-form-label required'])}}
                     {{Form::textarea('bulletin_subtitle', $landing_page->bulletin_subtitle, ['class' => 'form-control', 'rows' => '4'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('bulletin_advisory', 'Corn Bulletin Advisory', ['class' => 'col-form-label required'])}}
+                    {{Form::textarea('bulletin_advisory', $landing_page->bulletin_advisory, ['class' => 'form-control', 'rows' => '4'])}}
                 </div>
                 <div class="form-group">
                     {{Form::label('bulletin_file', 'Upload Corn Bulletin File', ['class' => 'col-form-label required'])}}
@@ -111,14 +115,14 @@
             align: 'center'
         },
         subtitle: {
-            text: 'Dr. Artemio Salazar, Project SARAi',
+            text: 'PAGASA',
             align: 'center'
         },
         xAxis: [{
             title: {
                 text: 'Month and Year'
             },
-            categories: ["Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022", "Apr 2022"],
+            categories: ["Mar 2022", "Apr 2022",  "May 2022", "Jun 2022", "Jul 2022", "Aug 2022"],
             crosshair: true
         }],
         yAxis: [{ // Primary yAxis
@@ -170,7 +174,7 @@
             name: 'Current Rainfall Forecast',
             type: 'column',
             yAxis: 1,
-            data: [33, 14, 11, 27, 58],
+            data: [24, 37, 182, 262, 310, 480],
             tooltip: {
                 valueSuffix: ' mm'
             }
@@ -179,7 +183,7 @@
             name: '40-year average rainfall',
             type: 'column',
             yAxis: 1,
-            data: [14, 2, 8, 22, 61],
+            data: [14, 2, 8, 22, 61, 200],
             tooltip: {
                 valueSuffix: ' mm'
             }

@@ -126,6 +126,7 @@ class PagesController extends Controller
         }
         $page->bulletin_title = $request->bulletin_title;
         $page->bulletin_subtitle = $request->bulletin_subtitle;
+        $page->bulletin_advisory = $request->bulletin_advisory;
         $page->bulletin_date = $request->bulletin_date;
         $page->bulletin_position = $request->bulletin_position;
         if($request->hasFile('bulletin_file')){
@@ -471,6 +472,18 @@ class PagesController extends Controller
         $page->mean_4 = $request->mean_4;
         $page->mean_5 = $request->mean_5;
         $page->mean_6 = $request->mean_6;
+        if($request->hasFile('rainfall_outlook_source')){
+            if($page->rainfall_outlook_source){
+                $file_path = public_path().'/storage/files/'.$page->rainfall_outlook_source;
+                if(file_exists($file_path)){
+                    unlink($file_path);
+                }
+            }
+            $pdfFile = $request->file('rainfall_outlook_source');
+            $pdfName = uniqid().$pdfFile->getClientOriginalName();
+            $pdfFile->move(public_path('/storage/files/'), $pdfName);
+            $page->rainfall_outlook_source = $pdfName;
+        }
         $page->save();
         return redirect()->back()->with('success','Rainfall Outlook Updated.'); 
     }

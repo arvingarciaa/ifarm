@@ -57,35 +57,37 @@
                             Weather Forecast for {{ucwords(str_replace("_", " ", $key))}}, Tarlac in the next 6 days</b>
                         </h5>
                         <div class="row mt-2">
-                            <table class="col-12 text-center forecast-table">
-                                <tr>
-                                    <th></th>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][0]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][1]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][2]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][3]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][4]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                    <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][5]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
-                                </tr>
-                                <tr style="font-size:90%">
-                                    <th style="width:14%">Date</th>
-                                    <td style="width:14%">Today</td>
-                                    <td style="width:14%">{{date('M d', strtotime("+1 day"))}}</td>
-                                    <td style="width:14%">{{date('M d', strtotime("+2 day"))}}</td>
-                                    <td style="width:14%">{{date('M d', strtotime("+3 day"))}}</td>
-                                    <td style="width:14%">{{date('M d', strtotime("+4 day"))}}</td>
-                                    <td style="width:14%">{{date('M d', strtotime("+5 day"))}}</td>
-                                </tr>
-                                <tr style="font-size:90%">
-                                    <th style="width:14%">Precipitation</th>
-                                    <td style="width:14%">{{$item['daily'][0]['pop']*100}}% chance of<br> {{!isset($item['daily'][0]['rain']) ? '< 0.01' : $item['daily'][0]['rain']}}mm</td>
-                                    <td style="width:14%">{{$item['daily'][1]['pop']*100}}% chance of<br> {{!isset($item['daily'][1]['rain']) ? '< 0.01' : $item['daily'][1]['rain']}}mm</td>
-                                    <td style="width:14%">{{$item['daily'][2]['pop']*100}}% chance of<br> {{!isset($item['daily'][2]['rain']) ? '< 0.01' : $item['daily'][2]['rain']}}mm</td>
-                                    <td style="width:14%">{{$item['daily'][3]['pop']*100}}% chance of<br> {{!isset($item['daily'][3]['rain']) ? '< 0.01' : $item['daily'][3]['rain']}}mm</td>
-                                    <td style="width:14%">{{$item['daily'][4]['pop']*100}}% chance of<br> {{!isset($item['daily'][4]['rain']) ? '< 0.01' : $item['daily'][4]['rain']}}mm</td>
-                                    <td style="width:14%">{{$item['daily'][5]['pop']*100}}% chance of<br> {{!isset($item['daily'][5]['rain']) ? '< 0.01' : $item['daily'][5]['rain']}}mm</td>
-                                </tr>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="col-12 text-center forecast-table">
+                                    <tr>
+                                        <th></th>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][0]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][1]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][2]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][3]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][4]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                        <td><img src="http://openweathermap.org/img/wn/{{$item['daily'][5]['weather'][0]['icon']}}@2x.png" style="max-width:75px"></td>
+                                    </tr>
+                                    <tr style="font-size:90%">
+                                        <th style="width:14%">Date</th>
+                                        <td style="width:14%">Today</td>
+                                        <td style="width:14%">{{date('M d', strtotime("+1 day"))}}</td>
+                                        <td style="width:14%">{{date('M d', strtotime("+2 day"))}}</td>
+                                        <td style="width:14%">{{date('M d', strtotime("+3 day"))}}</td>
+                                        <td style="width:14%">{{date('M d', strtotime("+4 day"))}}</td>
+                                        <td style="width:14%">{{date('M d', strtotime("+5 day"))}}</td>
+                                    </tr>
+                                    <tr style="font-size:90%">
+                                        <th style="width:14%">Precipitation</th>
+                                        <td style="width:14%">{{$item['daily'][0]['pop']*100}}% chance of<br> {{!isset($item['daily'][0]['rain']) ? '< 0.01' : $item['daily'][0]['rain']}}mm</td>
+                                        <td style="width:14%">{{$item['daily'][1]['pop']*100}}% chance of<br> {{!isset($item['daily'][1]['rain']) ? '< 0.01' : $item['daily'][1]['rain']}}mm</td>
+                                        <td style="width:14%">{{$item['daily'][2]['pop']*100}}% chance of<br> {{!isset($item['daily'][2]['rain']) ? '< 0.01' : $item['daily'][2]['rain']}}mm</td>
+                                        <td style="width:14%">{{$item['daily'][3]['pop']*100}}% chance of<br> {{!isset($item['daily'][3]['rain']) ? '< 0.01' : $item['daily'][3]['rain']}}mm</td>
+                                        <td style="width:14%">{{$item['daily'][4]['pop']*100}}% chance of<br> {{!isset($item['daily'][4]['rain']) ? '< 0.01' : $item['daily'][4]['rain']}}mm</td>
+                                        <td style="width:14%">{{$item['daily'][5]['pop']*100}}% chance of<br> {{!isset($item['daily'][5]['rain']) ? '< 0.01' : $item['daily'][5]['rain']}}mm</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -94,44 +96,46 @@
                         Rainfall Outlook for Tarlac ({{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('M Y') : '--'}} to {{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(5)->format('M Y') : '--'}})</b>
                     </h5>
                     <div class="row">
-                        <table class="col-12 text-center forecast-table">
-                            <tr style="font-size:90%">
-                                <th style="width:14%">Month</th>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('M Y') : '--'}}</td>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(1)->format('M Y') : '--'}}</td>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(2)->format('M Y') : '--'}}</td>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(3)->format('M Y') : '--'}}</td>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(4)->format('M Y') : '--'}}</td>
-                                <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(5)->format('M Y') : '--'}}</td>
-                            </tr>
-                            <tr style="font-size:90%">
-                                <th style="width:14%">Min</th>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_1) ? $landing_page->min_1 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_2) ? $landing_page->min_2 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->min_3) ? $landing_page->min_3 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_4) ? $landing_page->min_4 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->min_5) ? $landing_page->min_5 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_6) ? $landing_page->min_6 : '--'}} mm</td>
-                            </tr>
-                            <tr style="font-size:90%">
-                                <th style="width:14%">Max</th>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_1) ? $landing_page->max_1 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_2) ? $landing_page->max_2 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->max_3) ? $landing_page->max_3 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_4) ? $landing_page->max_4 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_5) ? $landing_page->max_5 : '--'}} mm</td>
-                                <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_6) ? $landing_page->max_6 : '--'}} mm</td>
-                            </tr>
-                            <tr style="font-size:90%">
-                                <th style="width:14%">Mean</th>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->mean_1) ? $landing_page->mean_1 : '--'}} mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_2.png" style="width:15px">{{isset($landing_page->mean_2) ? $landing_page->mean_2 : '--'}} mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->mean_3) ? $landing_page->mean_3 : '--'}} mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->mean_4) ? $landing_page->mean_4 : '--'}} mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_5) ? $landing_page->mean_5 : '--'}} mm</td>
-                                <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_6) ? $landing_page->mean_6 : '--'}} mm</td>
-                            </tr>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="col-12 text-center forecast-table">
+                                <tr style="font-size:90%">
+                                    <th style="width:14%">Month</th>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('M Y') : '--'}}</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(1)->format('M Y') : '--'}}</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(2)->format('M Y') : '--'}}</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(3)->format('M Y') : '--'}}</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(4)->format('M Y') : '--'}}</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px">{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->addMonths(5)->format('M Y') : '--'}}</td>
+                                </tr>
+                                <tr style="font-size:90%">
+                                    <th style="width:14%">Min</th>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_1) ? $landing_page->min_1 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->min_2) ? $landing_page->min_2 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->min_3) ? $landing_page->min_3 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_4) ? $landing_page->min_4 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->min_5) ? $landing_page->min_5 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->min_6) ? $landing_page->min_6 : '--'}} mm</td>
+                                </tr>
+                                <tr style="font-size:90%">
+                                    <th style="width:14%">Max</th>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_1) ? $landing_page->max_1 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->max_2) ? $landing_page->max_2 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_3.png" style="width:15px">{{isset($landing_page->max_3) ? $landing_page->max_3 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_4) ? $landing_page->max_4 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_5) ? $landing_page->max_5 : '--'}} mm</td>
+                                    <td style="width:14%"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->max_6) ? $landing_page->max_6 : '--'}} mm</td>
+                                </tr>
+                                <tr style="font-size:90%">
+                                    <th style="width:14%">Mean</th>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_5.png" style="width:15px">{{isset($landing_page->mean_1) ? $landing_page->mean_1 : '--'}} mm</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_2.png" style="width:15px">{{isset($landing_page->mean_2) ? $landing_page->mean_2 : '--'}} mm</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_1.png" style="width:15px">{{isset($landing_page->mean_3) ? $landing_page->mean_3 : '--'}} mm</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_4.png" style="width:15px">{{isset($landing_page->mean_4) ? $landing_page->mean_4 : '--'}} mm</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_5) ? $landing_page->mean_5 : '--'}} mm</td>
+                                    <td style="width:14%;font-weight:900;font-size:16px"><img src="/storage/website_assets/rainfall_6.png" style="width:15px">{{isset($landing_page->mean_6) ? $landing_page->mean_6 : '--'}} mm</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                     <hr class="rounded">
                     @foreach(App\Models\FarmStat::all() as $farm_stats_data)
@@ -586,6 +590,10 @@
                         {{Form::label('mean_6', 'Mean', ['class' => 'col-form-label required'])}}
                         {{Form::text('mean_6', $landing_page->mean_6, ['class' => 'form-control', 'placeholder' => 'ex. 10'])}}
                     </div>
+                </div>
+                <div class="form-group">
+                    {{Form::label('rainfall_outlook_source', 'Upload Rainfall Outlook Source File', ['class' => 'col-form-label required'])}}
+                    {{Form::file('rainfall_outlook_source', ['class' => 'form-control mb-3 pb-2'])}}
                 </div>
             </div>
             <div class="modal-footer">
