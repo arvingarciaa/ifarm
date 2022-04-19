@@ -205,7 +205,7 @@
     array_push($forty_year_mean_array,(int)$landing_page->forty_year_mean_1, (int)$landing_page->forty_year_mean_2, (int)$landing_page->forty_year_mean_3, (int)$landing_page->forty_year_mean_4, (int)$landing_page->forty_year_mean_5, (int)$landing_page->forty_year_mean_6);
     array_push($current_mean_array,(int)$landing_page->mean_1, (int)$landing_page->mean_2, (int)$landing_page->mean_3, (int)$landing_page->mean_4, (int)$landing_page->mean_5, (int)$landing_page->mean_6);
     for($i = 0; $i < 6; $i++){
-        $temp = 100*($current_mean_array[$i]-$forty_year_mean_array[$i])/$forty_year_mean_array[$i];
+        $temp = 100*($current_mean_array[$i]-$forty_year_mean_array[$i])/ ($forty_year_mean_array[$i] ? 1);
         array_push($rate_of_change_array, round($temp, 2));
     }
 ?>
