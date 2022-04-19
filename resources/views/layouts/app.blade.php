@@ -18,15 +18,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('css/lightbox.css') }}" rel="stylesheet"> -->
-
+ 
     <!-- Scripts
     <script src="https://kit.fontawesome.com/e0784f1094.js"></script>
     -->
-    
-    <script src="{{ asset('js/lightbox.js') }}" defer></script>
-    <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
-    
+   
     <script src="{{ asset('js/app.js') }}" ></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/dropzone.js') }}"></script>
@@ -35,10 +31,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js" integrity="sha512-ZKqmaRVpwWCw7S7mEjC89jDdWRD/oMS0mlfH96mO0u3wrPYoN+lXmqvyptH4P9mY6zkoPTSy5U2SwKVXRY5tYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <!-- x-editable -->
-    <link href="{{ asset('css/bootstrap-editable.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/bootstrap-editable.js') }}"></script>
-
     <script src="{{ asset('js/popper.min.js') }}"></script>
 
     <!-- chartjs -->
@@ -88,11 +80,9 @@
 <body style="background-color:white">
     <div id="app">
         <section class="sticky-top">
-            @extends('layouts.navbar')
+            @include('layouts.navbar')
         </section>
-        <div class="mt-4 pt-4">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
     <style>
         @media only screen and (max-width: 600px) {

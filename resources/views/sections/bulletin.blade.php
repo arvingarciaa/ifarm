@@ -28,7 +28,8 @@
 
     @if(request()->edit == 1 && $user != null)
         <div class="hover-overlay" style="width:100%">    
-            <button type="button" class="btn btn-xs btn-primary" data-target="#editBulletinSectionModal" data-toggle="modal"><i class="far fa-edit"></i></button>      
+            <button type="button" class="btn btn-xs btn-primary" data-target="#editBulletinSectionModal" data-toggle="modal"><i class="fas fa-cog"></i> Configure Section</button>     
+            <button type="button" class="btn btn-xs btn-primary" data-target="#editBulletinDataModal" data-toggle="modal"><i class="fas fa-edit"></i> Edit Bulletin Data</button>  
         </div>
     @endif
 </div>
@@ -63,10 +64,6 @@
                 <div class="form-group">
                     {{Form::label('bulletin_advisory', 'Corn Bulletin Advisory', ['class' => 'col-form-label required'])}}
                     {{Form::textarea('bulletin_advisory', $landing_page->bulletin_advisory, ['class' => 'form-control', 'rows' => '4'])}}
-                </div>
-                <div class="form-group">
-                    {{Form::label('bulletin_file', 'Upload Corn Bulletin File', ['class' => 'col-form-label required'])}}
-                    {{Form::file('bulletin_file', ['class' => 'form-control mb-3 pb-2'])}}
                 </div>
                 <hr class="my-0">
                 {{Form::label('bulletin_section_background_banner', 'Change Section Background', ['class' => 'col-form-label'])}}
@@ -105,6 +102,114 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="editBulletinDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Edit Corn Bulletin Data</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{ Form::open(['action' => ['PagesController@updateBulletinData'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+            <div class="modal-body">
+                <div class="form-group">
+                    {{Form::label('bulletin_file', 'Upload Corn Bulletin File', ['class' => 'col-form-label required'])}}
+                    {{Form::file('bulletin_file', ['class' => 'form-control mb-3 pb-2'])}}
+                </div>
+                <div class="row form-group">   
+                    <div class="col-6">
+                        {{Form::label('date_1', 'Date for first month', ['class' => 'col-form-label required'])}}
+                        <div class="input-append date" id="date_1" data-date-format="mm-yyyy">
+                            <input disabled class="form-control" type="text" placeholder="Add first month" name="date_1" value="{{isset($landing_page->outlook_month) ? $landing_page->outlook_month->format('Y-M') : ''}}">    
+                            <span class="add-on"><i class="icon-th"></i></span>      
+                        </div>     
+                    </div>
+                    <div class="col-12">
+                        <small>Date and current mean taken from Tarlac rainfall outlook input.</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h5 class="col-12 mb-0">Month 1 - {{$landing_page->outlook_month->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_1', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_1', $landing_page->mean_1, ['disabled', 'class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_1', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_1', $landing_page->forty_year_mean_1, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 2 - {{$landing_page->outlook_month->addMonths(1)->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_2', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_2', $landing_page->mean_2, ['disabled', 'class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_2', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_2', $landing_page->forty_year_mean_2, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 3 - {{$landing_page->outlook_month->addMonths(2)->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_3', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_3', $landing_page->mean_3, ['disabled', 'class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_3', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_3', $landing_page->forty_year_mean_3, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 4 - {{$landing_page->outlook_month->addMonths(3)->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_4', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_4', $landing_page->mean_4, ['disabled', 'class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_4', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_4', $landing_page->forty_year_mean_4, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 5 - {{$landing_page->outlook_month->addMonths(4)->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_5', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_5', $landing_page->mean_5, ['disabled', 'class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_5', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_5', $landing_page->forty_year_mean_5, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <h5 class="col-12 mt-2 mb-0">Month 6 - {{$landing_page->outlook_month->addMonths(5)->format('F')}}</h5>
+                    <div class="col-4">
+                        {{Form::label('mean_6', 'Current Mean', ['class' => 'col-form-label required'])}}
+                        {{Form::text('mean_6', $landing_page->mean_6, ['disabled', 'class' => 'form-control', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        {{Form::label('forty_year_mean_6', '40 Year Average', ['class' => 'col-form-label required'])}}
+                        {{Form::text('forty_year_mean_6', $landing_page->forty_year_mean_6, ['class' => 'form-control ', 'placeholder' => 'ex. 10'])}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
+            </div>
+            {{Form::close()}}   
+        </div>
+    </div>
+</div>
+
+<?php 
+    $forty_year_mean_array = array();
+    $current_mean_array = array();
+    $rate_of_change_array = array();
+    $date_array = array();
+    array_push($date_array, $landing_page->outlook_month->format('M Y'),$landing_page->outlook_month->addMonths(1)->format('M Y'), $landing_page->outlook_month->addMonths(2)->format('M Y'), $landing_page->outlook_month->addMonths(3)->format('M Y'), $landing_page->outlook_month->addMonths(4)->format('M Y'), $landing_page->outlook_month->addMonths(5)->format('M Y'));
+    array_push($forty_year_mean_array,(int)$landing_page->forty_year_mean_1, (int)$landing_page->forty_year_mean_2, (int)$landing_page->forty_year_mean_3, (int)$landing_page->forty_year_mean_4, (int)$landing_page->forty_year_mean_5, (int)$landing_page->forty_year_mean_6);
+    array_push($current_mean_array,(int)$landing_page->mean_1, (int)$landing_page->mean_2, (int)$landing_page->mean_3, (int)$landing_page->mean_4, (int)$landing_page->mean_5, (int)$landing_page->mean_6);
+    for($i = 0; $i < 6; $i++){
+        $temp = 100*($current_mean_array[$i]-$forty_year_mean_array[$i])/$forty_year_mean_array[$i];
+        array_push($rate_of_change_array, round($temp, 2));
+    }
+?>
+
 <script>
     Highcharts.chart('container', {
         chart: {
@@ -122,7 +227,7 @@
             title: {
                 text: 'Month and Year'
             },
-            categories: ["Mar 2022", "Apr 2022",  "May 2022", "Jun 2022", "Jul 2022", "Aug 2022"],
+            categories: @php echo json_encode($date_array);@endphp,
             crosshair: true
         }],
         yAxis: [{ // Primary yAxis
@@ -174,7 +279,7 @@
             name: 'Current Rainfall Forecast',
             type: 'column',
             yAxis: 1,
-            data: [24, 37, 182, 262, 310, 480],
+            data: @php echo json_encode($current_mean_array);@endphp,
             tooltip: {
                 valueSuffix: ' mm'
             }
@@ -183,7 +288,7 @@
             name: '40-year average rainfall',
             type: 'column',
             yAxis: 1,
-            data: [14, 2, 8, 22, 61, 200],
+            data: @php echo json_encode($forty_year_mean_array);@endphp,
             tooltip: {
                 valueSuffix: ' mm'
             }
@@ -191,7 +296,7 @@
         }, {
             name: '% of change',
             type: 'spline',
-            data: [233, 626, 134, 124, 119],
+            data: @php echo json_encode($rate_of_change_array);@endphp,
             tooltip: {
                 valueSuffix: '%'
             }, 

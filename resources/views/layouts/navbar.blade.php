@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top" style="background-color:#006838">             
+<nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#006838">             
     <div class="container">
         <a class="navbar-brand" href="https://competense.com/ifarm">
             <h4 style="color:white"><img alt="iFarm Footer" src="/storage/website_assets/ifarm_white.png" style="max-height:25px"></h4>

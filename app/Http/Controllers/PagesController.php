@@ -13,25 +13,25 @@ class PagesController extends Controller
     //
     public function getLandingPage(Request $request){
         if(request()->filter == 'at_risk'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'Vegetative')
-                                ->orWhere('development_stage', '=', 'Reproductive')
-                                ->orWhere('development_stage', '=', 'Maturity')
+            $farmer_entries = Farmer::where('development_stage', '=', '2')
+                                ->orWhere('development_stage', '=', '3')
+                                ->orWhere('development_stage', '=', '4')
                                 ->get();
         }
         elseif(request()->filter == 'no_crop'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'No Crop')->get();
+            $farmer_entries = Farmer::where('development_stage', '=', '0')->get();
         } 
         elseif(request()->filter == 'vegetative'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'Vegetative')->get();
+            $farmer_entries = Farmer::where('development_stage', '=', '1')->get();
         }
         elseif(request()->filter == 'reproductive'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'Reproductive')->get();
+            $farmer_entries = Farmer::where('development_stage', '=', '2')->get();
         }
         elseif(request()->filter == 'maturity'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'Maturity')->get();
+            $farmer_entries = Farmer::where('development_stage', '=', '3')->get();
         }
         elseif(request()->filter == 'harvested'){
-            $farmer_entries = Farmer::where('development_stage', '=', 'Harvested')->get();
+            $farmer_entries = Farmer::where('development_stage', '=', '4')->get();
         }
         else {
             $farmer_entries = Farmer::all();
@@ -171,6 +171,34 @@ class PagesController extends Controller
             $page->bulletin_background_type = 1;
         }
 
+        $page->save();
+        return redirect('/?edit=1')->with('success', 'Corn Bulletin Section Updated');
+    }
+
+    public function updateBulletinData(Request $request){
+        $this->validate($request, [
+            'bulletin_file' => 'file|max:10240|mimes:pdf,csv,xlsx,xls'
+        ]);
+        $page = LandingPage::first();
+        if($request->hasFile('bulletin_file')){
+            if($page->bulletin_file){
+                $file_path = public_path().'/storage/files/'.$page->bulletin_file;
+                if(file_exists($file_path)){
+                    unlink($file_path);
+                }
+            }
+            $pdfFile = $request->file('bulletin_file');
+            $pdfName = uniqid().$pdfFile->getClientOriginalName();
+            $pdfFile->move(public_path('/storage/files/'), $pdfName);
+            $page->bulletin_file = $pdfName;
+        }
+        
+        $page->forty_year_mean_1 = $request->forty_year_mean_1;
+        $page->forty_year_mean_2 = $request->forty_year_mean_2;
+        $page->forty_year_mean_3 = $request->forty_year_mean_3;
+        $page->forty_year_mean_4 = $request->forty_year_mean_4;
+        $page->forty_year_mean_5 = $request->forty_year_mean_5;
+        $page->forty_year_mean_6 = $request->forty_year_mean_6;
         $page->save();
         return redirect('/?edit=1')->with('success', 'Corn Bulletin Section Updated');
     }

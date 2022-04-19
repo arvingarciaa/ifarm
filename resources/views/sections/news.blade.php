@@ -151,7 +151,7 @@
             <div class="modal-content">
                 {{ Form::open(['action' => ['NewsController@editNews', $news_modal->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
                 <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLabel">Create News</h6>
+                    <h6 class="modal-title" id="exampleModalLabel">Edit News</h6>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

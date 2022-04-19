@@ -20,6 +20,7 @@ Route::get('/', 'PagesController@getLandingPage')->name('getLandingPage');
 Route::post('/update/topBanner', 'PagesController@updateTopBanner')->name('updateTopBanner');
 Route::post('/update/weather', 'PagesController@updateWeatherSection')->name('updateWeatherSection');
 Route::post('/update/bulletin', 'PagesController@updateBulletinSection')->name('updateBulletinSection');
+Route::post('/update/bulletinData', 'PagesController@updateBulletinData')->name('updateBulletinData');
 Route::post('/update/vegetation', 'PagesController@updateVegetationSection')->name('updateVegetationSection');
 Route::post('/update/plantingStatus', 'PagesController@updatePlantingStatusSection')->name('updatePlantingStatusSection');
 Route::post('/update/maps', 'PagesController@updateMapsSection')->name('updateMapsSection');
@@ -53,5 +54,7 @@ Auth::routes();
 Route::post('/addFarmer', 'FarmersController@addFarmer')->name('addFarmer');
 Route::post('/{id}/editFarmer', 'FarmersController@editFarmer')->name('editFarmer');
 Route::delete('/{id}/deleteFarmer', 'FarmersController@deleteFarmer')->name('deleteFarmer');
+Route::post('/uploadNDVI', 'FarmersController@uploadNDVI')->name('uploadNDVI');
+Route::post('/uploadDamagedPlots', 'FarmersController@uploadDamagedPlots')->name('uploadDamagedPlots');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

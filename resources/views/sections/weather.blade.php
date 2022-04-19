@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-12 show-when-mobile" style="display:none">
                     <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
-                    <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Click to see weather data from DOST-PAGASA</h6></a>   
+                    <a href="https://mail-attachment.googleusercontent.com/attachment/u/2/?ui=2&ik=0df8dc3541&attid=0.1&permmsgid=msg-f:1727174358751375908&th=17f827eda689f224&view=att&disp=inline&realattid=f_l0p1jwd80&saddbat=ANGjdJ9RAZO0Kr7WI57ENL6OL8YACdvQAHxdUzc_n7dwcMBOu8ijxX6wQWWzL8S3jMkf53KGNWCrHWnJ6MdhUuiqyVt7ehnj9WmKwOo1iLTy49D-o_VEOysVnD2UyVUa9nOXH6lDW_fNfI8rN7c-c5j8IUSDl77ytEtLb0tF9p9mfzJpkR9VvCg-TvhUwi3-Kk4qatGP3P69ZKaADOtOdgU9mb9VpsWdRoVPQSoIwDlXKJP_2kyVDXIEHm0W3V2hJi62EOWV-ujD5-m37kPxnm_sK6nZmmhSnD3gGinsP-RrhE_AoXxE6oXozAcmu3eZIA1UOIPs7JNiHnlwyKjTRR4cI7-yctDE35tgIPfdcFtFHdlp9hJoaG42_f6Crel4dD08rnsGZSgwEOkTPMbQHx3PBhB11NBqBVNTP2pwRNu0Yln9y64EHYl_n4kTiH7osPjDTY4DFEcWbsm6sQrTgqetQdD1a90OEqO5Rh5F8nl_5TCYMwVxrpg0_TKkNtUeZWxR4Ha7LKLFYmLvN19L8Ktl8mcGe4CNA1UmN1uUNNkFhI6EQphhvomu8SUgLgvZsxcu5OuZ7Jbmo-NJisTqZ9O6NTkNOkoge6GDCJWhDWcBEy98h0ttfvRtLqOfSrk08rE6xKB5PQIr-1rtlas9SJbBcvJVc0nApuGqa0zqeF4zNl3WWLanmIMIRyZzEvtl0POySR4qObVVlJjvV7LnvPlkEHdwhGPJTmthQSJqi0W3Eh147jAc1HKJ3Oiswtg9pML0ydFMBiwWrDH7dp9bHIj65uwVJyygfWXbye_fOw" target="_blank" class="text-center" style="color:blue"><h6>Download Rainfall Outlook (Source: PAGASA)</h6></a>
                 </div>
             </div>
         </div>
@@ -188,8 +188,7 @@
         <div class="col-7 hide-when-mobile">
             <hr class="rounded" style="margin-top:0;margin-bottom:0.5rem;">
             <span>
-                <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Source: PAGASA website</h6></a>  
-                <a href="https://www.pagasa.dost.gov.ph/" target="_blank" class="text-center" style="color:blue"><h6>Download Rainfall Outlook</h6></a>
+                <a href="https://mail-attachment.googleusercontent.com/attachment/u/2/?ui=2&ik=0df8dc3541&attid=0.1&permmsgid=msg-f:1727174358751375908&th=17f827eda689f224&view=att&disp=inline&realattid=f_l0p1jwd80&saddbat=ANGjdJ9RAZO0Kr7WI57ENL6OL8YACdvQAHxdUzc_n7dwcMBOu8ijxX6wQWWzL8S3jMkf53KGNWCrHWnJ6MdhUuiqyVt7ehnj9WmKwOo1iLTy49D-o_VEOysVnD2UyVUa9nOXH6lDW_fNfI8rN7c-c5j8IUSDl77ytEtLb0tF9p9mfzJpkR9VvCg-TvhUwi3-Kk4qatGP3P69ZKaADOtOdgU9mb9VpsWdRoVPQSoIwDlXKJP_2kyVDXIEHm0W3V2hJi62EOWV-ujD5-m37kPxnm_sK6nZmmhSnD3gGinsP-RrhE_AoXxE6oXozAcmu3eZIA1UOIPs7JNiHnlwyKjTRR4cI7-yctDE35tgIPfdcFtFHdlp9hJoaG42_f6Crel4dD08rnsGZSgwEOkTPMbQHx3PBhB11NBqBVNTP2pwRNu0Yln9y64EHYl_n4kTiH7osPjDTY4DFEcWbsm6sQrTgqetQdD1a90OEqO5Rh5F8nl_5TCYMwVxrpg0_TKkNtUeZWxR4Ha7LKLFYmLvN19L8Ktl8mcGe4CNA1UmN1uUNNkFhI6EQphhvomu8SUgLgvZsxcu5OuZ7Jbmo-NJisTqZ9O6NTkNOkoge6GDCJWhDWcBEy98h0ttfvRtLqOfSrk08rE6xKB5PQIr-1rtlas9SJbBcvJVc0nApuGqa0zqeF4zNl3WWLanmIMIRyZzEvtl0POySR4qObVVlJjvV7LnvPlkEHdwhGPJTmthQSJqi0W3Eh147jAc1HKJ3Oiswtg9pML0ydFMBiwWrDH7dp9bHIj65uwVJyygfWXbye_fOw" target="_blank" class="text-center" style="color:blue"><h6>Download Rainfall Outlook (Source: PAGASA)</h6></a>
             </span>    
         </div>
         <div class="expand-collapse">

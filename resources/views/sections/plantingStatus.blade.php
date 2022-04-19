@@ -38,7 +38,8 @@
                     </div>
                     <span class="mt-2 ml-3 text-muted">{{App\Models\Farmer::all()->count()}} Farmer Data</span>
                     @if(request()->edit == '1' && $user != null)
-                    <button type="button" class="btn btn-default" data-target="#addFarmerEntryModal" data-toggle="modal"><i class="fa fa-plus"></i> Add</button>  
+                    <button type="button" class="btn btn-default" data-target="#uploadNDVIModal" data-toggle="modal"><i class="fa fa-plus"></i> Upload NDVI</button>  
+                    <button type="button" class="btn btn-default" data-target="#uploadDamagedPlotsModal" data-toggle="modal"><i class="fa fa-plus"></i> Upload Damaged Plots</button>  
                     <button type="button" class="btn btn-default" data-target="#editFarmerEntryFieldsModal" data-toggle="modal"><i class="fas fa-edit"></i> Configure</button>     
                     @endif
                 </span>
@@ -63,19 +64,34 @@
                                 <th class="text-center" style="{{$landing_page->planted_area_access == 2 || $landing_page->planted_area_access == 1 && $user != null ? '' : 'display:none'}}">Planted Area</th>
                                 <th class="text-center" style="{{$landing_page->commodity_access == 2 || $landing_page->commodity_access == 1 && $user != null ? '' : 'display:none'}}">Commodity</th>
                                 <th class="text-center" style="{{$landing_page->date_planted_access == 2 || $landing_page->date_planted_access == 1 && $user != null ? '' : 'display:none'}}">Date Planted</th>
-                                <th style="{{request()->edit == 1 && $user != null ? '' : 'display:none'}}">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($farmerEntries as $farmer_entry)
+                                <?php 
+                                    $current_plot_ndvi = App\Models\AtRiskPlot::where('gpx_id', '=', $farmer_entry->gpx_id)->first();
+                                    if(isset($current_plot_ndvi)){
+                                        if($current_plot_ndvi->development_stage == 0){
+                                            $current_development_stage_text = "No Crop";
+                                        } elseif($current_plot_ndvi->development_stage == 1){
+                                            $current_development_stage_text = "Vegetative";
+                                        } elseif($current_plot_ndvi->development_stage == 2){
+                                            $current_development_stage_text = "Reproductive";
+                                        } elseif($current_plot_ndvi->development_stage == 3){
+                                            $current_development_stage_text = "Maturity";
+                                        } else{
+                                            $current_development_stage_text = "Harvested";
+                                        }
+                                    }
+                                ?>
                                 <tr>
                                     <th>{{$loop->iteration}}</th>
                                     <th style="{{$landing_page->rsbsa_no_access == 2 || $landing_page->rsbsa_no_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->rsbsa_no}}</th>
                                     <th style="{{$landing_page->last_name_access == 2 || $landing_page->last_name_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->last_name}}</th>
                                     <th style="{{$landing_page->first_name_access == 2 || $landing_page->first_name_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->first_name}}</th>
-                                    <th class="text-center" style="{{$landing_page->ndvi_value_access == 2 || $landing_page->ndvi_value_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{$farmer_entry->ndvi_value}}</th>
-                                    <th class="text-center" style="{{$landing_page->area_gis_access == 2 || $landing_page->area_gis_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{$farmer_entry->area_gis}}</th>
-                                    <th class="text-center" style="{{$landing_page->development_stage_access == 2 || $landing_page->development_stage_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{$farmer_entry->development_stage ? $farmer_entry->development_stage : '---'}}</th>
+                                    <th class="text-center" style="{{$landing_page->ndvi_value_access == 2 || $landing_page->ndvi_value_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{isset($current_plot_ndvi) ? $current_plot_ndvi->ndvi_value : '--'}}</th>
+                                    <th class="text-center" style="{{$landing_page->area_gis_access == 2 || $landing_page->area_gis_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{isset($current_plot_ndvi) ? $current_plot_ndvi->area_gis : '--'}}</th>
+                                    <th class="text-center" style="{{$landing_page->development_stage_access == 2 || $landing_page->development_stage_access == 1 && $user != null ? '' : 'display:none'}} background-color: #90EE90;">{{isset($current_plot_ndvi) && $current_plot_ndvi->development_stage != null ? $current_development_stage_text : '---'}}</th>
                                     <th class="text-center" style="{{$landing_page->gpx_id_access == 2 || $landing_page->gpx_id_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->gpx_id}}</th>
                                     <th class="text-center" style="{{$landing_page->barangay_access == 2 || $landing_page->barangay_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->barangay}}</th>
                                     <th class="text-center" style="{{$landing_page->municipality_access == 2 || $landing_page->municipality_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->municipality}}</th>
@@ -84,10 +100,6 @@
                                     <th class="text-center" style="{{$landing_page->planted_area_access == 2 || $landing_page->planted_area_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{number_format(round($farmer_entry->planted_area, 2),2)}}</th>
                                     <th class="text-center" style="{{$landing_page->commodity_access == 2 || $landing_page->commodity_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->commodity}}</th>
                                     <th class="text-center" style="{{$landing_page->date_planted_access == 2 || $landing_page->date_planted_access == 1 && $user != null ? '' : 'display:none'}} {{request()->filter == "at_risk" ? 'background-color:rgba(222, 29, 29,0.5)' : ''}}">{{$farmer_entry->date_planted}}</th>
-                                    <th style="{{request()->edit == 1 && $user != null ? '' : 'display:none'}}">
-                                        <button type="button" class="btn btn-primary" data-target="#editFarmerEntryModal-{{$farmer_entry->id}}" data-toggle="modal"><i class="fas fa-edit"></i> Edit</button>
-                                        <button type="button" class="btn btn-danger" data-target="#deleteFarmerEntryModal-{{$farmer_entry->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i> Delete</button>     
-                                    </th>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -442,6 +454,61 @@
     </div>
 </div>
 
+<div class="modal fade" id="uploadNDVIModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Upload NDVI CSV File</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{ Form::open(['action' => ['FarmersController@uploadNDVI'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-12">
+                        {{Form::label('csv_file', 'Upload NDVI CSV File', ['class' => 'col-form-label required'])}}
+                        {{Form::file('csv_file', ['class' => 'form-control'])}}
+                        <small>Please follow CSV format linked <a target="_blank" href="https://drive.google.com/file/d/1eUVgZ9s7__Yocal9Rf3fU0AYP2z5pT27/view?usp=sharing">here</a></small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
+            </div>
+            {{Form::close()}}   
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="uploadDamagedPlotsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">Upload Damaged Plots CSV File</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{ Form::open(['action' => ['FarmersController@uploadDamagedPlots'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-12">
+                        {{Form::label('damaged_csv', 'Upload Damaged Plots CSV File', ['class' => 'col-form-label required'])}}
+                        {{Form::file('damaged_csv', ['class' => 'form-control'])}}
+                        <small>Please follow CSV format linked <a target="_blank" href="https://drive.google.com/file/d/1gT5NGuG0EUNAhQoUciYtuYgP6PIybhJm/view?usp=sharing">here</a></small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {{Form::submit('Save Changes', ['class' => 'btn btn-success'])}}
+            </div>
+            {{Form::close()}}   
+        </div>
+    </div>
+</div>
 
 @foreach(App\Models\Farmer::all() as $farmer_modal)
 

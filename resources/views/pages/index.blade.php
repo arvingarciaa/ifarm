@@ -32,7 +32,7 @@
         </nav>
     </div> 
 @endif
-<div class="container-fluid" style="background-color:white;">
+<div class="container-fluid px-0" style="background-color:white;">
     @include('sections.topBanner')
 </div>
 

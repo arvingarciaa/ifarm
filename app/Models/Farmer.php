@@ -22,5 +22,7 @@ class Farmer extends Model
         'commodity',
         'date_planted',
         'development_stage',
+        'area_gis',
+        'ndvi_value'
     ];
 }
